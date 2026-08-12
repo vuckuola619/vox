@@ -1,0 +1,1087 @@
+jadiin referensi : 
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOX Style Animation Engine — Naseh Ngulik AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Special+Elite&family=Zilla+Slab:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EAE1C8;
+    --paper-dark:#D7C79C;
+    --ink:#221D14;
+    --red:#B92220;
+    --mustard:#BE8F2C;
+    --gray:#726C5E;
+    --line: rgba(34,29,20,0.18);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(255,255,255,0.35), transparent 40%),
+      repeating-linear-gradient(115deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Zilla Slab', serif;
+    min-height:100vh;
+    padding-bottom:60px;
+  }
+  .headline{font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.03em;}
+  .type{font-family:'Special Elite', monospace;}
+
+  /* ---------- watermark stamp ---------- */
+  .stamp-watermark{
+    position:fixed; right:18px; bottom:16px; z-index:500;
+    width:118px; height:118px; border-radius:50%;
+    border:3px solid rgba(185,34,32,0.55);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; transform:rotate(-11deg);
+    color:rgba(185,34,32,0.55);
+    font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:0.06em;
+    font-size:12.5px; line-height:1.25; text-transform:uppercase;
+    pointer-events:none; mix-blend-mode:multiply;
+    box-shadow: inset 0 0 0 5px rgba(185,34,32,0.12);
+  }
+  .stamp-watermark span{padding:0 10px;}
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    padding:34px 24px 0;
+    max-width:920px; margin:0 auto;
+    text-align:center;
+  }
+  header.masthead .eyebrow{
+    font-family:'Special Elite',monospace; font-size:12px; letter-spacing:0.18em;
+    color:var(--gray); text-transform:uppercase;
+  }
+  header.masthead h1{
+    font-size:clamp(28px,5vw,44px); margin:6px 0 4px; line-height:1.05;
+  }
+  header.masthead .sub{
+    color:var(--gray); font-family:'Zilla Slab',serif; font-style:italic; font-size:15px;
+  }
+  .lang-bar{
+    display:flex; align-items:center; justify-content:center; gap:10px; margin-top:16px; flex-wrap:wrap;
+  }
+  select.lang-select{
+    background:var(--paper-dark); border:1px solid var(--ink); color:var(--ink);
+    font-family:'Oswald',sans-serif; font-size:12.5px; letter-spacing:0.03em; text-transform:uppercase;
+    padding:8px 10px; cursor:pointer;
+  }
+  .lang-note{
+    font-family:'Special Elite',monospace; font-size:10.5px; color:var(--gray); max-width:520px; margin:6px auto 0; line-height:1.5;
+  }
+
+  /* ---------- progress strip (case board) ---------- */
+  .board-strip{
+    max-width:920px; margin:26px auto 0; padding:0 24px;
+    display:flex; align-items:flex-start; gap:0; overflow-x:auto;
+  }
+  .tab{
+    flex:1; min-width:78px; text-align:center; cursor:default; position:relative; padding:0 4px 14px;
+  }
+  .tab .string{
+    position:absolute; top:11px; left:-50%; width:100%; height:2px;
+    background:repeating-linear-gradient(90deg, var(--red) 0 5px, transparent 5px 9px);
+    opacity:0.55; z-index:0;
+  }
+  .tab:first-child .string{display:none;}
+  .tab .pin{
+    width:22px; height:22px; border-radius:50%; margin:0 auto 6px; position:relative; z-index:1;
+    background:var(--paper-dark); border:2px solid var(--ink); display:flex; align-items:center; justify-content:center;
+    font-family:'Oswald',sans-serif; font-size:11px; font-weight:700; color:var(--ink);
+  }
+  .tab.done .pin{background:var(--red); border-color:var(--red); color:var(--paper);}
+  .tab.active .pin{background:var(--ink); border-color:var(--ink); color:var(--mustard); box-shadow:0 0 0 4px rgba(185,34,32,0.18);}
+  .tab.locked .pin{opacity:0.4;}
+  .tab .lbl{font-family:'Special Elite',monospace; font-size:9.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--gray);}
+  .tab.active .lbl{color:var(--ink); font-weight:700;}
+  .tab button.jump{background:none;border:none;cursor:pointer;padding:0;font:inherit;}
+
+  /* ---------- board / card ---------- */
+  main.board{max-width:820px; margin:30px auto 0; padding:0 24px;}
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0) 40%), var(--paper);
+    border:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(255,255,255,0.6) inset, 0 12px 26px -18px rgba(0,0,0,0.5);
+    padding:30px 28px 28px;
+    position:relative;
+    clip-path: polygon(0% 1.2%, 4% 0%, 12% 0.8%, 20% 0%, 30% 0.6%, 41% 0%, 53% 0.8%, 64% 0%, 76% 0.7%, 87% 0%, 96% 0.9%, 100% 0.2%, 100% 100%, 0% 100%);
+  }
+  .card h2{margin:0 0 4px; font-size:22px;}
+  .card .kicker{font-family:'Special Elite',monospace; font-size:11px; color:var(--red); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px;}
+  .card p.desc{color:#4a4636; font-size:15px; line-height:1.55; margin:0 0 20px;}
+
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  @media(max-width:560px){.grid{grid-template-columns:1fr;}}
+
+  button.choice{
+    text-align:left; background:var(--paper-dark); border:1px solid var(--line);
+    padding:12px 14px; cursor:pointer; font-family:'Zilla Slab',serif; font-size:14.5px; color:var(--ink);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  button.choice:hover{transform:translateY(-2px); box-shadow:0 6px 14px -8px rgba(0,0,0,0.4);}
+  button.choice b{font-family:'Oswald',sans-serif; display:block; font-size:12px; color:var(--red); margin-bottom:2px;}
+
+  input.custom{
+    width:100%; padding:11px 12px; border:1px dashed var(--gray); background:transparent;
+    font-family:'Zilla Slab',serif; font-size:14.5px; color:var(--ink);
+  }
+
+  .idea-card{
+    background:var(--paper-dark); border:1px solid var(--line); padding:14px 16px; margin-bottom:9px;
+    cursor:pointer; display:flex; gap:12px; align-items:flex-start;
+  }
+  .idea-card:hover{box-shadow:0 6px 14px -9px rgba(0,0,0,0.45); transform:translateY(-1px);}
+  .idea-card .num{font-family:'Oswald',sans-serif; font-weight:700; color:var(--red); min-width:22px;}
+
+  .btn-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+  button.primary{
+    background:var(--ink); color:var(--paper); border:none; padding:12px 20px;
+    font-family:'Oswald',sans-serif; letter-spacing:0.04em; text-transform:uppercase; font-size:13px;
+    cursor:pointer;
+  }
+  button.primary:hover{background:var(--red);}
+  button.primary:disabled{opacity:0.5; cursor:not-allowed;}
+  button.ghost{
+    background:transparent; color:var(--ink); border:1px solid var(--ink); padding:11px 18px;
+    font-family:'Oswald',sans-serif; letter-spacing:0.04em; text-transform:uppercase; font-size:12.5px; cursor:pointer;
+  }
+  button.ghost:hover{border-color:var(--red); color:var(--red);}
+
+  .script-box{
+    white-space:pre-wrap; font-family:'Zilla Slab', serif; font-size:15.5px; line-height:1.7;
+    background:rgba(255,255,255,0.35); border-left:3px solid var(--red); padding:16px 18px; margin:10px 0 6px;
+  }
+  textarea.script-box{width:100%; box-sizing:border-box; border-top:none; border-right:none; border-bottom:none; outline:none; resize:vertical; min-height:240px; color:var(--ink);}
+  textarea.script-box:focus{background:rgba(255,255,255,0.55);}
+  .voice-links{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:6px 0 4px;}
+  @media(max-width:560px){.voice-links{grid-template-columns:1fr;}}
+  a.voice-link{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:var(--paper-dark); border:1px solid var(--line); padding:12px 14px;
+    text-decoration:none; color:var(--ink); font-family:'Zilla Slab',serif; font-size:14.5px;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  a.voice-link:hover{transform:translateY(-2px); box-shadow:0 6px 14px -8px rgba(0,0,0,0.4); color:var(--red);}
+  a.voice-link b{font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:0.03em;}
+  a.voice-link .arrow{font-family:'Oswald',sans-serif; opacity:0.6;}
+  .meta-line{font-family:'Special Elite',monospace; font-size:11.5px; color:var(--gray); letter-spacing:0.04em;}
+
+  table.beats{width:100%; border-collapse:collapse; font-size:13.5px; margin-top:8px;}
+  table.beats th{text-align:left; font-family:'Oswald',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--gray); border-bottom:1px solid var(--line); padding:6px 8px;}
+  table.beats td{padding:7px 8px; border-bottom:1px solid var(--line); vertical-align:top;}
+  table.beats td.n{color:var(--red); font-family:'Oswald',sans-serif; font-weight:600;}
+  table.beats td.t{font-family:'Special Elite',monospace; color:var(--gray); white-space:nowrap;}
+
+  textarea.dump{
+    width:100%; min-height:220px; font-family:'Special Elite',monospace; font-size:12px; line-height:1.55;
+    background:#fbf7ea; border:1px solid var(--line); padding:12px; resize:vertical;
+  }
+  .stampbox{
+    display:inline-block; border:2px solid var(--red); color:var(--red); padding:2px 10px;
+    font-family:'Oswald',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    transform:rotate(-3deg); margin-left:8px;
+  }
+  .loading{display:flex; align-items:center; gap:10px; color:var(--gray); font-family:'Special Elite',monospace; font-size:13px; padding:14px 0;}
+  .spinner{width:16px; height:16px; border:2px solid var(--line); border-top-color:var(--red); border-radius:50%; animation:spin .8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .error{background:rgba(185,34,32,0.08); border:1px solid var(--red); color:var(--red); padding:10px 14px; font-size:13.5px; margin-top:12px;}
+
+  .thumb-card{background:var(--paper-dark); border:1px solid var(--line); padding:14px 16px; margin-bottom:10px;}
+  .thumb-card .headline-tag{display:flex; gap:6px; margin-bottom:8px;}
+  .tag{background:var(--red); color:var(--paper); font-family:'Oswald',sans-serif; font-size:11px; font-weight:700; padding:2px 8px; letter-spacing:0.05em;}
+  .tag.mustard{background:var(--mustard);}
+
+  footer.credit{max-width:820px; margin:40px auto 0; padding:0 24px; text-align:center; color:var(--gray); font-family:'Special Elite',monospace; font-size:11px; letter-spacing:0.06em;}
+  button.back-btn{
+    display:inline-block; background:none; border:none; cursor:pointer; padding:0 0 16px;
+    font-family:'Special Elite',monospace; font-size:12px; letter-spacing:0.04em; color:var(--gray);
+  }
+  button.back-btn:hover{color:var(--red);}
+</style>
+</head>
+<body>
+
+<div class="stamp-watermark"><span>NASEH · NGULIK AI</span></div>
+
+<header class="masthead">
+  <div class="eyebrow">Documentary Paper Collage · VOX Style</div>
+  <h1 class="headline">VOX Style Animation Engine</h1>
+  <div class="sub">niche → 10 leads → script → voice → beats → image prompts → motion (classic or cinematic) → thumbnails</div>
+  <div class="lang-bar">
+    <label class="lang-note" for="langSelect" style="margin:0;">Output language:</label>
+    <select class="lang-select" id="langSelect" onchange="setLanguage(this.value)"></select>
+  </div>
+  <div class="lang-note" id="langInfo"></div>
+</header>
+
+<div class="board-strip" id="boardStrip"></div>
+
+<main class="board">
+  <div class="card" id="stageCard"></div>
+</main>
+
+<footer class="credit">CASE FILE ASSEMBLED WITH CLAUDE · NASEH NGULIK AI © BUILD YOUR OWN ENGINE</footer>
+
+<script>
+const STAGES = [
+  {key:'niche', label:'Niche'},
+  {key:'ideas', label:'Leads'},
+  {key:'duration', label:'Length'},
+  {key:'script', label:'Script'},
+  {key:'voice', label:'Voice'},
+  {key:'beats', label:'Beats'},
+  {key:'images', label:'Images'},
+  {key:'video', label:'Motion'},
+  {key:'thumbs', label:'Thumbs'},
+];
+
+const STYLE_BLOCK = "hand-cut documentary paper collage on aged newsprint and archival map surfaces, black and white halftone photograph cutouts with rough scissor-cut edges and offset accent strokes, torn paper edges, masking tape fragments, typewriter caption strips, rubber stamp marks, red string and brass pins where the story calls for connections, desaturated archival palette of tan, ink black, and halftone gray with ONE hot red signal accent and a restrained mustard yellow secondary, condensed bold headline lettering only where a label is specified, visible print grain and paper fiber, matte, flat even documentary lighting with soft cutout drop shadows.";
+
+const CLOSER = "Every element must appear physically hand-cut and layered from real paper, with visible cutout edges, halftone print texture, and soft shadow separation between layers. The composition stays clean, minimal, and editorial with generous negative space. NOT digital illustration, NOT cartoon, NOT 3D render, NOT glossy, no gradients, no clutter, no watermark, no logos, no text beyond the specified label. Premium documentary collage aesthetic, 16:9, ultra-detailed, 8K.";
+
+const THUMB_CLOSER = "Every element must appear physically hand-cut and layered from real paper, with visible cutout edges, halftone print texture, and soft shadow separation between layers. The composition stays clean, minimal, and editorial with generous negative space. NOT digital illustration, NOT cartoon, NOT 3D render, NOT glossy, no gradients, no clutter, no watermark, no logos, no text beyond the specified thumbnail words. Premium documentary collage aesthetic, 16:9, ultra-detailed, 8K.";
+
+/* ---- Cinematic (Paper Diorama) system, adapted from the reference channel's prompt system ---- */
+const DEEP_DIORAMA_STYLE = "Use the attached style sheet for materials only - aged-print collage textures, halftone black-and-white cutout people with rough keylines and offset accent strokes, giant stat numbers, print grain. Do NOT copy the sheet's layout or its flatness: this clip is a deep 3D paper diorama - cutouts are physical layers separated in real space, strong shallow depth of field, foreground elements crossing close to the lens. The camera is an actor: it flies between layers, orbits, dives, whips, racks focus - one committed cinematic move for this clip. The background is unique to this clip, always within the sheet's palette. ALERT WASH means the entire frame floods to the hot accent tone in one beat. Motion: springs with overshoot, staggered entrances, ticking counters.";
+
+const FLAT_PARALLAX_STYLE = "Use the attached style sheet as the strict visual system - match its aged-newsprint collage surface, desaturated archival palette with one hot accent, condensed headline caps with giant stat numbers, halftone black-and-white cutout people with rough white keylines and offset accent strokes, and its print-grain finish. Do NOT copy the sheet's layout; it defines the language, not the composition. Layers sit at distinct depths like a paper diorama - true parallax, never glossy 3D. The background is a muted archival field unique to this clip, within this palette. ALERT WASH means the whole frame floods toward the hot accent tone. Motion: spring pop-ups with overshoot, staggered entrances, ticking counters, underline swipes; one slow camera move for this clip.";
+
+const AVOID_DEEP = "AVOID: no flat single-plane composition, no static locked-off camera, no glossy plastic CG (depth stays papercraft), no full-color midground portraits (people stay halftone black-and-white), no warped or gibberish text, no invented logos, no watermarks, no music, no soundtrack, no voice-over, no narration, no lyrics";
+
+const AVOID_FLAT = "AVOID: no glossy CG 3D, no lens flares, no camera cuts within the clip, no full-color midground portraits (people stay halftone black-and-white), no warped or gibberish text, no invented logos, no watermarks, no simultaneous entrances, no music, no soundtrack, no voice-over, no narration, no lyrics";
+
+const MASTER_STYLE_SHEET_PROMPT = `MASTER STYLE SHEET - Vox Style visual system, one 16:9 reference board. A single polished art-direction sheet defining the visual language for a documentary-collage explainer series. Editorial grid, consistent margins, section labels. Baked-in typography is intentional here (this is a style guide).
+
+SURFACE & MOOD: aged archival paper / muted map texture field, visible grain and print texture. Mood: newsroom-serious, layered, tactile, slightly retro.
+
+TYPE SPECIMEN PANEL: H1 sample 'THE DEAL' in condensed bold headline caps; a huge stat number sample '$123' treated as a hero character; small annotation label sample 'Fig. 3 - Trade Route'. Typography aligned, sharp, no warped letters.
+
+PALETTE STRIP: labeled swatches - Archival Tan #C9BB9C, Ink Black #1A1A1A, Halftone Gray #8C8C8C, Hot Red #D62E1F, Mustard #D9A441. Red is reserved for strokes, underlines, and arrows; mustard is secondary accent only.
+
+COMPONENT ZOO PANEL: a black-and-white halftone cutout of a generic figure with a rough white keyline and an offset red stroke behind it; a torn-paper edge; a big red stat counter card; a map pin marker; an underline swipe in red beneath a headline word; an archival photo card with a thin white border. All share one construction logic: halftone texture, offset stroke pop.
+
+MINI-SCENE PANEL: 3 small example frames - (a) two halftone figures on the stage with a stat counter between them, (b) a map with a pin and a red underline swipe beneath a caption, (c) an archival photo card with a torn edge beside a mustard label. Same lighting and finish throughout.
+
+MOTION THUMBNAILS: 4 tiny storyboard frames with arrows only: cutout springs up with slight overshoot / counter ticks upward / red underline swipes beneath a word / camera holds a slow 2% drift across the stage.
+
+One panel shows THE STAGE: the persistent background world every clip lives on - a muted archival map/texture field, empty, pre-lit, evenly toned, ready for cutouts and stat cards to enter and exit. No midground elements present in this panel.
+
+FINISH: print grain, halftone dot texture, torn-paper edges, matte finish, no glossy 3D, no lens flares. No watermarks, no lorem ipsum, no unrelated logos, no random gibberish text - every visible word is one of the samples above.`;
+
+const CINEMATIC_SYSTEM = `You are a director writing AI text-to-video shot prompts for a documentary paper-collage series called Paper Diorama. For each scene given, write ONE clip.
+
+Rules:
+1. Pick a style for the clip: "deep" (deep 3D diorama, camera moves: orbits a quarter turn, flies between two layers, dives from above, whips left to right, pushes in through a gap, pulls back to reveal, cranes up over the stack, racks focus front to back) or "flat" (restrained flat parallax, one slow camera move only: slow lateral drift, gentle push-in, or a macro slide with rack focus). Vary style across the set: use deep for reveals and escalation, flat for restrained data beats. Never repeat the same style more than twice in a row.
+2. Write the SHOT as one tight block, present tense, active verbs, in this order: Background (a named surface, tilted, out of focus, or a muted archival field - must differ from the previous clip). MG/FG elements entering staggered at named depths (state at least two depths explicitly, e.g. "one near the lens, two deep"). One connective action if it fits (arrow draws, counter ticks, chip races, stamp lands, thread pulls taut, a layer tears away). Exactly ONE camera move, stated plainly, describing what crosses the lens or racks into focus. End with "Settle [where]."
+3. The background and camera move must differ from the previous clip supplied below; never the same move twice in a row.
+4. Reserve the named beat ALERT WASH (the entire frame floods to the hot accent color in one beat) for at most ONE clip in the whole set - only the single biggest, most dramatic beat. Flag it with alertWash true only on that one clip.
+5. Other named beats to use where they fit naturally, at most one per clip: STAMP (an approval or rejection stamp slams in at foreground depth, dust puff), TICK-UP (a giant number counts up with overshoot then settles), TEAR (a paper layer rips to reveal the layer behind it), THREAD PULL (pins and red thread draw a connection between two cutouts).
+6. Write AUDIO as exactly 2-3 short sound-design cues, comma separated, matching the camera move (a dive gets a submerge whoosh and pressure hum, whips get whip whooshes and pops landing each hit, a push/pull gets a track rumble and stall click, ALERT WASH gets a rising riser and a deep thud, a loop gets accelerating ticks). No music, no narration, ever.
+7. Never invent or describe logos. Never use double quote characters anywhere in any field, use single quotes instead if needed.
+8. If a real person is implied, keep them as an anonymous halftone cutout figure, never name or fully depict a real identifiable face.
+
+Respond ONLY with valid JSON, no markdown fences, no preamble: {"clips": [{"style": "deep or flat", "shot": "the SHOT text ending in Settle...", "audio": "sound1, sound2, sound3", "alertWash": true or false}]}, one entry per scene given, in the same order.`;
+
+const VIDEO_PROMPT = `Transform the provided image into a 10-second premium editorial documentary paper-collage animation. Preserve the final composition of the provided image exactly. Do not redesign, reposition, resize, or replace any element. The provided image is the FINISHED frame that the animation builds toward.
+
+Style: hand-cut documentary paper collage in motion. Aged newsprint and archival surfaces, halftone photo cutouts, torn edges, tape, stamps, red string, typewriter strips. Every element moves as a rigid physical paper piece. Visible cutout thickness, print grain, soft layered shadows. Stop-motion cadence, stepped easing, 2-3 frame holds, the hand-made "cutting on twos" feel. Never smooth CGI motion.
+
+CAMERA, STRICT: the camera stays completely locked for the entire clip. No zoom, no pan, no tilt, no rotation, no orbit, no dolly, no tracking, no handheld shake, no focus pulls, no reframing, no cuts, no transitions, no morphing, no object replacement, no time skips. One continuous static shot.
+
+0 TO 7 SECONDS, BUILD-ON ASSEMBLY: the frame opens on the EMPTY background plate only: the bare aged-newsprint or archival surface with its stains, grain, and any fixed scaffolding (a map base, a timeline line, a corkboard), with every story element absent. Elements then enter one by one, back to front, in narrative order: background scraps settle first, then the hero cutout slides in with paper drag and a small settle, supporting cutouts drop or pin on with a 2-frame stamp settle, tape presses down, typewriter strips slide in, stamps slap on, red string draws itself from pin to pin, marker underlines and arrows draw themselves last. Each entrance lands with a tiny handcrafted bounce and casts a real layered shadow. No element moves again after it lands. By 7 seconds the frame exactly matches the provided image.
+
+7 TO 10 SECONDS, LIVING PAPER POSTER: everything holds position. Only subtle life remains: paper corners lift a millimeter in a draft, halftone dots shimmer faintly, string tension quivers once, shadows breathe, stamp ink glistens subtly. Nothing changes location, nothing scales, nothing rotates significantly, nothing enters or exits.
+
+AUDIO: no music, no narration, no voices. Only close-up paper ASMR and faint scene-appropriate ambience: paper sliding, cardstock taps, tape press, stamp thud, string zip, pin click, soft room tone. All subtle.
+
+FINAL RULE: the finished clip must feel like a real editorial paper collage assembling itself on a table, then holding as a living poster, matching the provided image exactly from 7 seconds to the end.`;
+
+const KINETIC_PROMPT = `Transform the provided image into a 10-second high-energy kinetic-newsroom paper-collage animation. Preserve the final composition of the provided image exactly. Do not redesign, reposition, or replace any element, only animate how it enters and gets punched at.
+
+Style: hand-cut documentary paper collage in motion, pushed to breaking-news energy. Aged newsprint and archival surfaces, halftone photo cutouts, torn edges, tape, stamps, red string, typewriter strips. Every element moves as a rigid physical paper piece, snappy and quick. Stop-motion cadence, hard stepped stops, never smooth CGI motion.
+
+CAMERA: one handheld-feeling push-zoom sequence, not locked off. The camera punches in sharply on the hero element the instant it lands, a fast 15-20 percent zoom with a hard stop, one to two punches total across the clip, then holds. No orbit, no pan across the frame, no rotation, no reframing beyond the punches.
+
+0 TO 6 SECONDS, RAPID ASSEMBLY: elements slam in fast and hard, one after another with almost no pause: the hero cutout drops in with a hard stop and a dust-puff, supporting cutouts snap-pin into place, a red rubber stamp slams down with a thud, a torn caption strip whip-slides in from off-frame and stops sharp, red string snaps taut between pins in one motion. Every landing is snappier and harder than a calm collage build, close to breaking-news graphics hitting the screen.
+
+6 TO 8 SECONDS, THE PUNCH: the camera executes its one or two hard zoom-punches onto the hero element or the headline label, each with a hard stop and a subtle screen-shake flick on impact, no smoothing, no drift.
+
+8 TO 10 SECONDS, HOLD: everything freezes hard, only the faintest paper tremor and halftone shimmer remain, like a freeze-frame on a news broadcast.
+
+AUDIO: no music, no narration, no voices. Sharp foley only: paper slam, stamp thud, string snap, a hard impact whoosh on each camera punch, ticker-tape clatter under the assembly. All punchy and tight, matching the snappy visual rhythm.
+
+FINAL RULE: this must feel like breaking-news graphics hitting the screen, aggressive, fast, punchy, matching the provided image exactly by the freeze.`;
+
+const SLOWBURN_PROMPT = `Transform the provided image into a 10-second slow, atmospheric paper-collage animation. Preserve the final composition of the provided image exactly, only animate assembly and a slow drift, never redesign or replace any element.
+
+Style: hand-cut documentary paper collage in motion, unhurried and moody. Aged newsprint and archival surfaces, halftone photo cutouts, torn edges, tape, stamps, red string, typewriter strips. Stop-motion cadence, gentle eases, never snappy, never CGI-smooth.
+
+CAMERA: one continuous, very slow drift across the frame for the full 10 seconds, a bare 3 to 5 percent creep in one direction, either a slow push-in or a slow lateral drift, constant and unbroken. No cuts, no zoom punches, no rotation, no reframing.
+
+0 TO 8 SECONDS, SLOW ASSEMBLY: elements settle into place unhurried and gentle, one at a time with a slow, weighted drift and a soft paper-drag sound, tape presses down slowly, red string is drawn taut gradually rather than snapping, no element arrives fast. By 8 seconds the frame matches the provided image while the camera keeps drifting.
+
+8 TO 10 SECONDS, LINGER: everything is in place, the slow camera drift continues uninterrupted, paper grain and halftone dots hold quiet texture, shadows breathe faintly.
+
+AUDIO: no music, no narration, no voices. Distant, hushed paper ambience only, a soft continuous room tone, an occasional faint paper creak, nothing sharp or sudden.
+
+FINAL RULE: this must feel like a slow, contemplative reveal, patient and heavy with mood, matching the provided image exactly by the end while the camera keeps its single slow drift.`;
+
+const LIVINGCUTOUT_PROMPT = `Transform the provided image into a 10-second premium editorial paper-collage animation. Preserve the final composition of the provided image exactly, do not redesign, reposition, or replace any element. The provided image is the FINISHED frame the animation builds toward and then lives inside.
+
+Style: hand-cut documentary paper collage in motion. Aged newsprint and archival surfaces, halftone photo cutouts, torn edges, tape, stamps, red string, typewriter strips. Every element moves as a rigid physical paper piece, jointed at real cut lines like a paper marionette on visible pins or brads, never smooth CGI deformation, never morphing.
+
+CAMERA: the camera stays completely locked for the entire clip, no zoom, no pan, no tilt, no orbit, no cuts, no reframing. One continuous static shot.
+
+0 TO 6 SECONDS, BUILD-ON ASSEMBLY: background scraps settle first, then the hero cutout slides in with paper drag and a small settle, supporting cutouts pin and tape on, red string draws itself between pins where the story calls for it. No element moves again after it lands except as described below. By 6 seconds the frame exactly matches the provided image.
+
+6 TO 10 SECONDS, LIVING CUTOUT GESTURE: if the hero or a supporting element is a person, an animal, or any living figure, give it exactly ONE simple, small, repeating paper-puppet gesture that fits the beat, chosen from: a slow walk-in-place cycle (legs pivot at cut-paper hip joints, torso stays rigid), a single head nod or tilt (head cutout pivots at the neck seam, nods once, holds, repeats softly), one arm pointing or gesturing at another element in frame (a jointed arm cutout swings from the shoulder cut, then holds), a slow idle sway (the whole figure rocks a few degrees at its base like a puppet at rest), or a slow blink implied by a two-frame eye-strip swap. The gesture must read as flat paper pieces pivoting at their scissor-cut joints, stop-motion cadence with 2-3 frame holds between positions, never a smooth or organic human motion. Keep it small and restrained, it loops once or twice across the 4 seconds, the figure never leaves its spot in the composition and never breaks the frame's overall stillness. If no living figure is present in the image, this section is simply a quiet hold, paper corners lift a millimeter in a draft, halftone dots shimmer faintly.
+
+AUDIO: no music, no narration, no voices. Only close-up paper ASMR and faint scene-appropriate ambience: paper sliding, cardstock taps, tape press, stamp thud, a soft paper creak on each gesture beat. All subtle.
+
+FINAL RULE: the finished clip feels like a real paper collage that has quietly come alive, one small, believable puppet gesture on its living figure, everything else holding as a still paper composition, matching the provided image exactly.`;
+
+const DURATIONS = [
+  {label:'30 seconds', words:75, beats:'12-15'},
+  {label:'1 minute', words:150, beats:'22-30'},
+  {label:'2 minutes', words:300, beats:'45-60'},
+  {label:'3 minutes', words:450, beats:'70-90'},
+  {label:'5 minutes', words:750, beats:'115-150'},
+];
+
+const NICHES = [
+  'Crime and documentary',
+  'History',
+  'Money and power',
+  'Disasters and survival',
+  'Mysteries and the unexplained',
+  'Technology',
+  'Sports',
+];
+
+/* ---------------- language ---------------- */
+// Tiered by how reliably an LLM like Claude writes fluent, natural prose in each language.
+// Tier 1: near-native quality, safe as a default for any audience.
+// Tier 2: strong and reliable, minor stylistic rough edges possible.
+const LANGUAGES = [
+  {code:'id', label:'Indonesian', native:'Bahasa Indonesia', tier:1},
+  {code:'en', label:'English', native:'English', tier:1},
+  {code:'es', label:'Spanish', native:'Español', tier:1},
+  {code:'pt', label:'Portuguese', native:'Português', tier:1},
+  {code:'fr', label:'French', native:'Français', tier:1},
+  {code:'de', label:'German', native:'Deutsch', tier:1},
+  {code:'it', label:'Italian', native:'Italiano', tier:1},
+  {code:'nl', label:'Dutch', native:'Nederlands', tier:2},
+  {code:'pl', label:'Polish', native:'Polski', tier:2},
+];
+function langMeta(code){ return LANGUAGES.find(l=>l.code===code) || LANGUAGES[0]; }
+const UI_STRINGS = {
+  en: {nichePlaceholder:"Or type your own niche and press Enter", ideaKicker:"Or write your own lead", ideaPlaceholder:"Type your own topic and press Enter, e.g. a date, a name, a place"},
+  id: {nichePlaceholder:"Atau ketik niche sendiri lalu tekan Enter", ideaKicker:"Atau tulis ide sendiri", ideaPlaceholder:"Ketik topik sendiri lalu tekan Enter, misalnya tanggal, nama, atau tempat"},
+  es: {nichePlaceholder:"O escribe tu propio nicho y pulsa Enter", ideaKicker:"O escribe tu propia idea", ideaPlaceholder:"Escribe tu propio tema y pulsa Enter, por ejemplo una fecha, un nombre, un lugar"},
+  pt: {nichePlaceholder:"Ou digite seu próprio nicho e pressione Enter", ideaKicker:"Ou escreva sua própria pauta", ideaPlaceholder:"Digite seu próprio tema e pressione Enter, por exemplo uma data, um nome, um lugar"},
+  fr: {nichePlaceholder:"Ou tapez votre propre niche et appuyez sur Entrée", ideaKicker:"Ou écrivez votre propre sujet", ideaPlaceholder:"Tapez votre propre sujet et appuyez sur Entrée, par exemple une date, un nom, un lieu"},
+  de: {nichePlaceholder:"Oder gib deine eigene Nische ein und drücke Enter", ideaKicker:"Oder schreib deine eigene Idee", ideaPlaceholder:"Gib dein eigenes Thema ein und drücke Enter, zum Beispiel ein Datum, ein Name, ein Ort"},
+  it: {nichePlaceholder:"Oppure scrivi la tua nicchia e premi Invio", ideaKicker:"Oppure scrivi la tua idea", ideaPlaceholder:"Scrivi il tuo argomento e premi Invio, per esempio una data, un nome, un luogo"},
+  nl: {nichePlaceholder:"Of typ je eigen niche en druk op Enter", ideaKicker:"Of schrijf je eigen idee", ideaPlaceholder:"Typ je eigen onderwerp en druk op Enter, bijvoorbeeld een datum, een naam, een plek"},
+  pl: {nichePlaceholder:"Albo wpisz własną niszę i naciśnij Enter", ideaKicker:"Albo napisz własny pomysł", ideaPlaceholder:"Wpisz własny temat i naciśnij Enter, na przykład datę, nazwisko, miejsce"},
+};
+function t(key){ return (UI_STRINGS[state.language] && UI_STRINGS[state.language][key]) || UI_STRINGS.en[key]; }
+function langInstruction(jsonMode){
+  const l = langMeta(state.language);
+  if(l.code === 'en') return '';
+  if(jsonMode === false) return `\n\nLANGUAGE: write the script in ${l.native} (${l.label}), natural and idiomatic, not a literal translation.`;
+  return `\n\nLANGUAGE: write all narrative and creative content in ${l.native} (${l.label}), natural and idiomatic, not a literal translation. Keep any JSON keys in English exactly as specified, only the content values change language.`;
+}
+function setLanguage(code){ state.language = code; render(); }
+function renderLangSelect(){
+  const sel = document.getElementById('langSelect');
+  if(!sel) return;
+  sel.innerHTML = LANGUAGES.map(l=>`<option value="${l.code}" ${l.code===state.language?'selected':''}>${l.native}</option>`).join('');
+  renderLangInfo();
+}
+function renderLangInfo(){
+  const el = document.getElementById('langInfo');
+  if(!el) return;
+  const names = LANGUAGES.map(l=>l.native).join(', ');
+  el.innerHTML = `Leads, script and voiceover text are written in the language above. Image, motion and thumbnail prompts stay in English on purpose, that's what image and video AI models understand best, regardless of your chosen language. Languages this engine handles most reliably: ${names}.`;
+}
+
+let state = {
+  stageIdx: 0,
+  language: 'id',
+  niche: null,
+  ideas: [],
+  ideaTitle: null,
+  duration: null,
+  script: '',
+  scriptWords: 0,
+  beats: [],
+  imageBlocks: [],
+  imageScenes: [],
+  videoMode: null,
+  cinematicBlocks: [],
+  thumbBlocks: [],
+};
+
+function wc(s){ return (s.trim().match(/\S+/g) || []).length; }
+function slugify(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,60); }
+
+async function callClaude(system, user, maxTokens){
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({
+      model:"claude-sonnet-4-6",
+      max_tokens: maxTokens || 1000,
+      system: system,
+      messages:[{role:"user", content:user}]
+    })
+  });
+  const data = await res.json();
+  const text = (data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n");
+  return text;
+}
+function extractBalancedJson(text){
+  let startIdx = -1, openChar = null, closeChar = null;
+  for(let i=0;i<text.length;i++){
+    if(text[i] === '{'){ startIdx = i; openChar='{'; closeChar='}'; break; }
+    if(text[i] === '['){ startIdx = i; openChar='['; closeChar=']'; break; }
+  }
+  if(startIdx === -1) throw new Error('No JSON object found in response');
+  let depth = 0, inStr = false, esc = false;
+  for(let i=startIdx; i<text.length; i++){
+    const ch = text[i];
+    if(inStr){
+      if(esc) esc = false;
+      else if(ch === '\\') esc = true;
+      else if(ch === '"') inStr = false;
+    } else {
+      if(ch === '"') inStr = true;
+      else if(ch === openChar) depth++;
+      else if(ch === closeChar){ depth--; if(depth === 0) return text.slice(startIdx, i+1); }
+    }
+  }
+  throw new Error('Response was cut off before the JSON closed (hit the token limit) - try a smaller batch or try again');
+}
+function repairStrayQuotes(jsonStr){
+  // Walk the JSON string and escape any " that appears where it can't legally close/open a token,
+  // i.e. a quote inside a string value that isn't followed by a JSON structural character.
+  let out = '';
+  let inStr = false, esc = false;
+  for(let i=0;i<jsonStr.length;i++){
+    const ch = jsonStr[i];
+    if(!inStr){
+      out += ch;
+      if(ch === '"') inStr = true;
+      continue;
+    }
+    // inStr === true
+    if(esc){ out += ch; esc = false; continue; }
+    if(ch === '\\'){ out += ch; esc = true; continue; }
+    if(ch === '"'){
+      const rest = jsonStr.slice(i+1).match(/^\s*/)[0];
+      const next = jsonStr[i+1+rest.length];
+      if(next === undefined || ':,}]'.includes(next)){
+        out += ch; inStr = false;
+      } else {
+        out += '\\"';
+      }
+      continue;
+    }
+    out += ch;
+  }
+  return out;
+}
+function parseJSON(text){
+  let clean = text.trim();
+  clean = clean.replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim();
+  const span = extractBalancedJson(clean);
+  try{
+    return JSON.parse(span);
+  }catch(e){
+    return JSON.parse(repairStrayQuotes(span));
+  }
+}
+
+function downloadTxt(filename, content){
+  const blob = new Blob([content], {type:"text/plain"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+function copyText(text, btn){
+  navigator.clipboard.writeText(text).then(()=>{
+    const orig = btn.textContent; btn.textContent = 'Copied';
+    setTimeout(()=>btn.textContent = orig, 1200);
+  });
+}
+
+/* ---------------- beat splitting (deterministic, no API) ---------------- */
+function splitBeats(script){
+  const sentences = script.match(/[^.!?]+[.!?]+/g) || [script];
+  let beats = [];
+  sentences.forEach(raw=>{
+    const s = raw.trim();
+    if(!s) return;
+    const words = s.split(/\s+/);
+    if(words.length <= 8){ beats.push(s); return; }
+    const parts = s.split(/,\s*/).map(p=>p.trim()).filter(Boolean);
+    if(parts.length <= 1){
+      for(let i=0;i<words.length;i+=7) beats.push(words.slice(i,i+7).join(' '));
+      return;
+    }
+    let buffer = [];
+    parts.forEach((part,idx)=>{
+      const w = part.split(/\s+/);
+      if(buffer.length === 0){ buffer = w; }
+      else if(buffer.length + w.length <= 8){ buffer = buffer.concat(w); }
+      else { beats.push(buffer.join(' ') + (idx < parts.length ? ',' : '')); buffer = w; }
+    });
+    if(buffer.length) beats.push(buffer.join(' '));
+  });
+  let cum = 0;
+  return beats.map(b=>{
+    const start = +(cum/2.5).toFixed(1);
+    cum += wc(b);
+    return {text:b, start};
+  });
+}
+
+/* ---------------- rendering ---------------- */
+function renderStrip(){
+  const strip = document.getElementById('boardStrip');
+  strip.innerHTML = STAGES.map((s,i)=>{
+    let cls = 'tab';
+    if(i < state.stageIdx) cls += ' done';
+    else if(i === state.stageIdx) cls += ' active';
+    else cls += ' locked';
+    const clickable = i <= state.stageIdx;
+    return `<div class="${cls}">
+      <div class="string"></div>
+      <button class="jump pin" ${clickable?`onclick="jumpTo(${i})"`:'disabled'}>${i<state.stageIdx?'✓':(i+1)}</button>
+      <div class="lbl">${s.label}</div>
+    </div>`;
+  }).join('');
+}
+function jumpTo(i){ if(i<=state.stageIdx){ state.stageIdx = i; render(); } }
+
+function setCard(html){
+  const back = state.stageIdx > 0 ? `<button class="back-btn" onclick="goBack()">&larr; Back</button>` : '';
+  document.getElementById('stageCard').innerHTML = back + html;
+}
+function goBack(){ state.stageIdx = Math.max(0, state.stageIdx - 1); render(); }
+function loadingHtml(msg){ return `<div class="loading"><div class="spinner"></div>${msg}</div>`; }
+function errorHtml(msg){ return `<div class="error">${msg}</div>`; }
+
+function render(){
+  renderLangSelect();
+  renderStrip();
+  const key = STAGES[state.stageIdx].key;
+  if(key==='niche') renderNiche();
+  else if(key==='ideas') renderIdeas();
+  else if(key==='duration') renderDuration();
+  else if(key==='script') renderScript();
+  else if(key==='voice') renderVoice();
+  else if(key==='beats') renderBeats();
+  else if(key==='images') renderImages();
+  else if(key==='video') renderVideo();
+  else if(key==='thumbs') renderThumbs();
+}
+
+/* ---- STATE 1: niche ---- */
+function renderNiche(){
+  setCard(`
+    <div class="kicker">Case File · Step 1</div>
+    <h2>Pick tonight's niche</h2>
+    <p class="desc">Every lead, script, and shot list downstream is built for this world. Crime and documentary is the house default.</p>
+    <div class="grid" id="nicheGrid"></div>
+    <div style="margin-top:14px;">
+      <input class="custom" id="customNiche" placeholder="${t('nichePlaceholder')}">
+    </div>
+  `);
+  const grid = document.getElementById('nicheGrid');
+  grid.innerHTML = NICHES.map((n,i)=>`<button class="choice" onclick="pickNiche(${i})"><b>0${i+1}</b>${n}</button>`).join('');
+  document.getElementById('customNiche').addEventListener('keydown', e=>{
+    if(e.key==='Enter' && e.target.value.trim()){ state.niche = e.target.value.trim(); goNext(); }
+  });
+}
+function pickNiche(i){ state.niche = NICHES[i]; goNext(); }
+
+/* ---- STATE 2: ideas ---- */
+async function generateIdeas(){
+  setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 leads in ${state.niche}</h2>${loadingHtml('Digging through the archive…')}`);
+  const system = `You generate video ideas for a documentary paper-collage YouTube channel. Rules:
+1. Generate exactly 10 ideas in the given niche.
+2. No two ideas in the same sub-territory (e.g. never two heists, two disappearances, etc).
+3. Titles are declarative or interrogative, light punctuation, no clickbait. Use shapes like: "How [event] Unfolded", "The Hunt for [target]", "The [adjective] Story of [subject]", "Why [place] [did X]", "[Event] Explained", "The Man/Woman Who [impossible act]", "What Really Happened to [subject]".
+4. Each idea must have a concrete hook: a date, a name, a number, or a place that makes it feel real.
+5. Facts must be real and accurate, do not invent events.
+6. Never use double quote characters anywhere in any title. If you need to quote a word or phrase, use single quotes instead.
+Respond ONLY with valid JSON, no markdown fences, no preamble: {"ideas": ["title 1", "title 2", ... "title 10"]}${langInstruction()}`;
+  try{
+    const text = await callClaude(system, `Niche: ${state.niche}`);
+    const json = parseJSON(text);
+    state.ideas = json.ideas.slice(0,10);
+    renderIdeas();
+  }catch(e){
+    setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 leads</h2>${errorHtml('Could not reach the archive. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateIdeas()">Try again</button><button class="ghost" onclick="jumpTo(0)">Change niche</button></div>`);
+  }
+}
+async function loadMoreIdeas(){
+  const existingList = state.ideas.map((t,i)=>`${i+1}. ${t}`).join('\n');
+  setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 more leads</h2>${loadingHtml('Digging deeper into the archive…')}`);
+  const system = `You generate video ideas for a documentary paper-collage YouTube channel. Rules:
+1. Generate exactly 10 NEW ideas in the given niche, different from the leads already pulled (given below).
+2. No two ideas share a sub-territory with each other OR with any lead already pulled (e.g. never two heists, two disappearances, etc). Cover different cases, people, and events than what's already listed.
+3. Titles are declarative or interrogative, light punctuation, no clickbait. Use shapes like: "How [event] Unfolded", "The Hunt for [target]", "The [adjective] Story of [subject]", "Why [place] [did X]", "[Event] Explained", "The Man/Woman Who [impossible act]", "What Really Happened to [subject]".
+4. Each idea must have a concrete hook: a date, a name, a number, or a place that makes it feel real.
+5. Facts must be real and accurate, do not invent events.
+6. Never use double quote characters anywhere in any title. If you need to quote a word or phrase, use single quotes instead.
+Respond ONLY with valid JSON, no markdown fences, no preamble: {"ideas": ["title 1", "title 2", ... "title 10"]}${langInstruction()}`;
+  try{
+    const text = await callClaude(system, `Niche: ${state.niche}\n\nLeads already pulled, do not repeat or overlap with these:\n${existingList}`);
+    const json = parseJSON(text);
+    state.ideas = state.ideas.concat(json.ideas.slice(0,10));
+    renderIdeas();
+  }catch(e){
+    setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 more leads</h2>${errorHtml('Could not reach the archive. '+e.message)}<div class="btn-row"><button class="primary" onclick="loadMoreIdeas()">Try again</button><button class="ghost" onclick="renderIdeas()">Back to leads</button></div>`);
+  }
+}
+function renderIdeas(){
+  if(state.ideas.length === 0){ generateIdeas(); return; }
+  setCard(`
+    <div class="kicker">Case File · Step 2</div>
+    <h2>${state.ideas.length} leads, ${state.niche}</h2>
+    <p class="desc">Pick one to build out, load more, pull a fresh batch, or write your own below.</p>
+    <div id="ideasList"></div>
+    <div class="btn-row"><button class="primary" onclick="loadMoreIdeas()">Load 10 more leads</button><button class="ghost" onclick="state.ideas=[]; generateIdeas();">Pull new leads</button><button class="ghost" onclick="jumpTo(0)">Change niche</button></div>
+    <div style="margin-top:22px; padding-top:18px; border-top:1px dashed var(--line);">
+      <div class="kicker" style="margin-bottom:8px;">${t('ideaKicker')}</div>
+      <input class="custom" id="customIdea" placeholder="${t('ideaPlaceholder')}">
+    </div>
+  `);
+  document.getElementById('ideasList').innerHTML = state.ideas.map((t,i)=>
+    `<div class="idea-card" onclick="pickIdea(${i})"><div class="num">${String(i+1).padStart(2,'0')}</div><div>${t}</div></div>`
+  ).join('');
+  document.getElementById('customIdea').addEventListener('keydown', e=>{
+    if(e.key==='Enter' && e.target.value.trim()){ state.ideaTitle = e.target.value.trim(); goNext(); }
+  });
+}
+function pickIdea(i){ state.ideaTitle = state.ideas[i]; goNext(); }
+
+/* ---- STATE 3: duration ---- */
+function renderDuration(){
+  setCard(`
+    <div class="kicker">Case File · Step 3</div>
+    <h2>How long is the cut?</h2>
+    <p class="desc"><em>${state.ideaTitle}</em></p>
+    <div class="grid" id="durGrid"></div>
+  `);
+  document.getElementById('durGrid').innerHTML = DURATIONS.map((d,i)=>
+    `<button class="choice" onclick="pickDuration(${i})"><b>~${d.words} words</b>${d.label} · ${d.beats} beats</button>`
+  ).join('');
+}
+function pickDuration(i){ state.duration = DURATIONS[i]; goNext(); }
+
+/* ---- STATE 4: script ---- */
+async function generateScript(){
+  setCard(`<div class="kicker">Case File · Step 4</div><h2>Writing the narration</h2>${loadingHtml('Drafting the cold open…')}`);
+  const system = `You write Fern-style documentary narration scripts. DNA rules:
+1. Continuous narration only, one flowing block of prose. No chapter labels, no headers, no camera directions, no visual cues, no em dashes anywhere (use commas, colons, parentheses, or plain hyphens instead).
+2. Cold open: the first 3 to 4 sentences (about 30-40 words) open on a precise date, a location, and one small concrete action. Example shape: "November 24, 1971. Portland International Airport. A man in a dark suit buys a one-way ticket under the name Dan Cooper."
+3. Calm, precise, documentary tone. Short declaratives mixed with one longer explanatory sentence per stretch. Use temporal and causal connectives to carry the story: then, by morning, three days later, because of this, which meant, what nobody knew was.
+4. Every sentence ends cleanly on a full stop and carries exactly one idea, because sentences become visual beats later.
+5. Facts stay accurate. If a detail is uncertain or disputed, write around it ("the FBI believed", "witnesses described"), never invent names, dates, or numbers.
+6. Real-tragedy restraint: no gore, no suffering close-ups, no mockery of victims. Tension lives in objects, places, documents, and time.
+7. No sponsor copy, no subscribe prompts, no sign-offs.
+8. Mandatory cliffhanger ending. Final line 12 words or fewer, ending on a noun, a name, a date, or a short declarative. Use one of these five patterns: (1) THE UNRESOLVED OBJECT - end on a physical thing that still exists, e.g. "The parachute has never been found." (2) THE DATED FORWARD JUMP - leap to a later date that reopens the case, e.g. "Then, in 1980, a boy found the money." (3) THE MISSING PIECE - name the one thing investigators never got, e.g. "They had his tie. They never had his name." (4) THE QUIET CONTRADICTION - end on a fact that undermines everything before it, e.g. "The man in seat 18C never existed." (5) THE PRICE LINE - end on the human or financial cost stated flat, e.g. "The paintings are still worth half a billion dollars."
+9. Target length is ${state.duration.words} words at 2.5 words per second. Land within 5 percent.
+Respond with ONLY the script itself, as plain prose. No JSON, no quotes wrapping it, no markdown fences, no labels, no preamble, no commentary before or after.${langInstruction(false)}`;
+  try{
+    const text = await callClaude(system, `Topic: ${state.ideaTitle}\nNiche: ${state.niche}\nTarget: ${state.duration.words} words (${state.duration.label})`);
+    let clean = text.trim();
+    clean = clean.replace(/^```[a-z]*\n?/i,'').replace(/```$/,'').trim();
+    clean = clean.replace(/^"(.*)"$/s,'$1').trim();
+    state.script = clean;
+    state.scriptWords = wc(state.script);
+    renderScript();
+  }catch(e){
+    setCard(`<div class="kicker">Case File · Step 4</div><h2>Writing the narration</h2>${errorHtml('Draft failed. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateScript()">Try again</button></div>`);
+  }
+}
+function renderScript(){
+  if(!state.script){ generateScript(); return; }
+  const target = state.duration.words;
+  const minW = Math.floor(target*0.95), maxW = Math.ceil(target*1.05);
+  setCard(`
+    <div class="kicker">Case File · Step 4</div>
+    <h2>Narration script <span class="stampbox" id="scriptBadge">${scriptBadgeText()}</span></h2>
+    <div class="meta-line" id="scriptMetaLive">TARGET: ${target} words / ${state.duration.label} &nbsp;·&nbsp; FINAL: ${state.scriptWords} words &nbsp;·&nbsp; ALLOWED RANGE: ${minW}-${maxW} words</div>
+    <p class="desc" style="margin:10px 0 4px;">Editable, add your own research, facts, or details. Locked to ${minW}-${maxW} words to match the length you picked, typing past the max just gets trimmed back.</p>
+    <textarea class="script-box" id="scriptEdit" oninput="onScriptEdit(this)">${state.script}</textarea>
+    <div class="btn-row">
+      <button class="primary" onclick="goNext()">Continue to voiceover</button>
+      <button class="ghost" onclick="copyText(state.script, this)">Copy script</button>
+      <button class="ghost" onclick="downloadTxt(slugify(state.ideaTitle)+'-script.txt', state.script)">Download .txt</button>
+      <button class="ghost" onclick="state.script=''; generateScript();">Rewrite</button>
+    </div>
+  `);
+}
+function scriptBadgeText(){
+  const target = state.duration.words;
+  return Math.abs(state.scriptWords - target) <= target*0.05 ? 'ON TARGET' : 'CHECK LENGTH';
+}
+function onScriptEdit(el){
+  const target = state.duration.words;
+  const maxW = Math.ceil(target*1.05);
+  let val = el.value;
+  const words = val.trim().length ? val.trim().split(/\s+/) : [];
+  if(words.length > maxW){
+    const cursor = el.selectionStart;
+    const before = val.slice(0, cursor);
+    const overBy = words.length - maxW;
+    // trim the overflow off the end of the text, past the cursor if possible, so active typing position stays intact
+    const after = val.slice(cursor);
+    const afterWords = after.trim().length ? after.trim().split(/\s+/) : [];
+    if(afterWords.length >= overBy){
+      const keepAfter = afterWords.slice(0, afterWords.length - overBy).join(' ');
+      val = before + (keepAfter ? ' ' + keepAfter : '');
+    } else {
+      val = words.slice(0, maxW).join(' ');
+    }
+    el.value = val;
+    if(cursor <= before.length) el.selectionStart = el.selectionEnd = cursor;
+    flashScriptLimit();
+  }
+  state.script = el.value;
+  state.scriptWords = wc(state.script);
+  const minW = Math.floor(target*0.95);
+  document.getElementById('scriptMetaLive').innerHTML = `TARGET: ${target} words / ${state.duration.label} &nbsp;·&nbsp; FINAL: ${state.scriptWords} words &nbsp;·&nbsp; ALLOWED RANGE: ${minW}-${maxW} words`;
+  document.getElementById('scriptBadge').textContent = scriptBadgeText();
+}
+function flashScriptLimit(){
+  const badge = document.getElementById('scriptBadge');
+  if(!badge) return;
+  const orig = badge.textContent;
+  badge.textContent = 'MAX REACHED';
+  badge.style.borderColor = 'var(--mustard)'; badge.style.color = 'var(--mustard)';
+  setTimeout(()=>{ if(badge){ badge.textContent = scriptBadgeText(); badge.style.borderColor=''; badge.style.color=''; } }, 900);
+}
+
+/* ---- STATE 5: voiceover (formatted, no ElevenLabs tool in this environment) ---- */
+function renderVoice(){
+  const block = `NARRATION (paste into ElevenLabs):
+--------------------------------------------------
+${state.script}
+--------------------------------------------------
+
+VOICE DIRECTION: calm deadpan male narrator, mid-range, mild gravitas, about 155 wpm, minimal emotion spikes, documentary read.
+SETTINGS: stability ~55, similarity ~80, style low, speaker boost on.
+PRODUCTION RULES:
+1. Generate in 20-25 second batches, longer single generations distort.
+2. Regenerate each batch 2-5 times and keep the best take.
+3. Match cadence and flow across consecutive batches so joins are seamless.
+4. The cold open batch is the highest-priority take, it carries the video.
+5. The final mp3 layers over the silent assembled clips in the editor, the video clips themselves stay narration-free (their audio is paper ASMR only).`;
+  setCard(`
+    <div class="kicker">Case File · Step 5</div>
+    <h2>Voiceover, ElevenLabs or your pick</h2>
+    <p class="desc">No voice tool connected in this session, so here is the script and settings formatted for a straight copy-paste. Open a generator below, paste the block, and produce the read.</p>
+    <div class="voice-links">
+      <a class="voice-link" href="https://elevenlabs.io" target="_blank" rel="noopener"><span><b>ELEVENLABS</b><br>Text to speech, cloned voices</span><span class="arrow">↗</span></a>
+      <a class="voice-link" href="https://aistudio.google.com" target="_blank" rel="noopener"><span><b>GOOGLE AI STUDIO</b><br>Gemini native TTS</span><span class="arrow">↗</span></a>
+      <a class="voice-link" href="https://murf.ai" target="_blank" rel="noopener"><span><b>MURF AI</b><br>Studio voiceovers</span><span class="arrow">↗</span></a>
+      <a class="voice-link" href="https://play.ht" target="_blank" rel="noopener"><span><b>PLAY.HT</b><br>Ultra-realistic TTS</span><span class="arrow">↗</span></a>
+    </div>
+    <textarea class="dump" readonly>${block}</textarea>
+    <div class="btn-row">
+      <button class="ghost" onclick="copyText(\`${block.replace(/`/g,"'")}\`, this)">Copy block</button>
+      <button class="ghost" onclick="downloadTxt(slugify(state.ideaTitle)+'-voiceover.txt', \`${block.replace(/`/g,"'")}\`)">Download .txt</button>
+      <button class="primary" onclick="goNext()">Voiceover ready, continue</button>
+    </div>
+  `);
+}
+
+/* ---- STATE 6: beats ---- */
+function renderBeats(){
+  if(state.beats.length === 0){ state.beats = splitBeats(state.script); }
+  setCard(`
+    <div class="kicker">Case File · Step 6</div>
+    <h2>Beat breakdown <span class="stampbox">${state.beats.length} beats</span></h2>
+    <p class="desc">One beat per visual idea, split at sentence and clause boundaries, ~5-8 words each, timecoded at 2.5 words/sec.</p>
+    <div style="max-height:360px; overflow:auto;">
+      <table class="beats">
+        <thead><tr><th>#</th><th>Time</th><th>Narration</th></tr></thead>
+        <tbody>${state.beats.map((b,i)=>`<tr><td class="n">${i+1}</td><td class="t">${b.start.toFixed(1)}s</td><td>${b.text}</td></tr>`).join('')}</tbody>
+      </table>
+    </div>
+    <div class="btn-row">
+      <button class="ghost" onclick="state.beats=[]; renderBeats();">Re-split beats</button>
+      <button class="primary" onclick="goNext()">Build image prompts</button>
+    </div>
+  `);
+}
+
+/* ---- STATE 7: image prompts .txt ---- */
+const IMAGE_SYSTEM = `You are an editorial art director for a hand-cut documentary paper collage series. For each narration beat given, invent ONE self-contained visual SCENE description (2-4 sentences, natural prose, no line breaks).
+
+Rules for every scene:
+1. Find the core IDEA of the beat, not the literal words. Pick the strongest documentary visual: an object, a document, a map, a timeline fragment, a halftone figure, a place.
+2. Choose ONE hero element (about 70 percent of visual weight), at most 2-3 supporting elements, and generous negative space. Never illustrate every word.
+3. If the beat carries a date, a name, or a number, it may appear as ONE short label of 1-4 words on a paper strip or stamp. Otherwise no text in the scene.
+4. If a figure, object, or place recurs, describe it with identical wording every time it appears (same suit, same censor bar, same briefcase) so the set reads as one continuous film. Recurring subjects and their fixed description are listed below if any exist yet.
+5. If a real person is implied, describe a black censor bar across where the face would show; never name or fully depict a real identifiable face.
+6. Do NOT include the style block or closer boilerplate, that is added separately. Only write the scene composition itself.
+7. Never use double quote characters anywhere in the scene text. If you need to quote a name, word, or phrase, use single quotes instead, or just describe it without quotation marks.
+
+Example (beat: "A man in a dark suit pays cash / for a one-way ticket to Seattle."): "A halftone black and white photograph cutout of a man in a dark 1970s suit seen from behind at a ticket counter as the hero element, a black censor bar across where his face would show in the counter mirror, rough cut edges with a red offset stroke, a paper airline ticket cutout and two hand-cut dollar-bill scraps as the only supporting elements on the counter, aged newsprint background with wide clean margins."
+
+Respond ONLY with valid JSON, no markdown fences, no preamble: {"scenes": ["scene 1", "scene 2", ...]}, one entry per beat given, in the same order.`;
+
+async function generateImages(){
+  const BATCH = 8;
+  const total = state.beats.length;
+  const batches = [];
+  for(let i=0;i<total;i+=BATCH) batches.push(state.beats.slice(i,i+BATCH));
+  let scenes = [];
+  try{
+    for(let bi=0; bi<batches.length; bi++){
+      setCard(`<div class="kicker">Case File · Step 7</div><h2>Building the shot list</h2>${loadingHtml('Cutting paper, beats '+(bi*BATCH+1)+'-'+Math.min((bi+1)*BATCH,total)+' of '+total+'…')}`);
+      const chunk = batches[bi];
+      const beatLines = chunk.map((b,i)=>`${bi*BATCH+i+1}. ${b.text}`).join('\n');
+      const recurring = scenes.length ? `Scenes generated so far for continuity reference (keep any recurring subject's wording identical):\n${scenes.slice(-4).map((s,i)=>`- ${s}`).join('\n')}\n\n` : '';
+      const text = await callClaude(IMAGE_SYSTEM, `Topic: ${state.ideaTitle}\n${recurring}Beats:\n${beatLines}`);
+      const json = parseJSON(text);
+      scenes = scenes.concat(json.scenes);
+    }
+    state.imageScenes = scenes.map(s=>s.trim());
+    state.imageBlocks = scenes.map(scene => `${scene.trim()} ${STYLE_BLOCK} ${CLOSER}`);
+    renderImages();
+  }catch(e){
+    setCard(`<div class="kicker">Case File · Step 7</div><h2>Building the shot list</h2>${errorHtml('Shot list failed on batch. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateImages()">Try again</button></div>`);
+  }
+}
+function renderImages(){
+  if(state.imageBlocks.length === 0){ generateImages(); return; }
+  const fileContent = state.imageBlocks.join('\n\n');
+  setCard(`
+    <div class="kicker">Case File · Step 7</div>
+    <h2>Image prompts <span class="stampbox">${state.imageBlocks.length} blocks</span></h2>
+    <p class="desc">One self-contained prompt per beat, blank-line separated, no numbering, ready for bulk generation.</p>
+    <textarea class="dump" readonly>${fileContent}</textarea>
+    <div class="btn-row">
+      <button class="primary" onclick="downloadTxt(slugify(state.ideaTitle)+'-prompts.txt', fileContentGlobal())">Download ${slugify(state.ideaTitle)}-prompts.txt</button>
+      <button class="ghost" onclick="copyText(fileContentGlobal(), this)">Copy all</button>
+      <button class="ghost" onclick="state.imageBlocks=[]; state.imageScenes=[]; generateImages();">Regenerate</button>
+      <button class="ghost" onclick="goNext()">Skip to motion prompt</button>
+    </div>
+    <div style="margin-top:20px; padding-top:16px; border-top:1px dashed var(--line);">
+      <div class="kicker" style="margin-bottom:6px;">Optional · generate once per channel</div>
+      <p class="desc" style="margin-bottom:10px;">A single 16:9 art-direction board (materials, palette, type, component zoo). Generate it once, then attach it as the style-sheet reference on every image and cinematic clip prompt above for consistency.</p>
+      <div class="btn-row" style="margin-top:0;">
+        <button class="ghost" onclick="copyText(MASTER_STYLE_SHEET_PROMPT, this)">Copy master style sheet prompt</button>
+        <button class="ghost" onclick="downloadTxt('master-style-sheet-prompt.txt', MASTER_STYLE_SHEET_PROMPT)">Download style-sheet.txt</button>
+      </div>
+    </div>
+  `);
+}
+function fileContentGlobal(){ return state.imageBlocks.join('\n\n'); }
+
+/* ---- STATE 8: video prompt(s) ---- */
+const STATIC_VIDEO_MODES = {
+  classic: {
+    title:'Classic universal video prompt',
+    desc:'Applied identically to every generated image, unchanged, image to 10-second collage animation. Camera locked, paper assembles calmly, then breathes.',
+    prompt: VIDEO_PROMPT,
+    filename: 'universal-video-prompt.txt',
+  },
+  kinetic: {
+    title:'Kinetic newsroom video prompt',
+    desc:'Applied identically to every generated image. Fast slams, hard punch-zooms, breaking-news energy, matches the high-velocity thumbnails winning the algorithm right now.',
+    prompt: KINETIC_PROMPT,
+    filename: 'kinetic-newsroom-video-prompt.txt',
+  },
+  slowburn: {
+    title:'Slow burn video prompt',
+    desc:'Applied identically to every generated image. One continuous slow camera drift, gentle assembly, moody and patient, good for mystery or history beats.',
+    prompt: SLOWBURN_PROMPT,
+    filename: 'slow-burn-video-prompt.txt',
+  },
+  living: {
+    title:'Living cutout video prompt',
+    desc:'Applied identically to every generated image. Locked camera, calm assembly, then any person, animal, or figure in frame gets one small paper-puppet gesture, a walk cycle, a nod, a point, jointed at cut lines, everything else stays still.',
+    prompt: LIVINGCUTOUT_PROMPT,
+    filename: 'living-cutout-video-prompt.txt',
+  },
+};
+function renderStaticVideo(modeKey){
+  const m = STATIC_VIDEO_MODES[modeKey];
+  setCard(`
+    <div class="kicker">Case File · Step 8</div>
+    <h2>${m.title}</h2>
+    <p class="desc">${m.desc}</p>
+    <textarea class="dump" readonly style="min-height:320px;">${m.prompt}</textarea>
+    <div class="btn-row">
+      <button class="ghost" onclick="copyText(\`${m.prompt.replace(/`/g,"'")}\`, this)">Copy prompt</button>
+      <button class="ghost" onclick="downloadTxt('${m.filename}', \`${m.prompt.replace(/`/g,"'")}\`)">Download .txt</button>
+      <button class="ghost" onclick="state.videoMode=null; render();">Try a different treatment</button>
+      <button class="primary" onclick="goNext()">Build thumbnails</button>
+    </div>
+  `);
+}
+function renderVideo(){
+  if(!state.videoMode){
+    setCard(`
+      <div class="kicker">Case File · Step 8</div>
+      <h2>Choose the motion treatment</h2>
+      <p class="desc">Four ways to animate the same case file. Pick the energy that fits the story, switch any time, all are kept once generated.</p>
+      <div class="grid">
+        <button class="choice" onclick="state.videoMode='classic'; render();"><b>CLASSIC</b>Camera locked, paper assembles calmly into the final frame, then breathes.</button>
+        <button class="choice" onclick="state.videoMode='kinetic'; render();"><b>KINETIC NEWSROOM</b>Fast slams, hard punch-zooms, breaking-news energy.</button>
+        <button class="choice" onclick="state.videoMode='slowburn'; render();"><b>SLOW BURN</b>One slow continuous drift, moody, patient reveal.</button>
+        <button class="choice" onclick="state.videoMode='living'; render();"><b>LIVING CUTOUT</b>Calm locked-camera assembly, then any figure in frame gets one small gesture, a walk, a nod, a point.</button>
+        <button class="choice" onclick="state.videoMode='cinematic'; render();"><b>CINEMATIC</b>One AI-written prompt per clip, camera orbits/dives/whips, background and named beats vary every shot.</button>
+      </div>
+    `);
+    return;
+  }
+  if(state.videoMode === 'cinematic'){ renderCinematicVideos(); return; }
+  renderStaticVideo(state.videoMode);
+}
+
+async function generateCinematicVideos(){
+  const scenesSrc = state.imageScenes.length ? state.imageScenes : state.beats.map(b=>b.text);
+  const BATCH = 3;
+  const total = scenesSrc.length;
+  const batches = [];
+  for(let i=0;i<total;i+=BATCH) batches.push(scenesSrc.slice(i,i+BATCH));
+  let clips = [];
+  try{
+    for(let bi=0; bi<batches.length; bi++){
+      setCard(`<div class="kicker">Case File · Step 8</div><h2>Directing the cinematic set</h2>${loadingHtml('Blocking camera moves, clips '+(bi*BATCH+1)+'-'+Math.min((bi+1)*BATCH,total)+' of '+total+'…')}`);
+      const chunk = batches[bi];
+      const sceneLines = chunk.map((s,i)=>`${bi*BATCH+i+1}. ${s}`).join('\n');
+      const prev = clips[clips.length-1];
+      const prevNote = prev ? `Previous clip for continuity, do not repeat its background or camera move:\nstyle: ${prev.style}\nshot: ${prev.shot}\n\n` : '';
+      const alreadyUsedWash = clips.some(c=>c.alertWash);
+      const washNote = alreadyUsedWash ? 'ALERT WASH has already been used once in this set, do not use it again on any clip below.' : 'ALERT WASH has not been used yet in this set, reserve it for the single biggest beat below if one clearly qualifies, otherwise leave it unused.';
+      const text = await callClaude(CINEMATIC_SYSTEM, `Topic: ${state.ideaTitle}\n${prevNote}${washNote}\n\nScenes:\n${sceneLines}`, 2000);
+      const json = parseJSON(text);
+      clips = clips.concat(json.clips);
+    }
+    state.cinematicBlocks = clips.map(c=>{
+      const styleBlock = c.style === 'flat' ? FLAT_PARALLAX_STYLE : DEEP_DIORAMA_STYLE;
+      const avoid = c.style === 'flat' ? AVOID_FLAT : AVOID_DEEP;
+      let shotText = (c.shot||'').trim();
+      if(c.alertWash && !/ALERT WASH/i.test(shotText)){
+        shotText = shotText.replace(/\.$/,'') + '. ALERT WASH on this beat.';
+      }
+      return `${styleBlock}\nSHOT: ${shotText}\nAUDIO: ${c.audio} — sound design only, no music, no narration.\n${avoid}`;
+    });
+    renderCinematicVideos();
+  }catch(e){
+    setCard(`<div class="kicker">Case File · Step 8</div><h2>Directing the cinematic set</h2>${errorHtml('Directing failed on batch. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateCinematicVideos()">Try again</button><button class="ghost" onclick="state.videoMode=null; render();">Back to motion choice</button></div>`);
+  }
+}
+function renderCinematicVideos(){
+  if(state.cinematicBlocks.length === 0){ generateCinematicVideos(); return; }
+  setCard(`
+    <div class="kicker">Case File · Step 8</div>
+    <h2>Cinematic clip prompts <span class="stampbox">${state.cinematicBlocks.length} clips</span></h2>
+    <p class="desc">One text-to-video prompt per clip: style block, SHOT with one camera move, AUDIO, AVOID. Attach the master style sheet reference image (Step 7) alongside these when generating.</p>
+    <div id="cinList"></div>
+    <div class="btn-row">
+      <button class="primary" onclick="downloadTxt(slugify(state.ideaTitle)+'-cinematic-clips.txt', cinAllGlobal())">Download cinematic-clips.txt</button>
+      <button class="ghost" onclick="copyText(cinAllGlobal(), this)">Copy all</button>
+      <button class="ghost" onclick="state.cinematicBlocks=[]; generateCinematicVideos();">Regenerate</button>
+      <button class="ghost" onclick="state.videoMode=null; render();">Try a different treatment</button>
+      <button class="primary" onclick="goNext()">Build thumbnails</button>
+    </div>
+  `);
+  document.getElementById('cinList').innerHTML = state.cinematicBlocks.map((t,i)=>`
+    <div class="thumb-card">
+      <div class="headline-tag"><span class="tag">CLIP ${i+1}</span></div>
+      <div style="font-size:13px; line-height:1.55; white-space:pre-wrap;">${t}</div>
+      <div class="btn-row" style="margin-top:8px;"><button class="ghost" onclick="copyText(\`${t.replace(/`/g,"'")}\`, this)">Copy clip ${i+1}</button></div>
+    </div>
+  `).join('');
+}
+function cinAllGlobal(){ return state.cinematicBlocks.join('\n\n---\n\n'); }
+
+/* ---- STATE 9: thumbnails ---- */
+async function generateThumbs(){
+  setCard(`<div class="kicker">Case File · Step 9</div><h2>Stamping thumbnails</h2>${loadingHtml('Choosing the hook words…')}`);
+  const system = `You design thumbnails for a hand-cut documentary paper collage YouTube channel. Generate 3 distinct thumbnail concepts for the given video.
+
+Thumbnail laws:
+1. One dominant halftone subject cutout: a figure (with a black censor bar note if a real person is implied), an object, or a place.
+2. Maximum 2 text elements, maximum 3 words each, huge condensed all-caps, words pulled from the video's hook (e.g. EXPOSED, VANISHED, FOUND, a year, a dollar amount).
+3. One red or yellow highlight device: rough marker circle, stamp box, or underline.
+4. Built to read at 200 pixels wide, high contrast, no small details.
+5. Vary the 3 concepts: different subject framing and different hook words each time.
+6. Never use double quote characters anywhere in any field. If you need to quote a word or phrase, use single quotes instead.
+
+Respond ONLY with valid JSON, no markdown fences, no preamble:
+{"thumbnails":[
+  {"subject":"description of the dominant hero cutout", "censor":"censor bar note or empty string if no person implied", "headline":"1-3 WORDS ALL CAPS", "headlineColor":"red or yellow", "stamp":"1-3 WORDS ALL CAPS second smaller label", "device":"circle or underline"}
+], 3 entries total}`;
+  try{
+    const text = await callClaude(system, `Topic: ${state.ideaTitle}\nNiche: ${state.niche}`);
+    const json = parseJSON(text);
+    state.thumbBlocks = json.thumbnails.map(t=>{
+      const censorPart = t.censor && t.censor.trim() ? `, ${t.censor.trim()}` : '';
+      const scene = `A ${t.subject} as the dominant hero cutout in high-contrast black and white halftone with rough scissor-cut edges and a red offset accent stroke${censorPart}, set on aged torn newsprint that bleeds off frame, a huge condensed all-caps torn-label headline reading ${t.headline} in black on a ${t.headlineColor} bar, a second smaller stamp-box label reading ${t.stamp}, one rough red marker ${t.device} around the key element, desaturated tan and ink palette with hot red and mustard accents, extreme contrast, poster-scale readability.`;
+      return {meta:t, text:`${scene} ${THUMB_CLOSER}`};
+    });
+    renderThumbs();
+  }catch(e){
+    setCard(`<div class="kicker">Case File · Step 9</div><h2>Stamping thumbnails</h2>${errorHtml('Failed. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateThumbs()">Try again</button></div>`);
+  }
+}
+function renderThumbs(){
+  if(state.thumbBlocks.length === 0){ generateThumbs(); return; }
+  const all = state.thumbBlocks.map(t=>t.text).join('\n\n');
+  setCard(`
+    <div class="kicker">Case File · Step 9</div>
+    <h2>Thumbnail prompts <span class="stampbox">DONE</span></h2>
+    <div id="thumbList"></div>
+    <div class="btn-row">
+      <button class="primary" onclick="downloadTxt(slugify(state.ideaTitle)+'-thumbnails.txt', thumbAllGlobal())">Download thumbnails.txt</button>
+      <button class="ghost" onclick="copyText(thumbAllGlobal(), this)">Copy all</button>
+      <button class="ghost" onclick="state.thumbBlocks=[]; generateThumbs();">Regenerate</button>
+      <button class="ghost" onclick="resetEngine()">Start a new topic</button>
+    </div>
+  `);
+  document.getElementById('thumbList').innerHTML = state.thumbBlocks.map((t,i)=>`
+    <div class="thumb-card">
+      <div class="headline-tag"><span class="tag">${t.meta.headline}</span><span class="tag mustard">${t.meta.stamp}</span></div>
+      <div style="font-size:13.5px; line-height:1.5;">${t.text}</div>
+      <div class="btn-row" style="margin-top:8px;"><button class="ghost" onclick="copyText(\`${t.text.replace(/`/g,"'")}\`, this)">Copy prompt ${i+1}</button></div>
+    </div>
+  `).join('');
+}
+function thumbAllGlobal(){ return state.thumbBlocks.map(t=>t.text).join('\n\n'); }
+
+function goNext(){ state.stageIdx = Math.min(state.stageIdx+1, STAGES.length-1); render(); }
+function resetEngine(){
+  state = {stageIdx:0, niche:null, ideas:[], ideaTitle:null, duration:null, script:'', scriptWords:0, beats:[], imageBlocks:[], imageScenes:[], videoMode:null, cinematicBlocks:[], thumbBlocks:[]};
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
+
+Content is user-generated and unverified.
+131
+[Learn about artifacts](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)
+<!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>VOX Style Animation Engine — Naseh Ngulik AI</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Special+Elite&family=Zilla+Slab:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"> <style> :root{ --paper:#EAE1C8; --paper-dark:#D7C79C; --ink:#221D14; --red:#B92220; --mustard:#BE8F2C; --gray:#726C5E; --line: rgba(34,29,20,0.18); } *{box-sizing:border-box;} html,body{margin:0;padding:0;} body{ background: radial-gradient(ellipse at 20% -10%, rgba(255,255,255,0.35), transparent 40%), repeating-linear-gradient(115deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px), var(--paper); color:var(--ink); font-family:'Zilla Slab', serif; min-height:100vh; padding-bottom:60px; } .headline{font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.03em;} .type{font-family:'Special Elite', monospace;} /* ---------- watermark stamp ---------- */ .stamp-watermark{ position:fixed; right:18px; bottom:16px; z-index:500; width:118px; height:118px; border-radius:50%; border:3px solid rgba(185,34,32,0.55); display:flex; align-items:center; justify-content:center; text-align:center; transform:rotate(-11deg); color:rgba(185,34,32,0.55); font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:0.06em; font-size:12.5px; line-height:1.25; text-transform:uppercase; pointer-events:none; mix-blend-mode:multiply; box-shadow: inset 0 0 0 5px rgba(185,34,32,0.12); } .stamp-watermark span{padding:0 10px;} /* ---------- masthead ---------- */ header.masthead{ padding:34px 24px 0; max-width:920px; margin:0 auto; text-align:center; } header.masthead .eyebrow{ font-family:'Special Elite',monospace; font-size:12px; letter-spacing:0.18em; color:var(--gray); text-transform:uppercase; } header.masthead h1{ font-size:clamp(28px,5vw,44px); margin:6px 0 4px; line-height:1.05; } header.masthead .sub{ color:var(--gray); font-family:'Zilla Slab',serif; font-style:italic; font-size:15px; } /* ---------- progress strip (case board) ---------- */ .board-strip{ max-width:920px; margin:26px auto 0; padding:0 24px; display:flex; align-items:flex-start; gap:0; overflow-x:auto; } .tab{ flex:1; min-width:78px; text-align:center; cursor:default; position:relative; padding:0 4px 14px; } .tab .string{ position:absolute; top:11px; left:-50%; width:100%; height:2px; background:repeating-linear-gradient(90deg, var(--red) 0 5px, transparent 5px 9px); opacity:0.55; z-index:0; } .tab:first-child .string{display:none;} .tab .pin{ width:22px; height:22px; border-radius:50%; margin:0 auto 6px; position:relative; z-index:1; background:var(--paper-dark); border:2px solid var(--ink); display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; font-size:11px; font-weight:700; color:var(--ink); } .tab.done .pin{background:var(--red); border-color:var(--red); color:var(--paper);} .tab.active .pin{background:var(--ink); border-color:var(--ink); color:var(--mustard); box-shadow:0 0 0 4px rgba(185,34,32,0.18);} .tab.locked .pin{opacity:0.4;} .tab .lbl{font-family:'Special Elite',monospace; font-size:9.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--gray);} .tab.active .lbl{color:var(--ink); font-weight:700;} .tab button.jump{background:none;border:none;cursor:pointer;padding:0;font:inherit;} /* ---------- board / card ---------- */ main.board{max-width:820px; margin:30px auto 0; padding:0 24px;} .card{ background:linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0) 40%), var(--paper); border:1px solid var(--line); box-shadow:0 1px 0 rgba(255,255,255,0.6) inset, 0 12px 26px -18px rgba(0,0,0,0.5); padding:30px 28px 28px; position:relative; clip-path: polygon(0% 1.2%, 4% 0%, 12% 0.8%, 20% 0%, 30% 0.6%, 41% 0%, 53% 0.8%, 64% 0%, 76% 0.7%, 87% 0%, 96% 0.9%, 100% 0.2%, 100% 100%, 0% 100%); } .card h2{margin:0 0 4px; font-size:22px;} .card .kicker{font-family:'Special Elite',monospace; font-size:11px; color:var(--red); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px;} .card p.desc{color:#4a4636; font-size:15px; line-height:1.55; margin:0 0 20px;} .grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;} @media(max-width:560px){.grid{grid-template-columns:1fr;}} button.choice{ text-align:left; background:var(--paper-dark); border:1px solid var(--line); padding:12px 14px; cursor:pointer; font-family:'Zilla Slab',serif; font-size:14.5px; color:var(--ink); transition:transform .12s ease, box-shadow .12s ease; } button.choice:hover{transform:translateY(-2px); box-shadow:0 6px 14px -8px rgba(0,0,0,0.4);} button.choice b{font-family:'Oswald',sans-serif; display:block; font-size:12px; color:var(--red); margin-bottom:2px;} input.custom{ width:100%; padding:11px 12px; border:1px dashed var(--gray); background:transparent; font-family:'Zilla Slab',serif; font-size:14.5px; color:var(--ink); } .idea-card{ background:var(--paper-dark); border:1px solid var(--line); padding:14px 16px; margin-bottom:9px; cursor:pointer; display:flex; gap:12px; align-items:flex-start; } .idea-card:hover{box-shadow:0 6px 14px -9px rgba(0,0,0,0.45); transform:translateY(-1px);} .idea-card .num{font-family:'Oswald',sans-serif; font-weight:700; color:var(--red); min-width:22px;} .btn-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;} button.primary{ background:var(--ink); color:var(--paper); border:none; padding:12px 20px; font-family:'Oswald',sans-serif; letter-spacing:0.04em; text-transform:uppercase; font-size:13px; cursor:pointer; } button.primary:hover{background:var(--red);} button.primary:disabled{opacity:0.5; cursor:not-allowed;} button.ghost{ background:transparent; color:var(--ink); border:1px solid var(--ink); padding:11px 18px; font-family:'Oswald',sans-serif; letter-spacing:0.04em; text-transform:uppercase; font-size:12.5px; cursor:pointer; } button.ghost:hover{border-color:var(--red); color:var(--red);} .script-box{ white-space:pre-wrap; font-family:'Zilla Slab', serif; font-size:15.5px; line-height:1.7; background:rgba(255,255,255,0.35); border-left:3px solid var(--red); padding:16px 18px; margin:10px 0 6px; } textarea.script-box{width:100%; box-sizing:border-box; border-top:none; border-right:none; border-bottom:none; outline:none; resize:vertical; min-height:240px; color:var(--ink);} textarea.script-box:focus{background:rgba(255,255,255,0.55);} .voice-links{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:6px 0 4px;} @media(max-width:560px){.voice-links{grid-template-columns:1fr;}} a.voice-link{ display:flex; align-items:center; justify-content:space-between; gap:10px; background:var(--paper-dark); border:1px solid var(--line); padding:12px 14px; text-decoration:none; color:var(--ink); font-family:'Zilla Slab',serif; font-size:14.5px; transition:transform .12s ease, box-shadow .12s ease; } a.voice-link:hover{transform:translateY(-2px); box-shadow:0 6px 14px -8px rgba(0,0,0,0.4); color:var(--red);} a.voice-link b{font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:0.03em;} a.voice-link .arrow{font-family:'Oswald',sans-serif; opacity:0.6;} .meta-line{font-family:'Special Elite',monospace; font-size:11.5px; color:var(--gray); letter-spacing:0.04em;} table.beats{width:100%; border-collapse:collapse; font-size:13.5px; margin-top:8px;} table.beats th{text-align:left; font-family:'Oswald',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--gray); border-bottom:1px solid var(--line); padding:6px 8px;} table.beats td{padding:7px 8px; border-bottom:1px solid var(--line); vertical-align:top;} table.beats td.n{color:var(--red); font-family:'Oswald',sans-serif; font-weight:600;} table.beats td.t{font-family:'Special Elite',monospace; color:var(--gray); white-space:nowrap;} textarea.dump{ width:100%; min-height:220px; font-family:'Special Elite',monospace; font-size:12px; line-height:1.55; background:#fbf7ea; border:1px solid var(--line); padding:12px; resize:vertical; } .stampbox{ display:inline-block; border:2px solid var(--red); color:var(--red); padding:2px 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; transform:rotate(-3deg); margin-left:8px; } .loading{display:flex; align-items:center; gap:10px; color:var(--gray); font-family:'Special Elite',monospace; font-size:13px; padding:14px 0;} .spinner{width:16px; height:16px; border:2px solid var(--line); border-top-color:var(--red); border-radius:50%; animation:spin .8s linear infinite;} @keyframes spin{to{transform:rotate(360deg);}} .error{background:rgba(185,34,32,0.08); border:1px solid var(--red); color:var(--red); padding:10px 14px; font-size:13.5px; margin-top:12px;} .thumb-card{background:var(--paper-dark); border:1px solid var(--line); padding:14px 16px; margin-bottom:10px;} .thumb-card .headline-tag{display:flex; gap:6px; margin-bottom:8px;} .tag{background:var(--red); color:var(--paper); font-family:'Oswald',sans-serif; font-size:11px; font-weight:700; padding:2px 8px; letter-spacing:0.05em;} .tag.mustard{background:var(--mustard);} footer.credit{max-width:820px; margin:40px auto 0; padding:0 24px; text-align:center; color:var(--gray); font-family:'Special Elite',monospace; font-size:11px; letter-spacing:0.06em;} button.back-btn{ display:inline-block; background:none; border:none; cursor:pointer; padding:0 0 16px; font-family:'Special Elite',monospace; font-size:12px; letter-spacing:0.04em; color:var(--gray); } button.back-btn:hover{color:var(--red);} </style> </head> <body> <div class="stamp-watermark"><span>NASEH · NGULIK AI</span></div> <header class="masthead"> <div class="eyebrow">Documentary Paper Collage · VOX Style</div> <h1 class="headline">VOX Style Animation Engine</h1> <div class="sub">niche → 10 leads → script → voice → beats → image prompts → motion (classic or cinematic) → thumbnails</div> </header> <div class="board-strip" id="boardStrip"></div> <main class="board"> <div class="card" id="stageCard"></div> </main> <footer class="credit">CASE FILE ASSEMBLED WITH CLAUDE · NASEH NGULIK AI © BUILD YOUR OWN ENGINE</footer> <script> const STAGES = [ {key:'niche', label:'Niche'}, {key:'ideas', label:'Leads'}, {key:'duration', label:'Length'}, {key:'script', label:'Script'}, {key:'voice', label:'Voice'}, {key:'beats', label:'Beats'}, {key:'images', label:'Images'}, {key:'video', label:'Motion'}, {key:'thumbs', label:'Thumbs'}, ]; const STYLE_BLOCK = "hand-cut documentary paper collage on aged newsprint and archival map surfaces, black and white halftone photograph cutouts with rough scissor-cut edges and offset accent strokes, torn paper edges, masking tape fragments, typewriter caption strips, rubber stamp marks, red string and brass pins where the story calls for connections, desaturated archival palette of tan, ink black, and halftone gray with ONE hot red signal accent and a restrained mustard yellow secondary, condensed bold headline lettering only where a label is specified, visible print grain and paper fiber, matte, flat even documentary lighting with soft cutout drop shadows."; const CLOSER = "Every element must appear physically hand-cut and layered from real paper, with visible cutout edges, halftone print texture, and soft shadow separation between layers. The composition stays clean, minimal, and editorial with generous negative space. NOT digital illustration, NOT cartoon, NOT 3D render, NOT glossy, no gradients, no clutter, no watermark, no logos, no text beyond the specified label. Premium documentary collage aesthetic, 16:9, ultra-detailed, 8K."; const THUMB_CLOSER = "Every element must appear physically hand-cut and layered from real paper, with visible cutout edges, halftone print texture, and soft shadow separation between layers. The composition stays clean, minimal, and editorial with generous negative space. NOT digital illustration, NOT cartoon, NOT 3D render, NOT glossy, no gradients, no clutter, no watermark, no logos, no text beyond the specified thumbnail words. Premium documentary collage aesthetic, 16:9, ultra-detailed, 8K."; /* ---- Cinematic (Paper Diorama) system, adapted from the reference channel's prompt system ---- */ const DEEP_DIORAMA_STYLE = "Use the attached style sheet for materials only - aged-print collage textures, halftone black-and-white cutout people with rough keylines and offset accent strokes, giant stat numbers, print grain. Do NOT copy the sheet's layout or its flatness: this clip is a deep 3D paper diorama - cutouts are physical layers separated in real space, strong shallow depth of field, foreground elements crossing close to the lens. The camera is an actor: it flies between layers, orbits, dives, whips, racks focus - one committed cinematic move for this clip. The background is unique to this clip, always within the sheet's palette. ALERT WASH means the entire frame floods to the hot accent tone in one beat. Motion: springs with overshoot, staggered entrances, ticking counters."; const FLAT_PARALLAX_STYLE = "Use the attached style sheet as the strict visual system - match its aged-newsprint collage surface, desaturated archival palette with one hot accent, condensed headline caps with giant stat numbers, halftone black-and-white cutout people with rough white keylines and offset accent strokes, and its print-grain finish. Do NOT copy the sheet's layout; it defines the language, not the composition. Layers sit at distinct depths like a paper diorama - true parallax, never glossy 3D. The background is a muted archival field unique to this clip, within this palette. ALERT WASH means the whole frame floods toward the hot accent tone. Motion: spring pop-ups with overshoot, staggered entrances, ticking counters, underline swipes; one slow camera move for this clip."; const AVOID_DEEP = "AVOID: no flat single-plane composition, no static locked-off camera, no glossy plastic CG (depth stays papercraft), no full-color midground portraits (people stay halftone black-and-white), no warped or gibberish text, no invented logos, no watermarks, no music, no soundtrack, no voice-over, no narration, no lyrics"; const AVOID_FLAT = "AVOID: no glossy CG 3D, no lens flares, no camera cuts within the clip, no full-color midground portraits (people stay halftone black-and-white), no warped or gibberish text, no invented logos, no watermarks, no simultaneous entrances, no music, no soundtrack, no voice-over, no narration, no lyrics"; const MASTER_STYLE_SHEET_PROMPT = `MASTER STYLE SHEET - Vox Style visual system, one 16:9 reference board. A single polished art-direction sheet defining the visual language for a documentary-collage explainer series. Editorial grid, consistent margins, section labels. Baked-in typography is intentional here (this is a style guide). SURFACE & MOOD: aged archival paper / muted map texture field, visible grain and print texture. Mood: newsroom-serious, layered, tactile, slightly retro. TYPE SPECIMEN PANEL: H1 sample 'THE DEAL' in condensed bold headline caps; a huge stat number sample '$123' treated as a hero character; small annotation label sample 'Fig. 3 - Trade Route'. Typography aligned, sharp, no warped letters. PALETTE STRIP: labeled swatches - Archival Tan #C9BB9C, Ink Black #1A1A1A, Halftone Gray #8C8C8C, Hot Red #D62E1F, Mustard #D9A441. Red is reserved for strokes, underlines, and arrows; mustard is secondary accent only. COMPONENT ZOO PANEL: a black-and-white halftone cutout of a generic figure with a rough white keyline and an offset red stroke behind it; a torn-paper edge; a big red stat counter card; a map pin marker; an underline swipe in red beneath a headline word; an archival photo card with a thin white border. All share one construction logic: halftone texture, offset stroke pop. MINI-SCENE PANEL: 3 small example frames - (a) two halftone figures on the stage with a stat counter between them, (b) a map with a pin and a red underline swipe beneath a caption, (c) an archival photo card with a torn edge beside a mustard label. Same lighting and finish throughout. MOTION THUMBNAILS: 4 tiny storyboard frames with arrows only: cutout springs up with slight overshoot / counter ticks upward / red underline swipes beneath a word / camera holds a slow 2% drift across the stage. One panel shows THE STAGE: the persistent background world every clip lives on - a muted archival map/texture field, empty, pre-lit, evenly toned, ready for cutouts and stat cards to enter and exit. No midground elements present in this panel. FINISH: print grain, halftone dot texture, torn-paper edges, matte finish, no glossy 3D, no lens flares. No watermarks, no lorem ipsum, no unrelated logos, no random gibberish text - every visible word is one of the samples above.`; const CINEMATIC_SYSTEM = `You are a director writing AI text-to-video shot prompts for a documentary paper-collage series called Paper Diorama. For each scene given, write ONE clip. Rules: 1. Pick a style for the clip: "deep" (deep 3D diorama, camera moves: orbits a quarter turn, flies between two layers, dives from above, whips left to right, pushes in through a gap, pulls back to reveal, cranes up over the stack, racks focus front to back) or "flat" (restrained flat parallax, one slow camera move only: slow lateral drift, gentle push-in, or a macro slide with rack focus). Vary style across the set: use deep for reveals and escalation, flat for restrained data beats. Never repeat the same style more than twice in a row. 2. Write the SHOT as one tight block, present tense, active verbs, in this order: Background (a named surface, tilted, out of focus, or a muted archival field - must differ from the previous clip). MG/FG elements entering staggered at named depths (state at least two depths explicitly, e.g. "one near the lens, two deep"). One connective action if it fits (arrow draws, counter ticks, chip races, stamp lands, thread pulls taut, a layer tears away). Exactly ONE camera move, stated plainly, describing what crosses the lens or racks into focus. End with "Settle [where]." 3. The background and camera move must differ from the previous clip supplied below; never the same move twice in a row. 4. Reserve the named beat ALERT WASH (the entire frame floods to the hot accent color in one beat) for at most ONE clip in the whole set - only the single biggest, most dramatic beat. Flag it with alertWash true only on that one clip. 5. Other named beats to use where they fit naturally, at most one per clip: STAMP (an approval or rejection stamp slams in at foreground depth, dust puff), TICK-UP (a giant number counts up with overshoot then settles), TEAR (a paper layer rips to reveal the layer behind it), THREAD PULL (pins and red thread draw a connection between two cutouts). 6. Write AUDIO as exactly 2-3 short sound-design cues, comma separated, matching the camera move (a dive gets a submerge whoosh and pressure hum, whips get whip whooshes and pops landing each hit, a push/pull gets a track rumble and stall click, ALERT WASH gets a rising riser and a deep thud, a loop gets accelerating ticks). No music, no narration, ever. 7. Never invent or describe logos. Never use double quote characters anywhere in any field, use single quotes instead if needed. 8. If a real person is implied, keep them as an anonymous halftone cutout figure, never name or fully depict a real identifiable face. Respond ONLY with valid JSON, no markdown fences, no preamble: {"clips": [{"style": "deep or flat", "shot": "the SHOT text ending in Settle...", "audio": "sound1, sound2, sound3", "alertWash": true or false}]}, one entry per scene given, in the same order.`; const VIDEO_PROMPT = `Transform the provided image into a 10-second premium editorial documentary paper-collage animation. Preserve the final composition of the provided image exactly. Do not redesign, reposition, resize, or replace any element. The provided image is the FINISHED frame that the animation builds toward. Style: hand-cut documentary paper collage in motion. Aged newsprint and archival surfaces, halftone photo cutouts, torn edges, tape, stamps, red string, typewriter strips. Every element moves as a rigid physical paper piece. Visible cutout thickness, print grain, soft layered shadows. Stop-motion cadence, stepped easing, 2-3 frame holds, the hand-made "cutting on twos" feel. Never smooth CGI motion. CAMERA, STRICT: the camera stays completely locked for the entire clip. No zoom, no pan, no tilt, no rotation, no orbit, no dolly, no tracking, no handheld shake, no focus pulls, no reframing, no cuts, no transitions, no morphing, no object replacement, no time skips. One continuous static shot. 0 TO 7 SECONDS, BUILD-ON ASSEMBLY: the frame opens on the EMPTY background plate only: the bare aged-newsprint or archival surface with its stains, grain, and any fixed scaffolding (a map base, a timeline line, a corkboard), with every story element absent. Elements then enter one by one, back to front, in narrative order: background scraps settle first, then the hero cutout slides in with paper drag and a small settle, supporting cutouts drop or pin on with a 2-frame stamp settle, tape presses down, typewriter strips slide in, stamps slap on, red string draws itself from pin to pin, marker underlines and arrows draw themselves last. Each entrance lands with a tiny handcrafted bounce and casts a real layered shadow. No element moves again after it lands. By 7 seconds the frame exactly matches the provided image. 7 TO 10 SECONDS, LIVING PAPER POSTER: everything holds position. Only subtle life remains: paper corners lift a millimeter in a draft, halftone dots shimmer faintly, string tension quivers once, shadows breathe, stamp ink glistens subtly. Nothing changes location, nothing scales, nothing rotates significantly, nothing enters or exits. AUDIO: no music, no narration, no voices. Only close-up paper ASMR and faint scene-appropriate ambience: paper sliding, cardstock taps, tape press, stamp thud, string zip, pin click, soft room tone. All subtle. FINAL RULE: the finished clip must feel like a real editorial paper collage assembling itself on a table, then holding as a living poster, matching the provided image exactly from 7 seconds to the end.`; /* ---- Cinematic UNIVERSAL presets: one static prompt, image-to-video, reused identically on every image, no per-image API call ---- */ const CINEMATIC_UNIVERSAL_PRESETS = [ { key: 'orbit', name: 'Orbit Reveal', tag: 'Deep diorama · quarter orbit', blurb: 'Camera flies between paper layers and settles into the exact final frame. Most dramatic, best for hooks and reveals.', text: `Transform the provided image into a 10-second premium editorial documentary paper-collage animation, told as a deep 3D paper diorama. Use the provided image strictly as the FINISHED final frame the clip must land on and hold. Do not redesign, reposition, resize, or replace any element from it. Style: hand-cut documentary paper collage, cutouts as physical layers separated in real space with strong shallow depth of field, foreground elements crossing close to the lens. Aged newsprint and archival surfaces, halftone black-and-white photo cutouts with rough keylines and offset accent strokes, torn edges, tape, stamps, red string, typewriter strips, print grain, matte finish. Every element moves as a rigid physical paper piece with stepped, stop-motion cadence, 2-3 frame holds, "cutting on twos." Never smooth CGI motion, never glossy 3D. 0 TO 2 SECONDS: open wide on the near-empty background plate, camera positioned off-axis from the final framing. 2 TO 7 SECONDS, ORBIT + ASSEMBLY: the camera performs ONE continuous quarter-turn orbit around the diorama while paper elements enter staggered at named depths, back to front — background scraps settle first, the hero cutout drops in with paper drag and a small bounce, supporting cutouts pin on with a stamp-settle, tape presses down, red string draws itself taut, underlines and arrows draw last. The orbit and the assembly finish together, arriving exactly on the provided image's composition and camera angle. 7 TO 10 SECONDS: camera is now completely locked, matching the provided image exactly. Only subtle life remains — paper corners lift a millimeter, halftone dots shimmer faintly, shadows breathe. Nothing re-enters, nothing exits, nothing rotates further. AUDIO: no music, no narration, no voice-over. Only close-up paper ASMR and faint ambience — paper sliding, cardstock taps, a soft track-rumble under the orbit, tape press, stamp thud, string zip, soft room tone. All subtle. AVOID: no glossy plastic CG, no lens flares, no camera cuts within the clip, no full-color midground portraits (people stay halftone black-and-white), no warped or gibberish text, no invented logos, no watermarks, no music, no soundtrack, no lyrics. FINAL RULE: the clip must feel like a documentary paper set assembling itself while the camera glides around it, arriving precisely on the provided image and holding as a living poster.` }, { key: 'push', name: 'Push Through', tag: 'Deep diorama · slow push-in', blurb: 'Camera dollies forward through the paper layers toward the final frame. Steady, confident, works for most beats.', text: `Transform the provided image into a 10-second premium editorial documentary paper-collage animation, told as a deep 3D paper diorama. Use the provided image strictly as the FINISHED final frame the clip must land on and hold. Do not redesign, reposition, resize, or replace any element from it. Style: hand-cut documentary paper collage, cutouts as physical layers separated in real space with strong shallow depth of field, foreground elements crossing close to the lens as the camera passes them. Aged newsprint and archival surfaces, halftone black-and-white photo cutouts with rough keylines and offset accent strokes, torn edges, tape, stamps, red string, typewriter strips, print grain, matte finish. Every element moves as a rigid physical paper piece with stepped, stop-motion cadence, 2-3 frame holds, "cutting on twos." Never smooth CGI motion, never glossy 3D. 0 TO 2 SECONDS: open pulled back from the diorama, background plate visible and mostly empty, framing wider than the final image. 2 TO 7 SECONDS, PUSH + ASSEMBLY: the camera performs ONE continuous slow dolly push-in toward the final framing, racking focus front to back as it passes each depth, while paper elements enter staggered — background scraps settle first, the hero cutout slides in with paper drag and a small bounce, supporting cutouts drop or pin on with a stamp-settle, tape presses down, typewriter strips slide in, red string draws itself taut, marker underlines and arrows draw last. The push finishes exactly as the last element lands, arriving on the provided image's exact framing. 7 TO 10 SECONDS: camera is now completely locked, matching the provided image exactly. Only subtle life remains — paper corners lift a millimeter, halftone dots shimmer faintly, string tension quivers once, shadows breathe. Nothing re-enters, nothing exits, nothing scales further. AUDIO: no music, no narration, no voice-over. Only close-up paper ASMR and faint ambience — a low track-rumble and stall click under the push, paper sliding, cardstock taps, tape press, stamp thud, string zip, soft room tone. All subtle. AVOID: no glossy plastic CG, no lens flares, no camera cuts within the clip, no full-color midground portraits (people stay halftone black-and-white), no warped or gibberish text, no invented logos, no watermarks, no music, no soundtrack, no lyrics. FINAL RULE: the clip must feel like a documentary paper set assembling itself while the camera glides steadily toward it, arriving precisely on the provided image and holding as a living poster.` }, { key: 'drift', name: 'Drift Reveal', tag: 'Flat parallax · slow lateral drift', blurb: 'Restrained one-direction drift with true parallax. Subtlest option, safest for text-heavy or data-driven beats.', text: `Transform the provided image into a 10-second premium editorial documentary paper-collage animation, told as a restrained flat paper-diorama parallax. Use the provided image strictly as the FINISHED final frame the clip must land on and hold. Do not redesign, reposition, resize, or replace any element from it. Style: hand-cut documentary paper collage, layers sitting at distinct shallow depths like a true paper diorama, never glossy 3D. Aged newsprint and archival surfaces, halftone black-and-white photo cutouts with rough white keylines and offset accent strokes, torn edges, tape, stamps, red string, typewriter strips, print grain, matte finish. Every element moves as a rigid physical paper piece with stepped, stop-motion cadence, 2-3 frame holds, "cutting on twos." Never smooth CGI motion. 0 TO 2 SECONDS: open on the near-empty background plate, camera offset slightly to one side of the final framing. 2 TO 7 SECONDS, DRIFT + ASSEMBLY: the camera performs ONE continuous slow lateral drift toward the final framing, giving true parallax between depths as it moves, while paper elements enter staggered — background scraps settle first, the hero cutout pops up with a spring and slight overshoot, supporting cutouts pin on with a stamp-settle, tape presses down, red underline swipes draw beneath headline words, red string draws itself taut last. The drift finishes exactly as the last element lands, arriving on the provided image's exact framing. 7 TO 10 SECONDS: camera is now completely locked, matching the provided image exactly. Only subtle life remains — paper corners lift a millimeter, halftone dots shimmer faintly, shadows breathe. Nothing re-enters, nothing exits, nothing scales further. AUDIO: no music, no narration, no voice-over. Only close-up paper ASMR and faint ambience — a soft track glide under the drift, paper sliding, cardstock taps, tape press, stamp thud, string zip, soft room tone. All subtle. AVOID: no glossy CG 3D, no lens flares, no camera cuts within the clip, no full-color midground portraits (people stay halftone black-and-white), no warped or gibberish text, no invented logos, no watermarks, no simultaneous entrances, no music, no soundtrack, no lyrics. FINAL RULE: the clip must feel like a documentary paper set assembling itself while the camera drifts calmly across it, arriving precisely on the provided image and holding as a living poster.` } ]; const DURATIONS = [ {label:'30 seconds', words:75, beats:'12-15'}, {label:'1 minute', words:150, beats:'22-30'}, {label:'2 minutes', words:300, beats:'45-60'}, {label:'3 minutes', words:450, beats:'70-90'}, {label:'5 minutes', words:750, beats:'115-150'}, ]; const NICHES = [ 'Crime and documentary', 'History', 'Money and power', 'Disasters and survival', 'Mysteries and the unexplained', 'Technology', 'Sports', ]; let state = { stageIdx: 0, niche: null, ideas: [], ideaTitle: null, duration: null, script: '', scriptWords: 0, beats: [], imageBlocks: [], imageScenes: [], videoMode: null, cinematicPreset: null, cinematicBlocks: [], thumbBlocks: [], }; function wc(s){ return (s.trim().match(/\S+/g) || []).length; } function slugify(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,60); } async function callClaude(system, user, maxTokens){ const res = await fetch("https://api.anthropic.com/v1/messages", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ model:"claude-sonnet-4-6", max_tokens: maxTokens || 1000, system: system, messages:[{role:"user", content:user}] }) }); const data = await res.json(); const text = (data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n"); return text; } function extractBalancedJson(text){ let startIdx = -1, openChar = null, closeChar = null; for(let i=0;i<text.length;i++){ if(text[i] === '{'){ startIdx = i; openChar='{'; closeChar='}'; break; } if(text[i] === '['){ startIdx = i; openChar='['; closeChar=']'; break; } } if(startIdx === -1) throw new Error('No JSON object found in response'); let depth = 0, inStr = false, esc = false; for(let i=startIdx; i<text.length; i++){ const ch = text[i]; if(inStr){ if(esc) esc = false; else if(ch === '\\') esc = true; else if(ch === '"') inStr = false; } else { if(ch === '"') inStr = true; else if(ch === openChar) depth++; else if(ch === closeChar){ depth--; if(depth === 0) return text.slice(startIdx, i+1); } } } throw new Error('Response was cut off before the JSON closed (hit the token limit) - try a smaller batch or try again'); } function repairStrayQuotes(jsonStr){ // Walk the JSON string and escape any " that appears where it can't legally close/open a token, // i.e. a quote inside a string value that isn't followed by a JSON structural character. let out = ''; let inStr = false, esc = false; for(let i=0;i<jsonStr.length;i++){ const ch = jsonStr[i]; if(!inStr){ out += ch; if(ch === '"') inStr = true; continue; } // inStr === true if(esc){ out += ch; esc = false; continue; } if(ch === '\\'){ out += ch; esc = true; continue; } if(ch === '"'){ const rest = jsonStr.slice(i+1).match(/^\s*/)[0]; const next = jsonStr[i+1+rest.length]; if(next === undefined || ':,}]'.includes(next)){ out += ch; inStr = false; } else { out += '\\"'; } continue; } out += ch; } return out; } function parseJSON(text){ let clean = text.trim(); clean = clean.replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim(); const span = extractBalancedJson(clean); try{ return JSON.parse(span); }catch(e){ return JSON.parse(repairStrayQuotes(span)); } } function downloadTxt(filename, content){ const blob = new Blob([content], {type:"text/plain"}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); } function copyText(text, btn){ navigator.clipboard.writeText(text).then(()=>{ const orig = btn.textContent; btn.textContent = 'Copied'; setTimeout(()=>btn.textContent = orig, 1200); }); } /* ---------------- beat splitting (deterministic, no API) ---------------- */ function splitBeats(script){ const sentences = script.match(/[^.!?]+[.!?]+/g) || [script]; let beats = []; sentences.forEach(raw=>{ const s = raw.trim(); if(!s) return; const words = s.split(/\s+/); if(words.length <= 8){ beats.push(s); return; } const parts = s.split(/,\s*/).map(p=>p.trim()).filter(Boolean); if(parts.length <= 1){ for(let i=0;i<words.length;i+=7) beats.push(words.slice(i,i+7).join(' ')); return; } let buffer = []; parts.forEach((part,idx)=>{ const w = part.split(/\s+/); if(buffer.length === 0){ buffer = w; } else if(buffer.length + w.length <= 8){ buffer = buffer.concat(w); } else { beats.push(buffer.join(' ') + (idx < parts.length ? ',' : '')); buffer = w; } }); if(buffer.length) beats.push(buffer.join(' ')); }); let cum = 0; return beats.map(b=>{ const start = +(cum/2.5).toFixed(1); cum += wc(b); return {text:b, start}; }); } /* ---------------- rendering ---------------- */ function renderStrip(){ const strip = document.getElementById('boardStrip'); strip.innerHTML = STAGES.map((s,i)=>{ let cls = 'tab'; if(i < state.stageIdx) cls += ' done'; else if(i === state.stageIdx) cls += ' active'; else cls += ' locked'; const clickable = i <= state.stageIdx; return `<div class="${cls}"> <div class="string"></div> <button class="jump pin" ${clickable?`onclick="jumpTo(${i})"`:'disabled'}>${i<state.stageIdx?'✓':(i+1)}</button> <div class="lbl">${s.label}</div> </div>`; }).join(''); } function jumpTo(i){ if(i<=state.stageIdx){ state.stageIdx = i; render(); } } function setCard(html){ const back = state.stageIdx > 0 ? `<button class="back-btn" onclick="goBack()">&larr; Back</button>` : ''; document.getElementById('stageCard').innerHTML = back + html; } function goBack(){ state.stageIdx = Math.max(0, state.stageIdx - 1); render(); } function loadingHtml(msg){ return `<div class="loading"><div class="spinner"></div>${msg}</div>`; } function errorHtml(msg){ return `<div class="error">${msg}</div>`; } function render(){ renderStrip(); const key = STAGES[state.stageIdx].key; if(key==='niche') renderNiche(); else if(key==='ideas') renderIdeas(); else if(key==='duration') renderDuration(); else if(key==='script') renderScript(); else if(key==='voice') renderVoice(); else if(key==='beats') renderBeats(); else if(key==='images') renderImages(); else if(key==='video') renderVideo(); else if(key==='thumbs') renderThumbs(); } /* ---- STATE 1: niche ---- */ function renderNiche(){ setCard(` <div class="kicker">Case File · Step 1</div> <h2>Pick tonight's niche</h2> <p class="desc">Every lead, script, and shot list downstream is built for this world. Crime and documentary is the house default.</p> <div class="grid" id="nicheGrid"></div> <div style="margin-top:14px;"> <input class="custom" id="customNiche" placeholder="Or type your own niche and press Enter"> </div> `); const grid = document.getElementById('nicheGrid'); grid.innerHTML = NICHES.map((n,i)=>`<button class="choice" onclick="pickNiche(${i})"><b>0${i+1}</b>${n}</button>`).join(''); document.getElementById('customNiche').addEventListener('keydown', e=>{ if(e.key==='Enter' && e.target.value.trim()){ state.niche = e.target.value.trim(); goNext(); } }); } function pickNiche(i){ state.niche = NICHES[i]; goNext(); } /* ---- STATE 2: ideas ---- */ async function generateIdeas(){ setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 leads in ${state.niche}</h2>${loadingHtml('Digging through the archive…')}`); const system = `You generate video ideas for a documentary paper-collage YouTube channel. Rules: 1. Generate exactly 10 ideas in the given niche. 2. No two ideas in the same sub-territory (e.g. never two heists, two disappearances, etc). 3. Titles are declarative or interrogative, light punctuation, no clickbait. Use shapes like: "How [event] Unfolded", "The Hunt for [target]", "The [adjective] Story of [subject]", "Why [place] [did X]", "[Event] Explained", "The Man/Woman Who [impossible act]", "What Really Happened to [subject]". 4. Each idea must have a concrete hook: a date, a name, a number, or a place that makes it feel real. 5. Facts must be real and accurate, do not invent events. 6. Never use double quote characters anywhere in any title. If you need to quote a word or phrase, use single quotes instead. Respond ONLY with valid JSON, no markdown fences, no preamble: {"ideas": ["title 1", "title 2", ... "title 10"]}`; try{ const text = await callClaude(system, `Niche: ${state.niche}`); const json = parseJSON(text); state.ideas = json.ideas.slice(0,10); renderIdeas(); }catch(e){ setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 leads</h2>${errorHtml('Could not reach the archive. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateIdeas()">Try again</button><button class="ghost" onclick="jumpTo(0)">Change niche</button></div>`); } } async function loadMoreIdeas(){ const existingList = state.ideas.map((t,i)=>`${i+1}. ${t}`).join('\n'); setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 more leads</h2>${loadingHtml('Digging deeper into the archive…')}`); const system = `You generate video ideas for a documentary paper-collage YouTube channel. Rules: 1. Generate exactly 10 NEW ideas in the given niche, different from the leads already pulled (given below). 2. No two ideas share a sub-territory with each other OR with any lead already pulled (e.g. never two heists, two disappearances, etc). Cover different cases, people, and events than what's already listed. 3. Titles are declarative or interrogative, light punctuation, no clickbait. Use shapes like: "How [event] Unfolded", "The Hunt for [target]", "The [adjective] Story of [subject]", "Why [place] [did X]", "[Event] Explained", "The Man/Woman Who [impossible act]", "What Really Happened to [subject]". 4. Each idea must have a concrete hook: a date, a name, a number, or a place that makes it feel real. 5. Facts must be real and accurate, do not invent events. 6. Never use double quote characters anywhere in any title. If you need to quote a word or phrase, use single quotes instead. Respond ONLY with valid JSON, no markdown fences, no preamble: {"ideas": ["title 1", "title 2", ... "title 10"]}`; try{ const text = await callClaude(system, `Niche: ${state.niche}\n\nLeads already pulled, do not repeat or overlap with these:\n${existingList}`); const json = parseJSON(text); state.ideas = state.ideas.concat(json.ideas.slice(0,10)); renderIdeas(); }catch(e){ setCard(`<div class="kicker">Case File · Step 2</div><h2>Pulling 10 more leads</h2>${errorHtml('Could not reach the archive. '+e.message)}<div class="btn-row"><button class="primary" onclick="loadMoreIdeas()">Try again</button><button class="ghost" onclick="renderIdeas()">Back to leads</button></div>`); } } function renderIdeas(){ if(state.ideas.length === 0){ generateIdeas(); return; } setCard(` <div class="kicker">Case File · Step 2</div> <h2>${state.ideas.length} leads, ${state.niche}</h2> <p class="desc">Pick one to build out, load more, pull a fresh batch, or write your own below.</p> <div id="ideasList"></div> <div class="btn-row"><button class="primary" onclick="loadMoreIdeas()">Load 10 more leads</button><button class="ghost" onclick="state.ideas=[]; generateIdeas();">Pull new leads</button><button class="ghost" onclick="jumpTo(0)">Change niche</button></div> <div style="margin-top:22px; padding-top:18px; border-top:1px dashed var(--line);"> <div class="kicker" style="margin-bottom:8px;">Or write your own lead</div> <input class="custom" id="customIdea" placeholder="Type your own topic and press Enter, e.g. a date, a name, a place"> </div> `); document.getElementById('ideasList').innerHTML = state.ideas.map((t,i)=> `<div class="idea-card" onclick="pickIdea(${i})"><div class="num">${String(i+1).padStart(2,'0')}</div><div>${t}</div></div>` ).join(''); document.getElementById('customIdea').addEventListener('keydown', e=>{ if(e.key==='Enter' && e.target.value.trim()){ state.ideaTitle = e.target.value.trim(); goNext(); } }); } function pickIdea(i){ state.ideaTitle = state.ideas[i]; goNext(); } /* ---- STATE 3: duration ---- */ function renderDuration(){ setCard(` <div class="kicker">Case File · Step 3</div> <h2>How long is the cut?</h2> <p class="desc"><em>${state.ideaTitle}</em></p> <div class="grid" id="durGrid"></div> `); document.getElementById('durGrid').innerHTML = DURATIONS.map((d,i)=> `<button class="choice" onclick="pickDuration(${i})"><b>~${d.words} words</b>${d.label} · ${d.beats} beats</button>` ).join(''); } function pickDuration(i){ state.duration = DURATIONS[i]; goNext(); } /* ---- STATE 4: script ---- */ async function generateScript(){ setCard(`<div class="kicker">Case File · Step 4</div><h2>Writing the narration</h2>${loadingHtml('Drafting the cold open…')}`); const system = `You write Fern-style documentary narration scripts. DNA rules: 1. Continuous narration only, one flowing block of prose. No chapter labels, no headers, no camera directions, no visual cues, no em dashes anywhere (use commas, colons, parentheses, or plain hyphens instead). 2. Cold open: the first 3 to 4 sentences (about 30-40 words) open on a precise date, a location, and one small concrete action. Example shape: "November 24, 1971. Portland International Airport. A man in a dark suit buys a one-way ticket under the name Dan Cooper." 3. Calm, precise, documentary tone. Short declaratives mixed with one longer explanatory sentence per stretch. Use temporal and causal connectives to carry the story: then, by morning, three days later, because of this, which meant, what nobody knew was. 4. Every sentence ends cleanly on a full stop and carries exactly one idea, because sentences become visual beats later. 5. Facts stay accurate. If a detail is uncertain or disputed, write around it ("the FBI believed", "witnesses described"), never invent names, dates, or numbers. 6. Real-tragedy restraint: no gore, no suffering close-ups, no mockery of victims. Tension lives in objects, places, documents, and time. 7. No sponsor copy, no subscribe prompts, no sign-offs. 8. Mandatory cliffhanger ending. Final line 12 words or fewer, ending on a noun, a name, a date, or a short declarative. Use one of these five patterns: (1) THE UNRESOLVED OBJECT - end on a physical thing that still exists, e.g. "The parachute has never been found." (2) THE DATED FORWARD JUMP - leap to a later date that reopens the case, e.g. "Then, in 1980, a boy found the money." (3) THE MISSING PIECE - name the one thing investigators never got, e.g. "They had his tie. They never had his name." (4) THE QUIET CONTRADICTION - end on a fact that undermines everything before it, e.g. "The man in seat 18C never existed." (5) THE PRICE LINE - end on the human or financial cost stated flat, e.g. "The paintings are still worth half a billion dollars." 9. Target length is ${state.duration.words} words at 2.5 words per second. Land within 5 percent. Respond with ONLY the script itself, as plain prose. No JSON, no quotes wrapping it, no markdown fences, no labels, no preamble, no commentary before or after.`; try{ const text = await callClaude(system, `Topic: ${state.ideaTitle}\nNiche: ${state.niche}\nTarget: ${state.duration.words} words (${state.duration.label})`); let clean = text.trim(); clean = clean.replace(/^```[a-z]*\n?/i,'').replace(/```$/,'').trim(); clean = clean.replace(/^"(.*)"$/s,'$1').trim(); state.script = clean; state.scriptWords = wc(state.script); renderScript(); }catch(e){ setCard(`<div class="kicker">Case File · Step 4</div><h2>Writing the narration</h2>${errorHtml('Draft failed. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateScript()">Try again</button></div>`); } } function renderScript(){ if(!state.script){ generateScript(); return; } const target = state.duration.words; setCard(` <div class="kicker">Case File · Step 4</div> <h2>Narration script <span class="stampbox" id="scriptBadge">${scriptBadgeText()}</span></h2> <div class="meta-line" id="scriptMetaLive">TARGET: ${target} words / ${state.duration.label} &nbsp;·&nbsp; FINAL: ${state.scriptWords} words</div> <p class="desc" style="margin:10px 0 4px;">Editable, add your own research, facts, or details, then continue whenever it reads right.</p> <textarea class="script-box" id="scriptEdit" oninput="onScriptEdit(this)">${state.script}</textarea> <div class="btn-row"> <button class="primary" onclick="goNext()">Continue to voiceover</button> <button class="ghost" onclick="copyText(state.script, this)">Copy script</button> <button class="ghost" onclick="downloadTxt(slugify(state.ideaTitle)+'-script.txt', state.script)">Download .txt</button> <button class="ghost" onclick="state.script=''; generateScript();">Rewrite</button> </div> `); } function scriptBadgeText(){ const target = state.duration.words; return Math.abs(state.scriptWords - target) <= target*0.05 ? 'ON TARGET' : 'CHECK LENGTH'; } function onScriptEdit(el){ state.script = el.value; state.scriptWords = wc(state.script); document.getElementById('scriptMetaLive').innerHTML = `TARGET: ${state.duration.words} words / ${state.duration.label} &nbsp;·&nbsp; FINAL: ${state.scriptWords} words`; document.getElementById('scriptBadge').textContent = scriptBadgeText(); } /* ---- STATE 5: voiceover (formatted, no ElevenLabs tool in this environment) ---- */ function renderVoice(){ const block = `NARRATION (paste into ElevenLabs): -------------------------------------------------- ${state.script} -------------------------------------------------- VOICE DIRECTION: calm deadpan male narrator, mid-range, mild gravitas, about 155 wpm, minimal emotion spikes, documentary read. SETTINGS: stability ~55, similarity ~80, style low, speaker boost on. PRODUCTION RULES: 1. Generate in 20-25 second batches, longer single generations distort. 2. Regenerate each batch 2-5 times and keep the best take. 3. Match cadence and flow across consecutive batches so joins are seamless. 4. The cold open batch is the highest-priority take, it carries the video. 5. The final mp3 layers over the silent assembled clips in the editor, the video clips themselves stay narration-free (their audio is paper ASMR only).`; setCard(` <div class="kicker">Case File · Step 5</div> <h2>Voiceover, ElevenLabs or your pick</h2> <p class="desc">No voice tool connected in this session, so here is the script and settings formatted for a straight copy-paste. Open a generator below, paste the block, and produce the read.</p> <div class="voice-links"> <a class="voice-link" href="https://elevenlabs.io" target="_blank" rel="noopener"><span><b>ELEVENLABS</b><br>Text to speech, cloned voices</span><span class="arrow">↗</span></a> <a class="voice-link" href="https://aistudio.google.com" target="_blank" rel="noopener"><span><b>GOOGLE AI STUDIO</b><br>Gemini native TTS</span><span class="arrow">↗</span></a> <a class="voice-link" href="https://murf.ai" target="_blank" rel="noopener"><span><b>MURF AI</b><br>Studio voiceovers</span><span class="arrow">↗</span></a> <a class="voice-link" href="https://play.ht" target="_blank" rel="noopener"><span><b>PLAY.HT</b><br>Ultra-realistic TTS</span><span class="arrow">↗</span></a> </div> <textarea class="dump" readonly>${block}</textarea> <div class="btn-row"> <button class="ghost" onclick="copyText(\`${block.replace(/`/g,"'")}\`, this)">Copy block</button> <button class="ghost" onclick="downloadTxt(slugify(state.ideaTitle)+'-voiceover.txt', \`${block.replace(/`/g,"'")}\`)">Download .txt</button> <button class="primary" onclick="goNext()">Voiceover ready, continue</button> </div> `); } /* ---- STATE 6: beats ---- */ function renderBeats(){ if(state.beats.length === 0){ state.beats = splitBeats(state.script); } setCard(` <div class="kicker">Case File · Step 6</div> <h2>Beat breakdown <span class="stampbox">${state.beats.length} beats</span></h2> <p class="desc">One beat per visual idea, split at sentence and clause boundaries, ~5-8 words each, timecoded at 2.5 words/sec.</p> <div style="max-height:360px; overflow:auto;"> <table class="beats"> <thead><tr><th>#</th><th>Time</th><th>Narration</th></tr></thead> <tbody>${state.beats.map((b,i)=>`<tr><td class="n">${i+1}</td><td class="t">${b.start.toFixed(1)}s</td><td>${b.text}</td></tr>`).join('')}</tbody> </table> </div> <div class="btn-row"> <button class="ghost" onclick="state.beats=[]; renderBeats();">Re-split beats</button> <button class="primary" onclick="goNext()">Build image prompts</button> </div> `); } /* ---- STATE 7: image prompts .txt ---- */ const IMAGE_SYSTEM = `You are an editorial art director for a hand-cut documentary paper collage series. For each narration beat given, invent ONE self-contained visual SCENE description (2-4 sentences, natural prose, no line breaks). Rules for every scene: 1. Find the core IDEA of the beat, not the literal words. Pick the strongest documentary visual: an object, a document, a map, a timeline fragment, a halftone figure, a place. 2. Choose ONE hero element (about 70 percent of visual weight), at most 2-3 supporting elements, and generous negative space. Never illustrate every word. 3. If the beat carries a date, a name, or a number, it may appear as ONE short label of 1-4 words on a paper strip or stamp. Otherwise no text in the scene. 4. If a figure, object, or place recurs, describe it with identical wording every time it appears (same suit, same censor bar, same briefcase) so the set reads as one continuous film. Recurring subjects and their fixed description are listed below if any exist yet. 5. If a real person is implied, describe a black censor bar across where the face would show; never name or fully depict a real identifiable face. 6. Do NOT include the style block or closer boilerplate, that is added separately. Only write the scene composition itself. 7. Never use double quote characters anywhere in the scene text. If you need to quote a name, word, or phrase, use single quotes instead, or just describe it without quotation marks. Example (beat: "A man in a dark suit pays cash / for a one-way ticket to Seattle."): "A halftone black and white photograph cutout of a man in a dark 1970s suit seen from behind at a ticket counter as the hero element, a black censor bar across where his face would show in the counter mirror, rough cut edges with a red offset stroke, a paper airline ticket cutout and two hand-cut dollar-bill scraps as the only supporting elements on the counter, aged newsprint background with wide clean margins." Respond ONLY with valid JSON, no markdown fences, no preamble: {"scenes": ["scene 1", "scene 2", ...]}, one entry per beat given, in the same order.`; async function generateImages(){ const BATCH = 8; const total = state.beats.length; const batches = []; for(let i=0;i<total;i+=BATCH) batches.push(state.beats.slice(i,i+BATCH)); let scenes = []; try{ for(let bi=0; bi<batches.length; bi++){ setCard(`<div class="kicker">Case File · Step 7</div><h2>Building the shot list</h2>${loadingHtml('Cutting paper, beats '+(bi*BATCH+1)+'-'+Math.min((bi+1)*BATCH,total)+' of '+total+'…')}`); const chunk = batches[bi]; const beatLines = chunk.map((b,i)=>`${bi*BATCH+i+1}. ${b.text}`).join('\n'); const recurring = scenes.length ? `Scenes generated so far for continuity reference (keep any recurring subject's wording identical):\n${scenes.slice(-4).map((s,i)=>`- ${s}`).join('\n')}\n\n` : ''; const text = await callClaude(IMAGE_SYSTEM, `Topic: ${state.ideaTitle}\n${recurring}Beats:\n${beatLines}`); const json = parseJSON(text); scenes = scenes.concat(json.scenes); } state.imageScenes = scenes.map(s=>s.trim()); state.imageBlocks = scenes.map(scene => `${scene.trim()} ${STYLE_BLOCK} ${CLOSER}`); renderImages(); }catch(e){ setCard(`<div class="kicker">Case File · Step 7</div><h2>Building the shot list</h2>${errorHtml('Shot list failed on batch. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateImages()">Try again</button></div>`); } } function renderImages(){ if(state.imageBlocks.length === 0){ generateImages(); return; } const fileContent = state.imageBlocks.join('\n\n'); setCard(` <div class="kicker">Case File · Step 7</div> <h2>Image prompts <span class="stampbox">${state.imageBlocks.length} blocks</span></h2> <p class="desc">One self-contained prompt per beat, blank-line separated, no numbering, ready for bulk generation.</p> <textarea class="dump" readonly>${fileContent}</textarea> <div class="btn-row"> <button class="primary" onclick="downloadTxt(slugify(state.ideaTitle)+'-prompts.txt', fileContentGlobal())">Download ${slugify(state.ideaTitle)}-prompts.txt</button> <button class="ghost" onclick="copyText(fileContentGlobal(), this)">Copy all</button> <button class="ghost" onclick="state.imageBlocks=[]; state.imageScenes=[]; generateImages();">Regenerate</button> <button class="ghost" onclick="goNext()">Skip to motion prompt</button> </div> <div style="margin-top:20px; padding-top:16px; border-top:1px dashed var(--line);"> <div class="kicker" style="margin-bottom:6px;">Optional · generate once per channel</div> <p class="desc" style="margin-bottom:10px;">A single 16:9 art-direction board (materials, palette, type, component zoo). Generate it once, then attach it as the style-sheet reference on every image and cinematic clip prompt above for consistency.</p> <div class="btn-row" style="margin-top:0;"> <button class="ghost" onclick="copyText(MASTER_STYLE_SHEET_PROMPT, this)">Copy master style sheet prompt</button> <button class="ghost" onclick="downloadTxt('master-style-sheet-prompt.txt', MASTER_STYLE_SHEET_PROMPT)">Download style-sheet.txt</button> </div> </div> `); } function fileContentGlobal(){ return state.imageBlocks.join('\n\n'); } /* ---- STATE 8: video prompt(s) ---- */ function renderVideo(){ if(!state.videoMode){ setCard(` <div class="kicker">Case File · Step 8</div> <h2>Choose the motion treatment</h2> <p class="desc">Two ways to animate the same case file. Classic is one identical locked-camera prompt for every image. Cinematic is one identical prompt too, but with a camera move — pick a style once and reuse it on every image, no per-image generation needed.</p> <div class="grid"> <button class="choice" onclick="state.videoMode='classic'; render();"><b>CLASSIC</b>One universal prompt · image-to-video · camera locked · paper assembles itself into the final frame, then breathes.</button> <button class="choice" onclick="state.videoMode='cinematic'; render();"><b>CINEMATIC</b>One universal prompt · image-to-video · camera orbits/pushes/drifts · same move reused on every image.</button> </div> <p class="desc" style="margin-top:16px;">You can switch between the two any time, both are kept once generated.</p> `); return; } if(state.videoMode === 'cinematic'){ renderCinematicUniversal(); return; } if(state.videoMode === 'cinematic-ai'){ renderCinematicVideos(); return; } renderClassicVideo(); } /* ---- Cinematic UNIVERSAL: pick one of 3 static presets, no API call, same prompt reused on every image ---- */ function renderCinematicUniversal(){ if(!state.cinematicPreset){ setCard(` <div class="kicker">Case File · Step 8</div> <h2>Pick a cinematic camera move</h2> <p class="desc">Same idea as Classic — one prompt, reused identically on every generated image — but this one moves the camera. Pick a style once; every image gets the same move.</p> <div class="grid" style="grid-template-columns:1fr;"> ${CINEMATIC_UNIVERSAL_PRESETS.map(p=>` <button class="choice" onclick="state.cinematicPreset='${p.key}'; render();"><b>${p.name.toUpperCase()} — ${p.tag}</b>${p.blurb}</button> `).join('')} </div> <div class="btn-row"> <button class="ghost" onclick="state.videoMode='classic'; render();">Switch to classic instead</button> <button class="ghost" onclick="state.videoMode='cinematic-ai'; render();">Advanced: AI-directed per-clip (uses more tokens, may fail on free tier)</button> </div> `); return; } const preset = CINEMATIC_UNIVERSAL_PRESETS.find(p=>p.key===state.cinematicPreset); setCard(` <div class="kicker">Case File · Step 8</div> <h2>Cinematic universal video prompt <span class="stampbox">${preset.name}</span></h2> <p class="desc">${preset.tag}. Applied identically to every generated image, image to 10-second collage animation with a camera move.</p> <textarea class="dump" readonly style="min-height:320px;">${preset.text}</textarea> <div class="btn-row"> <button class="ghost" onclick="copyText(\`${preset.text.replace(/`/g,"'")}\`, this)">Copy prompt</button> <button class="ghost" onclick="downloadTxt('universal-cinematic-${preset.key}-prompt.txt', \`${preset.text.replace(/`/g,"'")}\`)">Download .txt</button> <button class="ghost" onclick="state.cinematicPreset=null; render();">Change camera move</button> <button class="ghost" onclick="state.videoMode='classic'; render();">Switch to classic</button> <button class="primary" onclick="goNext()">Build thumbnails</button> </div> `); } function renderClassicVideo(){ setCard(` <div class="kicker">Case File · Step 8</div> <h2>Classic universal video prompt</h2> <p class="desc">Applied identically to every generated image, unchanged, image to 10-second collage animation.</p> <textarea class="dump" readonly style="min-height:320px;">${VIDEO_PROMPT}</textarea> <div class="btn-row"> <button class="ghost" onclick="copyText(\`${VIDEO_PROMPT.replace(/`/g,"'")}\`, this)">Copy prompt</button> <button class="ghost" onclick="downloadTxt('universal-video-prompt.txt', \`${VIDEO_PROMPT.replace(/`/g,"'")}\`)">Download .txt</button> <button class="ghost" onclick="state.videoMode='cinematic'; render();">Try cinematic instead</button> <button class="primary" onclick="goNext()">Build thumbnails</button> </div> `); } async function generateCinematicVideos(){ const scenesSrc = state.imageScenes.length ? state.imageScenes : state.beats.map(b=>b.text); const BATCH = 3; const total = scenesSrc.length; const batches = []; for(let i=0;i<total;i+=BATCH) batches.push(scenesSrc.slice(i,i+BATCH)); let clips = []; try{ for(let bi=0; bi<batches.length; bi++){ setCard(`<div class="kicker">Case File · Step 8</div><h2>Directing the cinematic set</h2>${loadingHtml('Blocking camera moves, clips '+(bi*BATCH+1)+'-'+Math.min((bi+1)*BATCH,total)+' of '+total+'…')}`); const chunk = batches[bi]; const sceneLines = chunk.map((s,i)=>`${bi*BATCH+i+1}. ${s}`).join('\n'); const prev = clips[clips.length-1]; const prevNote = prev ? `Previous clip for continuity, do not repeat its background or camera move:\nstyle: ${prev.style}\nshot: ${prev.shot}\n\n` : ''; const alreadyUsedWash = clips.some(c=>c.alertWash); const washNote = alreadyUsedWash ? 'ALERT WASH has already been used once in this set, do not use it again on any clip below.' : 'ALERT WASH has not been used yet in this set, reserve it for the single biggest beat below if one clearly qualifies, otherwise leave it unused.'; const text = await callClaude(CINEMATIC_SYSTEM, `Topic: ${state.ideaTitle}\n${prevNote}${washNote}\n\nScenes:\n${sceneLines}`, 2000); const json = parseJSON(text); clips = clips.concat(json.clips); } state.cinematicBlocks = clips.map(c=>{ const styleBlock = c.style === 'flat' ? FLAT_PARALLAX_STYLE : DEEP_DIORAMA_STYLE; const avoid = c.style === 'flat' ? AVOID_FLAT : AVOID_DEEP; let shotText = (c.shot||'').trim(); if(c.alertWash && !/ALERT WASH/i.test(shotText)){ shotText = shotText.replace(/\.$/,'') + '. ALERT WASH on this beat.'; } return `${styleBlock}\nSHOT: ${shotText}\nAUDIO: ${c.audio} — sound design only, no music, no narration.\n${avoid}`; }); renderCinematicVideos(); }catch(e){ setCard(`<div class="kicker">Case File · Step 8</div><h2>Directing the cinematic set</h2>${errorHtml('Directing failed on batch. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateCinematicVideos()">Try again</button><button class="ghost" onclick="state.videoMode='cinematic'; state.cinematicPreset=null; render();">Use cinematic universal instead</button><button class="ghost" onclick="state.videoMode=null; render();">Back to motion choice</button></div>`); } } function renderCinematicVideos(){ if(state.cinematicBlocks.length === 0){ generateCinematicVideos(); return; } setCard(` <div class="kicker">Case File · Step 8</div> <h2>Cinematic clip prompts (advanced) <span class="stampbox">${state.cinematicBlocks.length} clips</span></h2> <p class="desc">One text-to-video prompt per clip: style block, SHOT with one camera move, AUDIO, AVOID. Attach the master style sheet reference image (Step 7) alongside these when generating.</p> <div id="cinList"></div> <div class="btn-row"> <button class="primary" onclick="downloadTxt(slugify(state.ideaTitle)+'-cinematic-clips.txt', cinAllGlobal())">Download cinematic-clips.txt</button> <button class="ghost" onclick="copyText(cinAllGlobal(), this)">Copy all</button> <button class="ghost" onclick="state.cinematicBlocks=[]; generateCinematicVideos();">Regenerate</button> <button class="ghost" onclick="state.videoMode='cinematic'; state.cinematicPreset=null; render();">Switch to cinematic universal</button> <button class="ghost" onclick="state.videoMode='classic'; render();">Switch to classic</button> <button class="primary" onclick="goNext()">Build thumbnails</button> </div> `); document.getElementById('cinList').innerHTML = state.cinematicBlocks.map((t,i)=>` <div class="thumb-card"> <div class="headline-tag"><span class="tag">CLIP ${i+1}</span></div> <div style="font-size:13px; line-height:1.55; white-space:pre-wrap;">${t}</div> <div class="btn-row" style="margin-top:8px;"><button class="ghost" onclick="copyText(\`${t.replace(/`/g,"'")}\`, this)">Copy clip ${i+1}</button></div> </div> `).join(''); } function cinAllGlobal(){ return state.cinematicBlocks.join('\n\n---\n\n'); } /* ---- STATE 9: thumbnails ---- */ async function generateThumbs(){ setCard(`<div class="kicker">Case File · Step 9</div><h2>Stamping thumbnails</h2>${loadingHtml('Choosing the hook words…')}`); const system = `You design thumbnails for a hand-cut documentary paper collage YouTube channel. Generate 3 distinct thumbnail concepts for the given video. Thumbnail laws: 1. One dominant halftone subject cutout: a figure (with a black censor bar note if a real person is implied), an object, or a place. 2. Maximum 2 text elements, maximum 3 words each, huge condensed all-caps, words pulled from the video's hook (e.g. EXPOSED, VANISHED, FOUND, a year, a dollar amount). 3. One red or yellow highlight device: rough marker circle, stamp box, or underline. 4. Built to read at 200 pixels wide, high contrast, no small details. 5. Vary the 3 concepts: different subject framing and different hook words each time. 6. Never use double quote characters anywhere in any field. If you need to quote a word or phrase, use single quotes instead. Respond ONLY with valid JSON, no markdown fences, no preamble: {"thumbnails":[ {"subject":"description of the dominant hero cutout", "censor":"censor bar note or empty string if no person implied", "headline":"1-3 WORDS ALL CAPS", "headlineColor":"red or yellow", "stamp":"1-3 WORDS ALL CAPS second smaller label", "device":"circle or underline"} ], 3 entries total}`; try{ const text = await callClaude(system, `Topic: ${state.ideaTitle}\nNiche: ${state.niche}`); const json = parseJSON(text); state.thumbBlocks = json.thumbnails.map(t=>{ const censorPart = t.censor && t.censor.trim() ? `, ${t.censor.trim()}` : ''; const scene = `A ${t.subject} as the dominant hero cutout in high-contrast black and white halftone with rough scissor-cut edges and a red offset accent stroke${censorPart}, set on aged torn newsprint that bleeds off frame, a huge condensed all-caps torn-label headline reading ${t.headline} in black on a ${t.headlineColor} bar, a second smaller stamp-box label reading ${t.stamp}, one rough red marker ${t.device} around the key element, desaturated tan and ink palette with hot red and mustard accents, extreme contrast, poster-scale readability.`; return {meta:t, text:`${scene} ${THUMB_CLOSER}`}; }); renderThumbs(); }catch(e){ setCard(`<div class="kicker">Case File · Step 9</div><h2>Stamping thumbnails</h2>${errorHtml('Failed. '+e.message)}<div class="btn-row"><button class="primary" onclick="generateThumbs()">Try again</button></div>`); } } function renderThumbs(){ if(state.thumbBlocks.length === 0){ generateThumbs(); return; } const all = state.thumbBlocks.map(t=>t.text).join('\n\n'); setCard(` <div class="kicker">Case File · Step 9</div> <h2>Thumbnail prompts <span class="stampbox">DONE</span></h2> <div id="thumbList"></div> <div class="btn-row"> <button class="primary" onclick="downloadTxt(slugify(state.ideaTitle)+'-thumbnails.txt', thumbAllGlobal())">Download thumbnails.txt</button> <button class="ghost" onclick="copyText(thumbAllGlobal(), this)">Copy all</button> <button class="ghost" onclick="state.thumbBlocks=[]; generateThumbs();">Regenerate</button> <button class="ghost" onclick="resetEngine()">Start a new topic</button> </div> `); document.getElementById('thumbList').innerHTML = state.thumbBlocks.map((t,i)=>` <div class="thumb-card"> <div class="headline-tag"><span class="tag">${t.meta.headline}</span><span class="tag mustard">${t.meta.stamp}</span></div> <div style="font-size:13.5px; line-height:1.5;">${t.text}</div> <div class="btn-row" style="margin-top:8px;"><button class="ghost" onclick="copyText(\`${t.text.replace(/`/g,"'")}\`, this)">Copy prompt ${i+1}</button></div> </div> `).join(''); } function thumbAllGlobal(){ return state.thumbBlocks.map(t=>t.text).join('\n\n'); } function goNext(){ state.stageIdx = Math.min(state.stageIdx+1, STAGES.length-1); render(); } function resetEngine(){ state = {stageIdx:0, niche:null, ideas:[], ideaTitle:null, duration:null, script:'', scriptWords:0, beats:[], imageBlocks:[], imageScenes:[], videoMode:null, cinematicPreset:null, cinematicBlocks:[], thumbBlocks:[]}; render(); } render(); </script> </body> </html>

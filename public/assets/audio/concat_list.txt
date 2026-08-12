@@ -1,0 +1,6 @@
+file 'level_6_frame_1_audio.mp3'
+file 'level_6_frame_2_audio.mp3'
+file 'level_6_frame_3_audio.mp3'
+file 'level_6_frame_4_audio.mp3'
+file 'level_6_frame_5_audio.mp3'
+file 'level_6_frame_6_audio.mp3'

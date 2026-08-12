@@ -1,0 +1,44 @@
+{
+  "title": "The Secret World of Quantum Computing",
+  "topic": "Quantum Computing",
+  "target_duration_seconds": 30,
+  "scenes": [
+    {
+      "scene_index": 1,
+      "narration_text": "Behind the surface of modern society lies Quantum Computing, a hidden force that quietly reshaped history.",
+      "kinetic_heading": "THE ORIGIN OF QUANTUM COMPUTING",
+      "imagen_prompt": "A halftone black and white photograph cutout representing Quantum Computing with rough scissor-cut edges and a red offset stroke, set on aged newsprint, hand-cut documentary paper collage on aged newsprint and archival map surfaces, black and white halftone photograph cutouts with rough scissor-cut edges and offset accent strokes, torn paper edges, masking tape fragments, typewriter caption strips, rubber stamp marks, red string and brass pins, desaturated archival palette of tan (#EAE1C8), ink black (#1A1A1A), and halftone gray with hot red (#B92220) signal accent and mustard yellow (#BE8F2C), condensed bold headline lettering, visible print grain, flat documentary lighting with soft cutout drop shadows.",
+      "lower_third": "CASE FILE: QUANTUM COMPUTING ORIGINS",
+      "highlight_words": [
+        "Quantum",
+        "force",
+        "history"
+      ],
+      "transition_style": "ken_burns_in"
+    },
+    {
+      "scene_index": 2,
+      "narration_text": "What few people realize is that Quantum Computing relies on a single critical chokepoint controlled by only a handful of key players.",
+      "kinetic_heading": "THE CHOKEPOINT",
+      "imagen_prompt": "A torn paper document cutout showing a technical schematic diagram of Quantum Computing, red string pinned between key nodes, rubber stamp mark reading CONFIDENTIAL, hand-cut documentary paper collage on aged newsprint and archival map surfaces, black and white halftone photograph cutouts with rough scissor-cut edges and offset accent strokes, torn paper edges, masking tape fragments, typewriter caption strips, rubber stamp marks, red string and brass pins, desaturated archival palette of tan (#EAE1C8), ink black (#1A1A1A), and halftone gray with hot red (#B92220) signal accent and mustard yellow (#BE8F2C), condensed bold headline lettering, visible print grain, flat documentary lighting with soft cutout drop shadows.",
+      "lower_third": "ANALYSIS: MONOPOLY RISKS",
+      "highlight_words": [
+        "chokepoint",
+        "controlled"
+      ],
+      "transition_style": "paper_tear"
+    },
+    {
+      "scene_index": 3,
+      "narration_text": "When demand for Quantum Computing surged, global supply chains reached a breaking point, sparking unprecedented disruption worldwide.",
+      "kinetic_heading": "THE CRISIS",
+      "imagen_prompt": "A massive stat counter reading 100 BILLION in condensed bold red numbers, surrounded by black and white halftone industrial cutouts, hand-cut documentary paper collage on aged newsprint and archival map surfaces, black and white halftone photograph cutouts with rough scissor-cut edges and offset accent strokes, torn paper edges, masking tape fragments, typewriter caption strips, rubber stamp marks, red string and brass pins, desaturated archival palette of tan (#EAE1C8), ink black (#1A1A1A), and halftone gray with hot red (#B92220) signal accent and mustard yellow (#BE8F2C), condensed bold headline lettering, visible print grain, flat documentary lighting with soft cutout drop shadows.",
+      "lower_third": "IMPACT: QUANTUM COMPUTING DISRUPTIONS",
+      "highlight_words": [
+        "surged",
+        "disruption"
+      ],
+      "transition_style": "kinetic"
+    }
+  ]
+}

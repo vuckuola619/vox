@@ -1,0 +1,796 @@
+{
+  "title": "The Secret War for Quantum Supremacy - LEVEL 6: THE UNRESOLVED FUTURE",
+  "topic": "The Secret War for Quantum Supremacy",
+  "totalDurationSeconds": 56.55,
+  "totalFrames": 1732,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "masterAudioPath": "assets/audio/level_6_master.mp3",
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "narrationText": "Behind closed doors in elite research centers, humanity stands at a monumental crossroads: the era of silicon scaling is ending, but what comes next will redefine civilization.",
+      "kineticHeading": "THE CROSSROADS",
+      "lowerThird": "DOCUMENTARY CONCLUSION: MONUMENTAL ERA",
+      "highlightWords": [
+        "crossroads",
+        "silicon",
+        "civilization"
+      ],
+      "transitionStyle": "paper_tear",
+      "audioPath": "assets/audio/level_6_frame_1_audio.mp3",
+      "imagePath": "assets/images/level_6_frame_1_image.png",
+      "startTime": 0.0,
+      "endTime": 10.838,
+      "duration": 10.838,
+      "wordTimestamps": [
+        {
+          "word": "Behind",
+          "startTime": 0.1,
+          "endTime": 0.562
+        },
+        {
+          "word": "closed",
+          "startTime": 0.575,
+          "endTime": 0.95
+        },
+        {
+          "word": "doors",
+          "startTime": 0.963,
+          "endTime": 1.288
+        },
+        {
+          "word": "in",
+          "startTime": 1.3,
+          "endTime": 1.387
+        },
+        {
+          "word": "elite",
+          "startTime": 1.4,
+          "endTime": 1.7
+        },
+        {
+          "word": "research",
+          "startTime": 1.712,
+          "endTime": 2.175
+        },
+        {
+          "word": "centers",
+          "startTime": 2.188,
+          "endTime": 2.675
+        },
+        {
+          "word": "humanity",
+          "startTime": 2.925,
+          "endTime": 3.413
+        },
+        {
+          "word": "stands",
+          "startTime": 3.425,
+          "endTime": 3.825
+        },
+        {
+          "word": "at",
+          "startTime": 3.837,
+          "endTime": 3.913
+        },
+        {
+          "word": "a",
+          "startTime": 3.925,
+          "endTime": 3.975
+        },
+        {
+          "word": "monumental",
+          "startTime": 3.975,
+          "endTime": 4.562
+        },
+        {
+          "word": "crossroads",
+          "startTime": 4.575,
+          "endTime": 5.312
+        },
+        {
+          "word": "the",
+          "startTime": 5.588,
+          "endTime": 5.713
+        },
+        {
+          "word": "era",
+          "startTime": 5.725,
+          "endTime": 6.062
+        },
+        {
+          "word": "of",
+          "startTime": 6.075,
+          "endTime": 6.188
+        },
+        {
+          "word": "silicon",
+          "startTime": 6.2,
+          "endTime": 6.638
+        },
+        {
+          "word": "scaling",
+          "startTime": 6.65,
+          "endTime": 7.125
+        },
+        {
+          "word": "is",
+          "startTime": 7.138,
+          "endTime": 7.3
+        },
+        {
+          "word": "ending",
+          "startTime": 7.312,
+          "endTime": 7.675
+        },
+        {
+          "word": "but",
+          "startTime": 7.95,
+          "endTime": 8.088
+        },
+        {
+          "word": "what",
+          "startTime": 8.1,
+          "endTime": 8.275
+        },
+        {
+          "word": "comes",
+          "startTime": 8.287,
+          "endTime": 8.562
+        },
+        {
+          "word": "next",
+          "startTime": 8.575,
+          "endTime": 8.887
+        },
+        {
+          "word": "will",
+          "startTime": 8.9,
+          "endTime": 9.025
+        },
+        {
+          "word": "redefine",
+          "startTime": 9.037,
+          "endTime": 9.6
+        },
+        {
+          "word": "civilization",
+          "startTime": 9.613,
+          "endTime": 10.488
+        }
+      ]
+    },
+    {
+      "sceneIndex": 2,
+      "narrationText": "With single points of failure scattered across vulnerable geographical chokepoints, a single conflict or natural disaster could halt global computation overnight.",
+      "kineticHeading": "VULNERABLE CHOKEPOINTS",
+      "lowerThird": "SYSTEMIC RISK: GEOGRAPHIC CONCENTRATION",
+      "highlightWords": [
+        "vulnerable",
+        "chokepoints",
+        "overnight"
+      ],
+      "transitionStyle": "map_pin",
+      "audioPath": "assets/audio/level_6_frame_2_audio.mp3",
+      "imagePath": "assets/images/level_6_frame_2_image.png",
+      "startTime": 10.838,
+      "endTime": 20.2,
+      "duration": 9.362,
+      "wordTimestamps": [
+        {
+          "word": "With",
+          "startTime": 10.938,
+          "endTime": 11.163
+        },
+        {
+          "word": "single",
+          "startTime": 11.176,
+          "endTime": 11.538
+        },
+        {
+          "word": "points",
+          "startTime": 11.551,
+          "endTime": 11.913
+        },
+        {
+          "word": "of",
+          "startTime": 11.925,
+          "endTime": 12.026
+        },
+        {
+          "word": "failure",
+          "startTime": 12.038,
+          "endTime": 12.438
+        },
+        {
+          "word": "scattered",
+          "startTime": 12.451,
+          "endTime": 12.876
+        },
+        {
+          "word": "across",
+          "startTime": 12.888,
+          "endTime": 13.263
+        },
+        {
+          "word": "vulnerable",
+          "startTime": 13.276,
+          "endTime": 13.776
+        },
+        {
+          "word": "geographical",
+          "startTime": 13.788,
+          "endTime": 14.513
+        },
+        {
+          "word": "chokepoints",
+          "startTime": 14.526,
+          "endTime": 15.238
+        },
+        {
+          "word": "a",
+          "startTime": 15.5,
+          "endTime": 15.563
+        },
+        {
+          "word": "single",
+          "startTime": 15.575,
+          "endTime": 15.963
+        },
+        {
+          "word": "conflict",
+          "startTime": 15.976,
+          "endTime": 16.551
+        },
+        {
+          "word": "or",
+          "startTime": 16.563,
+          "endTime": 16.688
+        },
+        {
+          "word": "natural",
+          "startTime": 16.7,
+          "endTime": 17.113
+        },
+        {
+          "word": "disaster",
+          "startTime": 17.125,
+          "endTime": 17.738
+        },
+        {
+          "word": "could",
+          "startTime": 17.75,
+          "endTime": 17.888
+        },
+        {
+          "word": "halt",
+          "startTime": 17.9,
+          "endTime": 18.163
+        },
+        {
+          "word": "global",
+          "startTime": 18.176,
+          "endTime": 18.538
+        },
+        {
+          "word": "computation",
+          "startTime": 18.551,
+          "endTime": 19.263
+        },
+        {
+          "word": "overnight",
+          "startTime": 19.276,
+          "endTime": 19.85
+        }
+      ]
+    },
+    {
+      "sceneIndex": 3,
+      "narrationText": "Yet from artificial intelligence to sovereign cryptography, every modern miracle depends on these microscopic chips of purified sand.",
+      "kineticHeading": "THE SILICON ENGINE",
+      "lowerThird": "FOUNDATION: ARTIFICIAL INTELLIGENCE & CRITICAL DATA",
+      "highlightWords": [
+        "intelligence",
+        "cryptography",
+        "sand"
+      ],
+      "transitionStyle": "deep_diorama",
+      "audioPath": "assets/audio/level_6_frame_3_audio.mp3",
+      "imagePath": "assets/images/level_6_frame_3_image.png",
+      "startTime": 20.2,
+      "endTime": 28.238,
+      "duration": 8.038,
+      "wordTimestamps": [
+        {
+          "word": "Yet",
+          "startTime": 20.3,
+          "endTime": 20.538
+        },
+        {
+          "word": "from",
+          "startTime": 20.55,
+          "endTime": 20.725
+        },
+        {
+          "word": "artificial",
+          "startTime": 20.737,
+          "endTime": 21.313
+        },
+        {
+          "word": "intelligence",
+          "startTime": 21.325,
+          "endTime": 21.975
+        },
+        {
+          "word": "to",
+          "startTime": 21.988,
+          "endTime": 22.1
+        },
+        {
+          "word": "sovereign",
+          "startTime": 22.113,
+          "endTime": 22.588
+        },
+        {
+          "word": "cryptography",
+          "startTime": 22.6,
+          "endTime": 23.4
+        },
+        {
+          "word": "every",
+          "startTime": 23.7,
+          "endTime": 23.975
+        },
+        {
+          "word": "modern",
+          "startTime": 23.988,
+          "endTime": 24.362
+        },
+        {
+          "word": "miracle",
+          "startTime": 24.375,
+          "endTime": 24.775
+        },
+        {
+          "word": "depends",
+          "startTime": 24.788,
+          "endTime": 25.2
+        },
+        {
+          "word": "on",
+          "startTime": 25.213,
+          "endTime": 25.325
+        },
+        {
+          "word": "these",
+          "startTime": 25.338,
+          "endTime": 25.538
+        },
+        {
+          "word": "microscopic",
+          "startTime": 25.55,
+          "endTime": 26.275
+        },
+        {
+          "word": "chips",
+          "startTime": 26.288,
+          "endTime": 26.612
+        },
+        {
+          "word": "of",
+          "startTime": 26.625,
+          "endTime": 26.725
+        },
+        {
+          "word": "purified",
+          "startTime": 26.737,
+          "endTime": 27.338
+        },
+        {
+          "word": "sand",
+          "startTime": 27.35,
+          "endTime": 27.888
+        }
+      ]
+    },
+    {
+      "sceneIndex": 4,
+      "narrationText": "Scientists are racing to unlock quantum supremacy, building dilution refrigerators cooled to near absolute zero to harness the power of superposition.",
+      "kineticHeading": "QUANTUM SUPREMACY",
+      "lowerThird": "FRONTIER: CRYOGENIC QUBIT SUPERCOMPUTERS",
+      "highlightWords": [
+        "quantum",
+        "supremacy",
+        "superposition"
+      ],
+      "transitionStyle": "ken_burns_in",
+      "audioPath": "assets/audio/level_6_frame_4_audio.mp3",
+      "imagePath": "assets/images/level_6_frame_4_image.png",
+      "startTime": 28.238,
+      "endTime": 37.188,
+      "duration": 8.95,
+      "wordTimestamps": [
+        {
+          "word": "Scientists",
+          "startTime": 28.338,
+          "endTime": 29.05
+        },
+        {
+          "word": "are",
+          "startTime": 29.063,
+          "endTime": 29.226
+        },
+        {
+          "word": "racing",
+          "startTime": 29.238,
+          "endTime": 29.588
+        },
+        {
+          "word": "to",
+          "startTime": 29.601,
+          "endTime": 29.726
+        },
+        {
+          "word": "unlock",
+          "startTime": 29.738,
+          "endTime": 30.151
+        },
+        {
+          "word": "quantum",
+          "startTime": 30.163,
+          "endTime": 30.55
+        },
+        {
+          "word": "supremacy",
+          "startTime": 30.563,
+          "endTime": 31.225
+        },
+        {
+          "word": "building",
+          "startTime": 31.526,
+          "endTime": 31.876
+        },
+        {
+          "word": "dilution",
+          "startTime": 31.888,
+          "endTime": 32.35
+        },
+        {
+          "word": "refrigerators",
+          "startTime": 32.363,
+          "endTime": 33.1
+        },
+        {
+          "word": "cooled",
+          "startTime": 33.113,
+          "endTime": 33.451
+        },
+        {
+          "word": "to",
+          "startTime": 33.463,
+          "endTime": 33.55
+        },
+        {
+          "word": "near",
+          "startTime": 33.563,
+          "endTime": 33.863
+        },
+        {
+          "word": "absolute",
+          "startTime": 33.876,
+          "endTime": 34.376
+        },
+        {
+          "word": "zero",
+          "startTime": 34.388,
+          "endTime": 34.8
+        },
+        {
+          "word": "to",
+          "startTime": 34.813,
+          "endTime": 34.951
+        },
+        {
+          "word": "harness",
+          "startTime": 34.963,
+          "endTime": 35.376
+        },
+        {
+          "word": "the",
+          "startTime": 35.388,
+          "endTime": 35.488
+        },
+        {
+          "word": "power",
+          "startTime": 35.501,
+          "endTime": 35.863
+        },
+        {
+          "word": "of",
+          "startTime": 35.876,
+          "endTime": 35.963
+        },
+        {
+          "word": "superposition",
+          "startTime": 35.975,
+          "endTime": 36.838
+        }
+      ]
+    },
+    {
+      "sceneIndex": 5,
+      "narrationText": "Whoever controls the next computing paradigm will hold the master key to global economic power, national defense, and artificial superintelligence.",
+      "kineticHeading": "THE MASTER KEY",
+      "lowerThird": "STAKES: ECONOMIC POWER & SUPERINTELLIGENCE",
+      "highlightWords": [
+        "paradigm",
+        "master",
+        "superintelligence"
+      ],
+      "transitionStyle": "paper_tear",
+      "audioPath": "assets/audio/level_6_frame_5_audio.mp3",
+      "imagePath": "assets/images/level_6_frame_5_image.png",
+      "startTime": 37.188,
+      "endTime": 46.113,
+      "duration": 8.925,
+      "wordTimestamps": [
+        {
+          "word": "Whoever",
+          "startTime": 37.288,
+          "endTime": 37.725
+        },
+        {
+          "word": "controls",
+          "startTime": 37.738,
+          "endTime": 38.25
+        },
+        {
+          "word": "the",
+          "startTime": 38.263,
+          "endTime": 38.338
+        },
+        {
+          "word": "next",
+          "startTime": 38.351,
+          "endTime": 38.65
+        },
+        {
+          "word": "computing",
+          "startTime": 38.663,
+          "endTime": 39.126
+        },
+        {
+          "word": "paradigm",
+          "startTime": 39.138,
+          "endTime": 39.688
+        },
+        {
+          "word": "will",
+          "startTime": 39.701,
+          "endTime": 39.813
+        },
+        {
+          "word": "hold",
+          "startTime": 39.826,
+          "endTime": 40.063
+        },
+        {
+          "word": "the",
+          "startTime": 40.076,
+          "endTime": 40.126
+        },
+        {
+          "word": "master",
+          "startTime": 40.138,
+          "endTime": 40.563
+        },
+        {
+          "word": "key",
+          "startTime": 40.576,
+          "endTime": 40.851
+        },
+        {
+          "word": "to",
+          "startTime": 40.863,
+          "endTime": 40.976
+        },
+        {
+          "word": "global",
+          "startTime": 40.988,
+          "endTime": 41.413
+        },
+        {
+          "word": "economic",
+          "startTime": 41.425,
+          "endTime": 41.925
+        },
+        {
+          "word": "power",
+          "startTime": 41.938,
+          "endTime": 42.35
+        },
+        {
+          "word": "national",
+          "startTime": 42.613,
+          "endTime": 43.038
+        },
+        {
+          "word": "defense",
+          "startTime": 43.05,
+          "endTime": 43.588
+        },
+        {
+          "word": "and",
+          "startTime": 43.838,
+          "endTime": 44.013
+        },
+        {
+          "word": "artificial",
+          "startTime": 44.026,
+          "endTime": 44.576
+        },
+        {
+          "word": "superintelligence",
+          "startTime": 44.588,
+          "endTime": 45.763
+        }
+      ]
+    },
+    {
+      "sceneIndex": 6,
+      "narrationText": "The secret war for quantum supremacy has only just begun. The question is no longer if the paradigm will shift, but who will dominate the new era.",
+      "kineticHeading": "THE UNRESOLVED FUTURE",
+      "lowerThird": "FINAL QUESTION: THE NEXT ERA",
+      "highlightWords": [
+        "secret",
+        "supremacy",
+        "dominate"
+      ],
+      "transitionStyle": "deep_diorama",
+      "audioPath": "assets/audio/level_6_frame_6_audio.mp3",
+      "imagePath": "assets/images/level_6_frame_6_image.png",
+      "startTime": 46.113,
+      "endTime": 56.55,
+      "duration": 10.437,
+      "wordTimestamps": [
+        {
+          "word": "The",
+          "startTime": 46.213,
+          "endTime": 46.363
+        },
+        {
+          "word": "secret",
+          "startTime": 46.376,
+          "endTime": 46.788
+        },
+        {
+          "word": "war",
+          "startTime": 46.801,
+          "endTime": 47.101
+        },
+        {
+          "word": "for",
+          "startTime": 47.113,
+          "endTime": 47.263
+        },
+        {
+          "word": "quantum",
+          "startTime": 47.276,
+          "endTime": 47.688
+        },
+        {
+          "word": "supremacy",
+          "startTime": 47.7,
+          "endTime": 48.338
+        },
+        {
+          "word": "has",
+          "startTime": 48.35,
+          "endTime": 48.575
+        },
+        {
+          "word": "only",
+          "startTime": 48.588,
+          "endTime": 48.813
+        },
+        {
+          "word": "just",
+          "startTime": 48.825,
+          "endTime": 49.063
+        },
+        {
+          "word": "begun",
+          "startTime": 49.075,
+          "endTime": 49.538
+        },
+        {
+          "word": "The",
+          "startTime": 50.4,
+          "endTime": 50.525
+        },
+        {
+          "word": "question",
+          "startTime": 50.538,
+          "endTime": 51.013
+        },
+        {
+          "word": "is",
+          "startTime": 51.025,
+          "endTime": 51.15
+        },
+        {
+          "word": "no",
+          "startTime": 51.163,
+          "endTime": 51.338
+        },
+        {
+          "word": "longer",
+          "startTime": 51.35,
+          "endTime": 51.701
+        },
+        {
+          "word": "if",
+          "startTime": 51.713,
+          "endTime": 51.813
+        },
+        {
+          "word": "the",
+          "startTime": 51.826,
+          "endTime": 51.913
+        },
+        {
+          "word": "paradigm",
+          "startTime": 51.925,
+          "endTime": 52.475
+        },
+        {
+          "word": "will",
+          "startTime": 52.488,
+          "endTime": 52.613
+        },
+        {
+          "word": "shift",
+          "startTime": 52.626,
+          "endTime": 53.113
+        },
+        {
+          "word": "but",
+          "startTime": 53.363,
+          "endTime": 53.488
+        },
+        {
+          "word": "who",
+          "startTime": 53.501,
+          "endTime": 53.626
+        },
+        {
+          "word": "will",
+          "startTime": 53.638,
+          "endTime": 53.775
+        },
+        {
+          "word": "dominate",
+          "startTime": 53.788,
+          "endTime": 54.275
+        },
+        {
+          "word": "the",
+          "startTime": 54.288,
+          "endTime": 54.363
+        },
+        {
+          "word": "new",
+          "startTime": 54.375,
+          "endTime": 54.563
+        },
+        {
+          "word": "era",
+          "startTime": 54.576,
+          "endTime": 55.0
+        }
+      ]
+    }
+  ]
+}

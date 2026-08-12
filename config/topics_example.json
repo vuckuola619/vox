@@ -1,0 +1,19 @@
+{
+  "topics": [
+    {
+      "topic": "The Secret History of Cryptography",
+      "mode": "short",
+      "duration": 45
+    },
+    {
+      "topic": "How Submarine Cables Power the Internet",
+      "mode": "short",
+      "duration": 60
+    },
+    {
+      "topic": "The Geopolitics of Semiconductor Fabs",
+      "mode": "short",
+      "duration": 45
+    }
+  ]
+}

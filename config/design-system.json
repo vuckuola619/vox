@@ -1,0 +1,38 @@
+{
+  "name": "vox-studio-design-system",
+  "version": "1.0.0",
+  "palette": {
+    "paper": "#EAE1C8",
+    "paperDark": "#D7C79C",
+    "ink": "#1A1A1A",
+    "red": "#B92220",
+    "mustard": "#BE8F2C",
+    "gray": "#726C5E"
+  },
+  "typography": {
+    "headlineFont": "Oswald, sans-serif",
+    "bodyFont": "Zilla Slab, serif",
+    "typewriterFont": "Special Elite, monospace",
+    "scales": {
+      "h1": "46px",
+      "h2": "32px",
+      "body": "16px",
+      "caption": "14px"
+    }
+  },
+  "motion": {
+    "cadence": "stop-motion",
+    "easing": "stepped-twos",
+    "spring": {
+      "damping": 10,
+      "stiffness": 220
+    }
+  },
+  "antiSlopRules": [
+    "No generic AI illustration without context",
+    "No fake text or gibberish letters",
+    "No repeated transition across adjacent shots",
+    "Critical numbers and dates composited deterministically",
+    "Maximum 1 camera move type per clip"
+  ]
+}

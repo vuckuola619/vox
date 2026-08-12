@@ -1,0 +1,695 @@
+{
+  "title": "The Hidden Reality of The Global Microchip Race",
+  "topic": "The Global Microchip Race",
+  "totalDurationSeconds": 47.2,
+  "totalFrames": 1416,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "narrationText": "Every single day, millions of people around the world interact with The Global Microchip Race without understanding the massive infrastructure behind it.",
+      "kineticHeading": "THE HIDDEN WORLD OF THE GLOBAL MICROCHIP RACE",
+      "lowerThird": "EXPLAINER: THE GLOBAL MICROCHIP RACE",
+      "highlightWords": [
+        "millions",
+        "infrastructure"
+      ],
+      "transitionStyle": "ken_burns_in",
+      "audioPath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\audio\\scene_1_audio.mp3",
+      "imagePath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\images\\scene_1_image.png",
+      "startTime": 0.0,
+      "endTime": 9.0,
+      "duration": 9.0,
+      "wordTimestamps": [
+        {
+          "word": "Every",
+          "startTime": 0.2,
+          "endTime": 0.55
+        },
+        {
+          "word": "single",
+          "startTime": 0.6,
+          "endTime": 0.95
+        },
+        {
+          "word": "day,",
+          "startTime": 1.0,
+          "endTime": 1.35
+        },
+        {
+          "word": "millions",
+          "startTime": 1.4,
+          "endTime": 1.75
+        },
+        {
+          "word": "of",
+          "startTime": 1.8,
+          "endTime": 2.15
+        },
+        {
+          "word": "people",
+          "startTime": 2.2,
+          "endTime": 2.55
+        },
+        {
+          "word": "around",
+          "startTime": 2.6,
+          "endTime": 2.95
+        },
+        {
+          "word": "the",
+          "startTime": 3.0,
+          "endTime": 3.35
+        },
+        {
+          "word": "world",
+          "startTime": 3.4,
+          "endTime": 3.75
+        },
+        {
+          "word": "interact",
+          "startTime": 3.8,
+          "endTime": 4.15
+        },
+        {
+          "word": "with",
+          "startTime": 4.2,
+          "endTime": 4.55
+        },
+        {
+          "word": "The",
+          "startTime": 4.6,
+          "endTime": 4.95
+        },
+        {
+          "word": "Global",
+          "startTime": 5.0,
+          "endTime": 5.35
+        },
+        {
+          "word": "Microchip",
+          "startTime": 5.4,
+          "endTime": 5.75
+        },
+        {
+          "word": "Race",
+          "startTime": 5.8,
+          "endTime": 6.15
+        },
+        {
+          "word": "without",
+          "startTime": 6.2,
+          "endTime": 6.55
+        },
+        {
+          "word": "understanding",
+          "startTime": 6.6,
+          "endTime": 6.95
+        },
+        {
+          "word": "the",
+          "startTime": 7.0,
+          "endTime": 7.35
+        },
+        {
+          "word": "massive",
+          "startTime": 7.4,
+          "endTime": 7.75
+        },
+        {
+          "word": "infrastructure",
+          "startTime": 7.8,
+          "endTime": 8.15
+        },
+        {
+          "word": "behind",
+          "startTime": 8.2,
+          "endTime": 8.55
+        },
+        {
+          "word": "it.",
+          "startTime": 8.6,
+          "endTime": 8.95
+        }
+      ]
+    },
+    {
+      "sceneIndex": 2,
+      "narrationText": "To understand how we got here, we have to look back at the key breakthrough that transformed simple concepts into scalable systems.",
+      "kineticHeading": "THE ORIGINAL BREAKTHROUGH",
+      "lowerThird": "HISTORICAL EVOLUTION",
+      "highlightWords": [
+        "breakthrough",
+        "scalable"
+      ],
+      "transitionStyle": "document_cut",
+      "audioPath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\audio\\scene_2_audio.mp3",
+      "imagePath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\images\\scene_2_image.png",
+      "startTime": 9.0,
+      "endTime": 18.0,
+      "duration": 9.0,
+      "wordTimestamps": [
+        {
+          "word": "To",
+          "startTime": 9.2,
+          "endTime": 9.55
+        },
+        {
+          "word": "understand",
+          "startTime": 9.6,
+          "endTime": 9.95
+        },
+        {
+          "word": "how",
+          "startTime": 10.0,
+          "endTime": 10.35
+        },
+        {
+          "word": "we",
+          "startTime": 10.4,
+          "endTime": 10.75
+        },
+        {
+          "word": "got",
+          "startTime": 10.8,
+          "endTime": 11.15
+        },
+        {
+          "word": "here,",
+          "startTime": 11.2,
+          "endTime": 11.55
+        },
+        {
+          "word": "we",
+          "startTime": 11.6,
+          "endTime": 11.95
+        },
+        {
+          "word": "have",
+          "startTime": 12.0,
+          "endTime": 12.35
+        },
+        {
+          "word": "to",
+          "startTime": 12.4,
+          "endTime": 12.75
+        },
+        {
+          "word": "look",
+          "startTime": 12.8,
+          "endTime": 13.15
+        },
+        {
+          "word": "back",
+          "startTime": 13.2,
+          "endTime": 13.55
+        },
+        {
+          "word": "at",
+          "startTime": 13.6,
+          "endTime": 13.95
+        },
+        {
+          "word": "the",
+          "startTime": 14.0,
+          "endTime": 14.35
+        },
+        {
+          "word": "key",
+          "startTime": 14.4,
+          "endTime": 14.75
+        },
+        {
+          "word": "breakthrough",
+          "startTime": 14.8,
+          "endTime": 15.15
+        },
+        {
+          "word": "that",
+          "startTime": 15.2,
+          "endTime": 15.55
+        },
+        {
+          "word": "transformed",
+          "startTime": 15.6,
+          "endTime": 15.95
+        },
+        {
+          "word": "simple",
+          "startTime": 16.0,
+          "endTime": 16.35
+        },
+        {
+          "word": "concepts",
+          "startTime": 16.4,
+          "endTime": 16.75
+        },
+        {
+          "word": "into",
+          "startTime": 16.8,
+          "endTime": 17.15
+        },
+        {
+          "word": "scalable",
+          "startTime": 17.2,
+          "endTime": 17.55
+        },
+        {
+          "word": "systems.",
+          "startTime": 17.6,
+          "endTime": 17.95
+        }
+      ]
+    },
+    {
+      "sceneIndex": 3,
+      "narrationText": "Engineers and researchers discovered that by optimizing data flows, performance could be multiplied by order of magnitude.",
+      "kineticHeading": "EXPONENTIAL EFFICIENCY",
+      "lowerThird": "DATA METRICS & OPTIMIZATION",
+      "highlightWords": [
+        "optimizing",
+        "magnitude"
+      ],
+      "transitionStyle": "ken_burns_out",
+      "audioPath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\audio\\scene_3_audio.mp3",
+      "imagePath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\images\\scene_3_image.png",
+      "startTime": 18.0,
+      "endTime": 25.0,
+      "duration": 7.0,
+      "wordTimestamps": [
+        {
+          "word": "Engineers",
+          "startTime": 18.2,
+          "endTime": 18.55
+        },
+        {
+          "word": "and",
+          "startTime": 18.6,
+          "endTime": 18.95
+        },
+        {
+          "word": "researchers",
+          "startTime": 19.0,
+          "endTime": 19.35
+        },
+        {
+          "word": "discovered",
+          "startTime": 19.4,
+          "endTime": 19.75
+        },
+        {
+          "word": "that",
+          "startTime": 19.8,
+          "endTime": 20.15
+        },
+        {
+          "word": "by",
+          "startTime": 20.2,
+          "endTime": 20.55
+        },
+        {
+          "word": "optimizing",
+          "startTime": 20.6,
+          "endTime": 20.95
+        },
+        {
+          "word": "data",
+          "startTime": 21.0,
+          "endTime": 21.35
+        },
+        {
+          "word": "flows,",
+          "startTime": 21.4,
+          "endTime": 21.75
+        },
+        {
+          "word": "performance",
+          "startTime": 21.8,
+          "endTime": 22.15
+        },
+        {
+          "word": "could",
+          "startTime": 22.2,
+          "endTime": 22.55
+        },
+        {
+          "word": "be",
+          "startTime": 22.6,
+          "endTime": 22.95
+        },
+        {
+          "word": "multiplied",
+          "startTime": 23.0,
+          "endTime": 23.35
+        },
+        {
+          "word": "by",
+          "startTime": 23.4,
+          "endTime": 23.75
+        },
+        {
+          "word": "order",
+          "startTime": 23.8,
+          "endTime": 24.15
+        },
+        {
+          "word": "of",
+          "startTime": 24.2,
+          "endTime": 24.55
+        },
+        {
+          "word": "magnitude.",
+          "startTime": 24.6,
+          "endTime": 24.95
+        }
+      ]
+    },
+    {
+      "sceneIndex": 4,
+      "narrationText": "Yet this rapid advancement brings critical challenges regarding resource allocation, security, and global supply chain dependencies.",
+      "kineticHeading": "THE SUPPLY CHAIN BOTTLENECK",
+      "lowerThird": "GLOBAL BOTTLENECKS",
+      "highlightWords": [
+        "advancement",
+        "security",
+        "supply"
+      ],
+      "transitionStyle": "split_screen",
+      "audioPath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\audio\\scene_4_audio.mp3",
+      "imagePath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\images\\scene_4_image.png",
+      "startTime": 25.0,
+      "endTime": 31.6,
+      "duration": 6.6,
+      "wordTimestamps": [
+        {
+          "word": "Yet",
+          "startTime": 25.2,
+          "endTime": 25.55
+        },
+        {
+          "word": "this",
+          "startTime": 25.6,
+          "endTime": 25.95
+        },
+        {
+          "word": "rapid",
+          "startTime": 26.0,
+          "endTime": 26.35
+        },
+        {
+          "word": "advancement",
+          "startTime": 26.4,
+          "endTime": 26.75
+        },
+        {
+          "word": "brings",
+          "startTime": 26.8,
+          "endTime": 27.15
+        },
+        {
+          "word": "critical",
+          "startTime": 27.2,
+          "endTime": 27.55
+        },
+        {
+          "word": "challenges",
+          "startTime": 27.6,
+          "endTime": 27.95
+        },
+        {
+          "word": "regarding",
+          "startTime": 28.0,
+          "endTime": 28.35
+        },
+        {
+          "word": "resource",
+          "startTime": 28.4,
+          "endTime": 28.75
+        },
+        {
+          "word": "allocation,",
+          "startTime": 28.8,
+          "endTime": 29.15
+        },
+        {
+          "word": "security,",
+          "startTime": 29.2,
+          "endTime": 29.55
+        },
+        {
+          "word": "and",
+          "startTime": 29.6,
+          "endTime": 29.95
+        },
+        {
+          "word": "global",
+          "startTime": 30.0,
+          "endTime": 30.35
+        },
+        {
+          "word": "supply",
+          "startTime": 30.4,
+          "endTime": 30.75
+        },
+        {
+          "word": "chain",
+          "startTime": 30.8,
+          "endTime": 31.15
+        },
+        {
+          "word": "dependencies.",
+          "startTime": 31.2,
+          "endTime": 31.55
+        }
+      ]
+    },
+    {
+      "sceneIndex": 5,
+      "narrationText": "Leading tech nations and companies are now investing hundreds of billions to secure control over this critical modern technology.",
+      "kineticHeading": "CAPITAL & GEOPOLITICS",
+      "lowerThird": "BILLION DOLLAR INVESTMENTS",
+      "highlightWords": [
+        "investing",
+        "geopolitics"
+      ],
+      "transitionStyle": "ken_burns_in",
+      "audioPath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\audio\\scene_5_audio.mp3",
+      "imagePath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\images\\scene_5_image.png",
+      "startTime": 31.6,
+      "endTime": 39.4,
+      "duration": 7.8,
+      "wordTimestamps": [
+        {
+          "word": "Leading",
+          "startTime": 31.8,
+          "endTime": 32.15
+        },
+        {
+          "word": "tech",
+          "startTime": 32.2,
+          "endTime": 32.55
+        },
+        {
+          "word": "nations",
+          "startTime": 32.6,
+          "endTime": 32.95
+        },
+        {
+          "word": "and",
+          "startTime": 33.0,
+          "endTime": 33.35
+        },
+        {
+          "word": "companies",
+          "startTime": 33.4,
+          "endTime": 33.75
+        },
+        {
+          "word": "are",
+          "startTime": 33.8,
+          "endTime": 34.15
+        },
+        {
+          "word": "now",
+          "startTime": 34.2,
+          "endTime": 34.55
+        },
+        {
+          "word": "investing",
+          "startTime": 34.6,
+          "endTime": 34.95
+        },
+        {
+          "word": "hundreds",
+          "startTime": 35.0,
+          "endTime": 35.35
+        },
+        {
+          "word": "of",
+          "startTime": 35.4,
+          "endTime": 35.75
+        },
+        {
+          "word": "billions",
+          "startTime": 35.8,
+          "endTime": 36.15
+        },
+        {
+          "word": "to",
+          "startTime": 36.2,
+          "endTime": 36.55
+        },
+        {
+          "word": "secure",
+          "startTime": 36.6,
+          "endTime": 36.95
+        },
+        {
+          "word": "control",
+          "startTime": 37.0,
+          "endTime": 37.35
+        },
+        {
+          "word": "over",
+          "startTime": 37.4,
+          "endTime": 37.75
+        },
+        {
+          "word": "this",
+          "startTime": 37.8,
+          "endTime": 38.15
+        },
+        {
+          "word": "critical",
+          "startTime": 38.2,
+          "endTime": 38.55
+        },
+        {
+          "word": "modern",
+          "startTime": 38.6,
+          "endTime": 38.95
+        },
+        {
+          "word": "technology.",
+          "startTime": 39.0,
+          "endTime": 39.35
+        }
+      ]
+    },
+    {
+      "sceneIndex": 6,
+      "narrationText": "As we look to the next decade, the decisions made today will redefine how humanity builds, communicates, and innovates.",
+      "kineticHeading": "THE FUTURE LANDSCAPE",
+      "lowerThird": "NEXT-GEN HORIZONS",
+      "highlightWords": [
+        "redefine",
+        "innovates"
+      ],
+      "transitionStyle": "document_cut",
+      "audioPath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\audio\\scene_6_audio.mp3",
+      "imagePath": "C:\\Users\\bati-\\Documents\\AG-VOX\\assets\\images\\scene_6_image.png",
+      "startTime": 39.4,
+      "endTime": 47.2,
+      "duration": 7.8,
+      "wordTimestamps": [
+        {
+          "word": "As",
+          "startTime": 39.6,
+          "endTime": 39.95
+        },
+        {
+          "word": "we",
+          "startTime": 40.0,
+          "endTime": 40.35
+        },
+        {
+          "word": "look",
+          "startTime": 40.4,
+          "endTime": 40.75
+        },
+        {
+          "word": "to",
+          "startTime": 40.8,
+          "endTime": 41.15
+        },
+        {
+          "word": "the",
+          "startTime": 41.2,
+          "endTime": 41.55
+        },
+        {
+          "word": "next",
+          "startTime": 41.6,
+          "endTime": 41.95
+        },
+        {
+          "word": "decade,",
+          "startTime": 42.0,
+          "endTime": 42.35
+        },
+        {
+          "word": "the",
+          "startTime": 42.4,
+          "endTime": 42.75
+        },
+        {
+          "word": "decisions",
+          "startTime": 42.8,
+          "endTime": 43.15
+        },
+        {
+          "word": "made",
+          "startTime": 43.2,
+          "endTime": 43.55
+        },
+        {
+          "word": "today",
+          "startTime": 43.6,
+          "endTime": 43.95
+        },
+        {
+          "word": "will",
+          "startTime": 44.0,
+          "endTime": 44.35
+        },
+        {
+          "word": "redefine",
+          "startTime": 44.4,
+          "endTime": 44.75
+        },
+        {
+          "word": "how",
+          "startTime": 44.8,
+          "endTime": 45.15
+        },
+        {
+          "word": "humanity",
+          "startTime": 45.2,
+          "endTime": 45.55
+        },
+        {
+          "word": "builds,",
+          "startTime": 45.6,
+          "endTime": 45.95
+        },
+        {
+          "word": "communicates,",
+          "startTime": 46.0,
+          "endTime": 46.35
+        },
+        {
+          "word": "and",
+          "startTime": 46.4,
+          "endTime": 46.75
+        },
+        {
+          "word": "innovates.",
+          "startTime": 46.8,
+          "endTime": 47.15
+        }
+      ]
+    }
+  ]
+}

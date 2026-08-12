@@ -1,0 +1,27 @@
+# Environment & Secrets
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.pytest_cache/
+
+# Node & Remotion
+node_modules/
+.remotion/
+build/
+
+# Generated Media Outputs & Large Binary Dumps
+output/*.mp4
+out/
+public/assets/audio/*.mp3
+public/assets/images/*.png
+public/assets/images/*.jpg
+
+# OS Junk
+.DS_Store
+Thumbs.db

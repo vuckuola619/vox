@@ -1,0 +1,1053 @@
+{
+  "title": "Why The Strait of Malacca Holds 60% of World Trade (And How It Could Collapse) - Level 8: The Physics of Collapse & Suez Parallels",
+  "topic": "Why The Strait of Malacca Holds 60% of World Trade (And How It Could Collapse)",
+  "levelNumber": 8,
+  "levelTitle": "The Physics of Collapse & Suez Parallels",
+  "totalDurationSeconds": 72.73,
+  "totalFrames": 2181,
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "masterAudioPath": "assets/audio/level_8_master.mp3",
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "globalFrameIndex": 57,
+      "narrationText": "While geopolitical blockades represent a military threat, physical accidents and environmental disasters pose a far more immediate risk of closing the strait.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 1",
+      "prompt": "Dramatic vector visual of a cargo ship listing in stormy seas, warning aura, 16:9",
+      "audioPath": "assets/audio/level_8_frame_1_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_1_image.png",
+      "startTime": 0.0,
+      "endTime": 9.58,
+      "duration": 9.58,
+      "wordTimestamps": [
+        {
+          "word": "While",
+          "startTime": 0.1,
+          "endTime": 0.425
+        },
+        {
+          "word": "geopolitical",
+          "startTime": 0.438,
+          "endTime": 1.2
+        },
+        {
+          "word": "blockades",
+          "startTime": 1.212,
+          "endTime": 1.75
+        },
+        {
+          "word": "represent",
+          "startTime": 1.762,
+          "endTime": 2.212
+        },
+        {
+          "word": "a",
+          "startTime": 2.225,
+          "endTime": 2.275
+        },
+        {
+          "word": "military",
+          "startTime": 2.288,
+          "endTime": 2.812
+        },
+        {
+          "word": "threat",
+          "startTime": 2.825,
+          "endTime": 3.188
+        },
+        {
+          "word": "physical",
+          "startTime": 3.487,
+          "endTime": 3.925
+        },
+        {
+          "word": "accidents",
+          "startTime": 3.938,
+          "endTime": 4.475
+        },
+        {
+          "word": "and",
+          "startTime": 4.575,
+          "endTime": 4.662
+        },
+        {
+          "word": "environmental",
+          "startTime": 4.675,
+          "endTime": 5.275
+        },
+        {
+          "word": "disasters",
+          "startTime": 5.287,
+          "endTime": 5.9
+        },
+        {
+          "word": "pose",
+          "startTime": 5.912,
+          "endTime": 6.213
+        },
+        {
+          "word": "a",
+          "startTime": 6.225,
+          "endTime": 6.3
+        },
+        {
+          "word": "far",
+          "startTime": 6.312,
+          "endTime": 6.612
+        },
+        {
+          "word": "more",
+          "startTime": 6.625,
+          "endTime": 6.862
+        },
+        {
+          "word": "immediate",
+          "startTime": 6.875,
+          "endTime": 7.312
+        },
+        {
+          "word": "risk",
+          "startTime": 7.325,
+          "endTime": 7.6
+        },
+        {
+          "word": "of",
+          "startTime": 7.612,
+          "endTime": 7.713
+        },
+        {
+          "word": "closing",
+          "startTime": 7.725,
+          "endTime": 8.125
+        },
+        {
+          "word": "the",
+          "startTime": 8.137,
+          "endTime": 8.213
+        },
+        {
+          "word": "strait",
+          "startTime": 8.225,
+          "endTime": 8.7
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "hazard_intro",
+        "focus": "Physical & Accidental Blockade"
+      }
+    },
+    {
+      "sceneIndex": 2,
+      "globalFrameIndex": 58,
+      "narrationText": "The world received a terrifying preview of maritime choke point fragility in March twenty twenty-one, when the Ever Given wedged in the Suez Canal.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 2",
+      "prompt": "Editorial illustration of the giant container ship Ever Given stuck diagonally across Suez Canal, paper cut art, 16:9",
+      "audioPath": "assets/audio/level_8_frame_2_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_2_image.png",
+      "startTime": 9.58,
+      "endTime": 18.41,
+      "duration": 8.83,
+      "wordTimestamps": [
+        {
+          "word": "The",
+          "startTime": 9.68,
+          "endTime": 9.817
+        },
+        {
+          "word": "world",
+          "startTime": 9.83,
+          "endTime": 10.117
+        },
+        {
+          "word": "received",
+          "startTime": 10.13,
+          "endTime": 10.53
+        },
+        {
+          "word": "a",
+          "startTime": 10.543,
+          "endTime": 10.605
+        },
+        {
+          "word": "terrifying",
+          "startTime": 10.618,
+          "endTime": 11.243
+        },
+        {
+          "word": "preview",
+          "startTime": 11.255,
+          "endTime": 11.667
+        },
+        {
+          "word": "of",
+          "startTime": 11.68,
+          "endTime": 11.792
+        },
+        {
+          "word": "maritime",
+          "startTime": 11.805,
+          "endTime": 12.392
+        },
+        {
+          "word": "choke",
+          "startTime": 12.405,
+          "endTime": 12.718
+        },
+        {
+          "word": "point",
+          "startTime": 12.73,
+          "endTime": 12.98
+        },
+        {
+          "word": "fragility",
+          "startTime": 12.993,
+          "endTime": 13.567
+        },
+        {
+          "word": "in",
+          "startTime": 13.58,
+          "endTime": 13.668
+        },
+        {
+          "word": "March",
+          "startTime": 13.68,
+          "endTime": 14.005
+        },
+        {
+          "word": "twenty",
+          "startTime": 14.018,
+          "endTime": 14.305
+        },
+        {
+          "word": "twenty-one",
+          "startTime": 14.317,
+          "endTime": 14.892
+        },
+        {
+          "word": "when",
+          "startTime": 15.218,
+          "endTime": 15.343
+        },
+        {
+          "word": "the",
+          "startTime": 15.355,
+          "endTime": 15.43
+        },
+        {
+          "word": "Ever",
+          "startTime": 15.442,
+          "endTime": 15.73
+        },
+        {
+          "word": "Given",
+          "startTime": 15.742,
+          "endTime": 16.005
+        },
+        {
+          "word": "wedged",
+          "startTime": 16.018,
+          "endTime": 16.392
+        },
+        {
+          "word": "in",
+          "startTime": 16.405,
+          "endTime": 16.48
+        },
+        {
+          "word": "the",
+          "startTime": 16.492,
+          "endTime": 16.567
+        },
+        {
+          "word": "Suez",
+          "startTime": 16.58,
+          "endTime": 16.992
+        },
+        {
+          "word": "Canal",
+          "startTime": 17.005,
+          "endTime": 17.543
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "suez_recap",
+        "ship": "Ever Given",
+        "duration": "6 Days"
+      }
+    },
+    {
+      "sceneIndex": 3,
+      "globalFrameIndex": 59,
+      "narrationText": "That single six-day blockage in Egypt held up an estimated fifty-nine billion dollars in trade, creating global supply chain chaos for months.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 3",
+      "prompt": "Global map showing trade impact ripple effects radiating from Suez Canal across Europe and Asia, 16:9",
+      "audioPath": "assets/audio/level_8_frame_3_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_3_image.png",
+      "startTime": 18.41,
+      "endTime": 27.58,
+      "duration": 9.17,
+      "wordTimestamps": [
+        {
+          "word": "That",
+          "startTime": 18.51,
+          "endTime": 18.785
+        },
+        {
+          "word": "single",
+          "startTime": 18.798,
+          "endTime": 19.172
+        },
+        {
+          "word": "six-day",
+          "startTime": 19.185,
+          "endTime": 19.672
+        },
+        {
+          "word": "blockage",
+          "startTime": 19.685,
+          "endTime": 20.185
+        },
+        {
+          "word": "in",
+          "startTime": 20.198,
+          "endTime": 20.335
+        },
+        {
+          "word": "Egypt",
+          "startTime": 20.348,
+          "endTime": 20.722
+        },
+        {
+          "word": "held",
+          "startTime": 20.735,
+          "endTime": 20.972
+        },
+        {
+          "word": "up",
+          "startTime": 20.985,
+          "endTime": 21.098
+        },
+        {
+          "word": "an",
+          "startTime": 21.11,
+          "endTime": 21.222
+        },
+        {
+          "word": "estimated",
+          "startTime": 21.235,
+          "endTime": 21.76
+        },
+        {
+          "word": "fifty-nine",
+          "startTime": 21.772,
+          "endTime": 22.385
+        },
+        {
+          "word": "billion",
+          "startTime": 22.397,
+          "endTime": 22.772
+        },
+        {
+          "word": "dollars",
+          "startTime": 22.785,
+          "endTime": 23.173
+        },
+        {
+          "word": "in",
+          "startTime": 23.185,
+          "endTime": 23.285
+        },
+        {
+          "word": "trade",
+          "startTime": 23.298,
+          "endTime": 23.697
+        },
+        {
+          "word": "creating",
+          "startTime": 24.01,
+          "endTime": 24.435
+        },
+        {
+          "word": "global",
+          "startTime": 24.447,
+          "endTime": 24.772
+        },
+        {
+          "word": "supply",
+          "startTime": 24.785,
+          "endTime": 25.197
+        },
+        {
+          "word": "chain",
+          "startTime": 25.21,
+          "endTime": 25.572
+        },
+        {
+          "word": "chaos",
+          "startTime": 25.585,
+          "endTime": 26.072
+        },
+        {
+          "word": "for",
+          "startTime": 26.085,
+          "endTime": 26.21
+        },
+        {
+          "word": "months",
+          "startTime": 26.222,
+          "endTime": 26.697
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "suez_cost",
+        "daily_damage": "$9.6 Billion / Day"
+      }
+    },
+    {
+      "sceneIndex": 4,
+      "globalFrameIndex": 60,
+      "narrationText": "However, maritime logistics experts warn that a major grounding or collision in the Strait of Malacca would be significantly worse than Suez.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 4",
+      "prompt": "Comparative graphic pitting Suez Canal vs Malacca Strait trade volumes and channel width, 16:9",
+      "audioPath": "assets/audio/level_8_frame_4_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_4_image.png",
+      "startTime": 27.58,
+      "endTime": 36.1,
+      "duration": 8.52,
+      "wordTimestamps": [
+        {
+          "word": "However",
+          "startTime": 27.68,
+          "endTime": 28.18
+        },
+        {
+          "word": "maritime",
+          "startTime": 28.38,
+          "endTime": 28.943
+        },
+        {
+          "word": "logistics",
+          "startTime": 28.955,
+          "endTime": 29.493
+        },
+        {
+          "word": "experts",
+          "startTime": 29.505,
+          "endTime": 29.955
+        },
+        {
+          "word": "warn",
+          "startTime": 29.968,
+          "endTime": 30.317
+        },
+        {
+          "word": "that",
+          "startTime": 30.33,
+          "endTime": 30.442
+        },
+        {
+          "word": "a",
+          "startTime": 30.455,
+          "endTime": 30.505
+        },
+        {
+          "word": "major",
+          "startTime": 30.505,
+          "endTime": 30.892
+        },
+        {
+          "word": "grounding",
+          "startTime": 30.905,
+          "endTime": 31.368
+        },
+        {
+          "word": "or",
+          "startTime": 31.38,
+          "endTime": 31.505
+        },
+        {
+          "word": "collision",
+          "startTime": 31.518,
+          "endTime": 31.992
+        },
+        {
+          "word": "in",
+          "startTime": 32.005,
+          "endTime": 32.067
+        },
+        {
+          "word": "the",
+          "startTime": 32.08,
+          "endTime": 32.155
+        },
+        {
+          "word": "Strait",
+          "startTime": 32.168,
+          "endTime": 32.505
+        },
+        {
+          "word": "of",
+          "startTime": 32.518,
+          "endTime": 32.58
+        },
+        {
+          "word": "Malacca",
+          "startTime": 32.593,
+          "endTime": 33.105
+        },
+        {
+          "word": "would",
+          "startTime": 33.117,
+          "endTime": 33.268
+        },
+        {
+          "word": "be",
+          "startTime": 33.28,
+          "endTime": 33.38
+        },
+        {
+          "word": "significantly",
+          "startTime": 33.392,
+          "endTime": 34.067
+        },
+        {
+          "word": "worse",
+          "startTime": 34.08,
+          "endTime": 34.392
+        },
+        {
+          "word": "than",
+          "startTime": 34.405,
+          "endTime": 34.555
+        },
+        {
+          "word": "Suez",
+          "startTime": 34.567,
+          "endTime": 35.218
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "severity_index",
+        "suez_risk": "High",
+        "malacca_risk": "CRITICAL"
+      }
+    },
+    {
+      "sceneIndex": 5,
+      "globalFrameIndex": 61,
+      "narrationText": "Because the Suez Canal is an artificial ditch with soft sandbanks, tugboats were eventually able to dig out the Ever Given's bow.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 5",
+      "prompt": "Tugboats pulling a container ship in a narrow canal, dredging machinery working at bow, 16:9",
+      "audioPath": "assets/audio/level_8_frame_5_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_5_image.png",
+      "startTime": 36.1,
+      "endTime": 44.28,
+      "duration": 8.18,
+      "wordTimestamps": [
+        {
+          "word": "Because",
+          "startTime": 36.2,
+          "endTime": 36.575
+        },
+        {
+          "word": "the",
+          "startTime": 36.587,
+          "endTime": 36.7
+        },
+        {
+          "word": "Suez",
+          "startTime": 36.713,
+          "endTime": 37.162
+        },
+        {
+          "word": "Canal",
+          "startTime": 37.175,
+          "endTime": 37.65
+        },
+        {
+          "word": "is",
+          "startTime": 37.662,
+          "endTime": 37.788
+        },
+        {
+          "word": "an",
+          "startTime": 37.8,
+          "endTime": 37.9
+        },
+        {
+          "word": "artificial",
+          "startTime": 37.912,
+          "endTime": 38.488
+        },
+        {
+          "word": "ditch",
+          "startTime": 38.5,
+          "endTime": 38.788
+        },
+        {
+          "word": "with",
+          "startTime": 38.8,
+          "endTime": 38.95
+        },
+        {
+          "word": "soft",
+          "startTime": 38.962,
+          "endTime": 39.312
+        },
+        {
+          "word": "sandbanks",
+          "startTime": 39.325,
+          "endTime": 40.062
+        },
+        {
+          "word": "tugboats",
+          "startTime": 40.3,
+          "endTime": 40.837
+        },
+        {
+          "word": "were",
+          "startTime": 40.85,
+          "endTime": 40.95
+        },
+        {
+          "word": "eventually",
+          "startTime": 40.962,
+          "endTime": 41.462
+        },
+        {
+          "word": "able",
+          "startTime": 41.475,
+          "endTime": 41.7
+        },
+        {
+          "word": "to",
+          "startTime": 41.712,
+          "endTime": 41.8
+        },
+        {
+          "word": "dig",
+          "startTime": 41.813,
+          "endTime": 42.075
+        },
+        {
+          "word": "out",
+          "startTime": 42.087,
+          "endTime": 42.25
+        },
+        {
+          "word": "the",
+          "startTime": 42.262,
+          "endTime": 42.35
+        },
+        {
+          "word": "Ever",
+          "startTime": 42.363,
+          "endTime": 42.65
+        },
+        {
+          "word": "Given's",
+          "startTime": 42.662,
+          "endTime": 43.012
+        },
+        {
+          "word": "bow",
+          "startTime": 43.025,
+          "endTime": 43.4
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "salvage_note",
+        "method": "Soft Sand Dredging"
+      }
+    },
+    {
+      "sceneIndex": 6,
+      "globalFrameIndex": 62,
+      "narrationText": "In contrast, parts of the Phillips Channel feature hard granite rock seabed outcroppings. A grounding at high speed could breach a vessel's hull instantly.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 6",
+      "prompt": "Underwater bathymetric cross-section showing jagged granite rock outcropping striking a ship hull, 16:9",
+      "audioPath": "assets/audio/level_8_frame_6_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_6_image.png",
+      "startTime": 44.28,
+      "endTime": 54.58,
+      "duration": 10.3,
+      "wordTimestamps": [
+        {
+          "word": "In",
+          "startTime": 44.38,
+          "endTime": 44.567
+        },
+        {
+          "word": "contrast",
+          "startTime": 44.58,
+          "endTime": 45.305
+        },
+        {
+          "word": "parts",
+          "startTime": 45.518,
+          "endTime": 45.792
+        },
+        {
+          "word": "of",
+          "startTime": 45.805,
+          "endTime": 45.88
+        },
+        {
+          "word": "the",
+          "startTime": 45.893,
+          "endTime": 45.98
+        },
+        {
+          "word": "Phillips",
+          "startTime": 45.992,
+          "endTime": 46.43
+        },
+        {
+          "word": "Channel",
+          "startTime": 46.443,
+          "endTime": 46.805
+        },
+        {
+          "word": "feature",
+          "startTime": 46.818,
+          "endTime": 47.218
+        },
+        {
+          "word": "hard",
+          "startTime": 47.23,
+          "endTime": 47.48
+        },
+        {
+          "word": "granite",
+          "startTime": 47.492,
+          "endTime": 47.867
+        },
+        {
+          "word": "rock",
+          "startTime": 47.88,
+          "endTime": 48.142
+        },
+        {
+          "word": "seabed",
+          "startTime": 48.155,
+          "endTime": 48.618
+        },
+        {
+          "word": "outcroppings",
+          "startTime": 48.63,
+          "endTime": 49.48
+        },
+        {
+          "word": "A",
+          "startTime": 50.342,
+          "endTime": 50.468
+        },
+        {
+          "word": "grounding",
+          "startTime": 50.48,
+          "endTime": 50.98
+        },
+        {
+          "word": "at",
+          "startTime": 50.993,
+          "endTime": 51.067
+        },
+        {
+          "word": "high",
+          "startTime": 51.08,
+          "endTime": 51.33
+        },
+        {
+          "word": "speed",
+          "startTime": 51.342,
+          "endTime": 51.78
+        },
+        {
+          "word": "could",
+          "startTime": 51.793,
+          "endTime": 51.98
+        },
+        {
+          "word": "breach",
+          "startTime": 51.993,
+          "endTime": 52.255
+        },
+        {
+          "word": "a",
+          "startTime": 52.267,
+          "endTime": 52.33
+        },
+        {
+          "word": "vessel's",
+          "startTime": 52.342,
+          "endTime": 52.768
+        },
+        {
+          "word": "hull",
+          "startTime": 52.78,
+          "endTime": 53.042
+        },
+        {
+          "word": "instantly",
+          "startTime": 53.055,
+          "endTime": 53.705
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "seabed_composition",
+        "rock": "Granite Outcroppings"
+      }
+    },
+    {
+      "sceneIndex": 7,
+      "globalFrameIndex": 63,
+      "narrationText": "If an Ultra-Large Container Vessel carrying twenty-four thousand containers sank or grounded in the narrow shipping lane, salvage operations could take months.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 7",
+      "prompt": "Salvage crane vessel operating next to a partially submerged mega container ship in a narrow strait, 16:9",
+      "audioPath": "assets/audio/level_8_frame_7_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_7_image.png",
+      "startTime": 54.58,
+      "endTime": 63.92,
+      "duration": 9.34,
+      "wordTimestamps": [
+        {
+          "word": "If",
+          "startTime": 54.68,
+          "endTime": 54.843
+        },
+        {
+          "word": "an",
+          "startTime": 54.855,
+          "endTime": 54.992
+        },
+        {
+          "word": "Ultra-Large",
+          "startTime": 55.005,
+          "endTime": 55.618
+        },
+        {
+          "word": "Container",
+          "startTime": 55.63,
+          "endTime": 56.092
+        },
+        {
+          "word": "Vessel",
+          "startTime": 56.105,
+          "endTime": 56.493
+        },
+        {
+          "word": "carrying",
+          "startTime": 56.505,
+          "endTime": 56.93
+        },
+        {
+          "word": "twenty-four",
+          "startTime": 56.942,
+          "endTime": 57.455
+        },
+        {
+          "word": "thousand",
+          "startTime": 57.468,
+          "endTime": 57.892
+        },
+        {
+          "word": "containers",
+          "startTime": 57.905,
+          "endTime": 58.48
+        },
+        {
+          "word": "sank",
+          "startTime": 58.493,
+          "endTime": 58.843
+        },
+        {
+          "word": "or",
+          "startTime": 58.855,
+          "endTime": 58.992
+        },
+        {
+          "word": "grounded",
+          "startTime": 59.005,
+          "endTime": 59.442
+        },
+        {
+          "word": "in",
+          "startTime": 59.455,
+          "endTime": 59.53
+        },
+        {
+          "word": "the",
+          "startTime": 59.543,
+          "endTime": 59.605
+        },
+        {
+          "word": "narrow",
+          "startTime": 59.617,
+          "endTime": 59.93
+        },
+        {
+          "word": "shipping",
+          "startTime": 59.942,
+          "endTime": 60.343
+        },
+        {
+          "word": "lane",
+          "startTime": 60.355,
+          "endTime": 60.668
+        },
+        {
+          "word": "salvage",
+          "startTime": 60.992,
+          "endTime": 61.418
+        },
+        {
+          "word": "operations",
+          "startTime": 61.43,
+          "endTime": 62.13
+        },
+        {
+          "word": "could",
+          "startTime": 62.142,
+          "endTime": 62.305
+        },
+        {
+          "word": "take",
+          "startTime": 62.317,
+          "endTime": 62.555
+        },
+        {
+          "word": "months",
+          "startTime": 62.567,
+          "endTime": 63.043
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "salvage_timeline",
+        "estimated_salvage": "30 to 90 Days"
+      }
+    },
+    {
+      "sceneIndex": 8,
+      "globalFrameIndex": 64,
+      "narrationText": "The resulting environmental oil spill would contaminate regional marine ecosystems and force maritime authorities to shut down traffic completely.",
+      "kineticHeading": "STRAIT OF MALACCA",
+      "lowerThird": "CASE FILE \u2022 FRAME 8",
+      "prompt": "Oil spill containment boom drifting on ocean surface around a damaged tanker, aerial view, 16:9",
+      "audioPath": "assets/audio/level_8_frame_8_audio.mp3",
+      "imagePath": "assets/images/level_8_frame_8_image.png",
+      "startTime": 63.92,
+      "endTime": 72.73,
+      "duration": 8.81,
+      "wordTimestamps": [
+        {
+          "word": "The",
+          "startTime": 64.02,
+          "endTime": 64.145
+        },
+        {
+          "word": "resulting",
+          "startTime": 64.157,
+          "endTime": 64.695
+        },
+        {
+          "word": "environmental",
+          "startTime": 64.707,
+          "endTime": 65.382
+        },
+        {
+          "word": "oil",
+          "startTime": 65.395,
+          "endTime": 65.695
+        },
+        {
+          "word": "spill",
+          "startTime": 65.708,
+          "endTime": 66.108
+        },
+        {
+          "word": "would",
+          "startTime": 66.12,
+          "endTime": 66.27
+        },
+        {
+          "word": "contaminate",
+          "startTime": 66.282,
+          "endTime": 66.933
+        },
+        {
+          "word": "regional",
+          "startTime": 66.945,
+          "endTime": 67.32
+        },
+        {
+          "word": "marine",
+          "startTime": 67.333,
+          "endTime": 67.695
+        },
+        {
+          "word": "ecosystems",
+          "startTime": 67.708,
+          "endTime": 68.482
+        },
+        {
+          "word": "and",
+          "startTime": 68.495,
+          "endTime": 68.62
+        },
+        {
+          "word": "force",
+          "startTime": 68.633,
+          "endTime": 68.957
+        },
+        {
+          "word": "maritime",
+          "startTime": 68.97,
+          "endTime": 69.52
+        },
+        {
+          "word": "authorities",
+          "startTime": 69.532,
+          "endTime": 70.082
+        },
+        {
+          "word": "to",
+          "startTime": 70.095,
+          "endTime": 70.195
+        },
+        {
+          "word": "shut",
+          "startTime": 70.207,
+          "endTime": 70.52
+        },
+        {
+          "word": "down",
+          "startTime": 70.532,
+          "endTime": 70.782
+        },
+        {
+          "word": "traffic",
+          "startTime": 70.795,
+          "endTime": 71.195
+        },
+        {
+          "word": "completely",
+          "startTime": 71.207,
+          "endTime": 71.858
+        }
+      ],
+      "motionGraphicsOverlay": {
+        "type": "spill_impact",
+        "hazard": "Environmental & Traffic Shutdown"
+      }
+    }
+  ]
+}

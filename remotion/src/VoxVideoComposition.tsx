@@ -4,7 +4,17 @@ import { PaperBackground } from './components/PaperBackground';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { LowerThird } from './components/LowerThird';
 import { FilmGrainOverlay } from './components/FilmGrainOverlay';
+import { VoxMotionOverlay } from './components/VoxMotionOverlay';
 import { RubberStamp } from './components/RubberStamp';
+import { RedStringConnect } from './components/RedStringConnect';
+import { VoxChartAnimation } from './components/VoxChartAnimation';
+import { VoxMapAnimation } from './components/VoxMapAnimation';
+import { TapeFragments } from './components/TapeFragments';
+import { RedMarkerOverlay } from './components/RedMarkerOverlay';
+import { AlertWash } from './components/AlertWash';
+import { LivingPuppet } from './components/LivingPuppet';
+import { KineticHeadline } from './components/KineticHeadline';
+import { WatermarkStamp } from './components/WatermarkStamp';
 
 export interface SceneData {
   sceneIndex: number;
@@ -18,6 +28,7 @@ export interface SceneData {
   startTime: number;
   endTime: number;
   duration: number;
+  motionGraphicsOverlay?: any;
 }
 
 export interface VoxVideoCompositionProps {
@@ -43,56 +54,51 @@ const SceneWrapper: React.FC<{
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
-  const isStampScene = scene.transitionStyle === 'paper_tear' || scene.sceneIndex === 2;
+  const overlayType = scene.motionGraphicsOverlay?.type;
+  const isStampScene = overlayType === 'stamp' || scene.motionGraphicsOverlay?.stampText;
+  const isRedStringScene = overlayType === 'red_string' || scene.motionGraphicsOverlay?.redString;
+  const isAlertWashScene = overlayType === 'alert_wash' || scene.motionGraphicsOverlay?.alertWash;
+  const isPuppetScene = overlayType === 'living_puppet' || scene.motionGraphicsOverlay?.gesture;
+  const stampText = scene.motionGraphicsOverlay?.stampText || (isStampScene ? "CLASSIFIED" : undefined);
 
   return (
     <div style={{ position: 'absolute', width: '100%', height: '100%', opacity }}>
-      {/* 1. HERO VISUAL LAYER: ALWAYS GOOGLE IMAGEN 3 ARTWORK (FULL SCREEN 16:9) */}
+      {/* 1. HERO VISUAL LAYER: GOOGLE IMAGEN 3 / 9ROUTER ARTWORK (ALWAYS 100% CLEAN FULL SCREEN 16:9) */}
       <KenBurnsImage
         imagePath={scene.imagePath}
         durationInFrames={durationFrames}
         transitionStyle={scene.transitionStyle}
       />
 
-      {/* 2. RUBBER STAMP ACCENT */}
-      {isStampScene ? (
-        <RubberStamp text="CLASSIFIED" />
+      {/* 2. PAPER MASKING TAPE FRAGMENTS */}
+      <TapeFragments />
+
+      {/* 3. DYNAMIC ANIMATED VOX MAP & MOTION GRAPHICS OVERLAY */}
+      <VoxMotionOverlay
+        config={scene.motionGraphicsOverlay}
+        durationInFrames={durationFrames}
+      />
+
+      {/* 4. RED STRING & BRASS PINS OVERLAY */}
+      {isRedStringScene ? <RedStringConnect /> : null}
+
+      {/* 5. PAPER MARIONETTE PUPPET (STOP-MOTION) */}
+      {isPuppetScene ? (
+        <LivingPuppet gesture={scene.motionGraphicsOverlay?.gesture || "arm_point"} />
       ) : null}
 
-      {/* 3. CONDENSED BOLD HEADLINE */}
-      {scene.kineticHeading ? (
-        <div
-          style={{
-            position: 'absolute',
-            top: '50px',
-            left: '0',
-            right: '0',
-            textAlign: 'center',
-            zIndex: 22
-          }}
-        >
-          <h1
-            style={{
-              fontFamily: 'Oswald, Helvetica Neue, Arial, sans-serif',
-              fontWeight: 700,
-              fontSize: '46px',
-              color: '#1A1A1A',
-              letterSpacing: '3px',
-              textTransform: 'uppercase',
-              backgroundColor: '#EAE1C8',
-              display: 'inline-block',
-              padding: '6px 20px',
-              border: '3px solid #1A1A1A',
-              boxShadow: '4px 6px 0px #B92220',
-              margin: 0
-            }}
-          >
-            {scene.kineticHeading}
-          </h1>
-        </div>
+      {/* 6. RUBBER STAMP ACCENT */}
+      {isStampScene && stampText ? (
+        <RubberStamp text={stampText} />
       ) : null}
 
-      {/* 4. LOWER THIRD TYPEWRITER BANNER */}
+      {/* 7. ALERT WASH DRAMATIC FLOOD */}
+      <AlertWash active={isAlertWashScene} />
+
+      {/* 8. KINETIC HEADLINE BANNER (EDITORIAL PAPER STAMP) */}
+      <KineticHeadline heading={scene.kineticHeading} />
+
+      {/* 9. LOWER THIRD TYPEWRITER BANNER */}
       <LowerThird text={scene.lowerThird} />
     </div>
   );
@@ -156,6 +162,9 @@ export const VoxVideoComposition: React.FC<VoxVideoCompositionProps> = ({
 
       {/* Global Film Grain & Paper Vignette */}
       <FilmGrainOverlay />
+
+      {/* Global Vox Studio Watermark Stamp */}
+      <WatermarkStamp />
     </div>
   );
 };

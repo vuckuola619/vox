@@ -1,0 +1,3254 @@
+{
+  "project": {
+    "id": "strait_of_malacca_14min",
+    "title": "Why The Strait of Malacca Holds 60% of World Trade (And How It Could Collapse)",
+    "project_directory": "projects\\strait_of_malacca_14min",
+    "target_duration_seconds": 840,
+    "total_levels": 12,
+    "frames_per_level": 8,
+    "total_frames": 96,
+    "fps": 30,
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "audio_sample_rate": 48000
+  },
+  "levels": [
+    {
+      "level_number": 1,
+      "title": "The 2.8-Kilometer Pinch Point",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_1.mp4",
+      "relative_level_audio": "audio/level_1_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 1,
+          "level_number": 1,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Every single day, over two hundred and fifty commercial cargo vessels and crude oil supertankers slice through a narrow, funnel-shaped corridor of water separating the Indonesian island of Sumatra from the Malay Peninsula.",
+            "word_count": 33,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Cinematic wide satellite view of the Strait of Malacca between Sumatra and Malaysia, dark blue ocean, glowing golden shipping vectors, paper collage keylines, 16:9",
+            "relative_filename": "images/level_1_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "map_highlight",
+              "label": "Strait of Malacca",
+              "coords": "2.5°N, 101.5°E"
+            }
+          }
+        },
+        {
+          "global_frame_index": 2,
+          "level_number": 1,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Stretching five hundred and eighty nautical miles from the Andaman Sea down to Singapore, the Strait of Malacca forms the indispensable maritime bridge connecting the Indian Ocean directly to the South China Sea.",
+            "word_count": 33,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "3D geographic vector map showing Indian Ocean connecting through Malacca to South China Sea, dark navy background, paper texture, 16:9",
+            "relative_filename": "images/level_1_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "route_tracer",
+              "distance": "580 NM"
+            }
+          }
+        },
+        {
+          "global_frame_index": 3,
+          "level_number": 1,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "At its northern entrance near the Andaman Sea, the channel spans over three hundred and seventy kilometers wide, giving ships vast open waters to maneuver safely.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Wide ocean expanse at northern entrance of Malacca Strait, cargo ships on horizon, dramatic dark blue volumetric lighting, 16:9",
+            "relative_filename": "images/level_1_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "width_indicator",
+              "width": "370 km"
+            }
+          }
+        },
+        {
+          "global_frame_index": 4,
+          "level_number": 1,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "However, as maritime traffic streams southeast toward the equator, the coastline of Sumatra and Malaysia converge, transforming the open sea into a tightly compressed maritime funnel.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Architectural vector illustration of ocean coastline converging toward Singapore, dark blue canvas, gold ship icons, 16:9",
+            "relative_filename": "images/level_1_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "funnel_graphic",
+              "compression": "High"
+            }
+          }
+        },
+        {
+          "global_frame_index": 5,
+          "level_number": 1,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "By the time vessels reach the southern exit near the Singapore Strait, the navigable channel constricts into a dramatic pinch point known as the Phillips Channel.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Satellite macro focus on the Phillips Channel near Singapore, dark ocean water, sharp red glowing boundary lines, 16:9",
+            "relative_filename": "images/level_1_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "location_pin",
+              "name": "Phillips Channel"
+            }
+          }
+        },
+        {
+          "global_frame_index": 6,
+          "level_number": 1,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "At its absolute narrowest point, the Phillips Channel compresses global maritime trade into a passage just two point eight kilometers—or one point seven miles—in width.",
+            "word_count": 25,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "High-contrast aerial view of two container ships passing in a narrow 2.8km channel, red measurement ruler overlay, 16:9",
+            "relative_filename": "images/level_1_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "ruler",
+              "distance": "2.8 km (1.7 Miles)"
+            }
+          }
+        },
+        {
+          "global_frame_index": 7,
+          "level_number": 1,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "To put that in perspective, two mega-container ships travelling in opposite directions have less than eight hundred meters of buffer space between their hulls and surrounding shallow reefs.",
+            "word_count": 28,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Low-angle perspective of two mega container ships passing close to each other, paper cut keylines, dramatic lighting, 16:9",
+            "relative_filename": "images/level_1_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "buffer_zone",
+              "margin": "<800m"
+            }
+          }
+        },
+        {
+          "global_frame_index": 8,
+          "level_number": 1,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "This extreme geographic compression makes the Strait of Malacca the most densely congested maritime bottleneck on the surface of the Earth.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Infographic diagram of global chokepoints ranking Malacca as #1 in congestion, dark navy paper collage aesthetic, 16:9",
+            "relative_filename": "images/level_1_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_1_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_1_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "rank_badge",
+              "rank": "#1 Most Congested Chokepoint"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 2,
+      "title": "Shallow Seabed & VLCC Supertanker Hazards",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_2.mp4",
+      "relative_level_audio": "audio/level_2_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 9,
+          "level_number": 2,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Physical width is only half of the equation. What makes the Strait of Malacca truly treacherous for modern shipping is its exceptionally shallow underwater topography.",
+            "word_count": 25,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Cross-section bathymetric diagram of Malacca seabed underwater trench, dark blue and amber sediment layers, 16:9",
+            "relative_filename": "images/level_2_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "bathymetry",
+              "depth_profile": "Shallow"
+            }
+          }
+        },
+        {
+          "global_frame_index": 10,
+          "level_number": 2,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "While most global oceanic trade lanes feature depths of thousands of meters, the critical Phillips Channel bottleneck drops to a maximum depth of just twenty-five meters.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Subterranean cross-section showing shallow ocean floor at 25m, cargo ship hull silhouette, yellow depth marker, 16:9",
+            "relative_filename": "images/level_2_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "depth_gauge",
+              "max_depth": "25 Meters"
+            }
+          }
+        },
+        {
+          "global_frame_index": 11,
+          "level_number": 2,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Fully laden Very Large Crude Carriers—known as VLCC supertankers—carry up to two million barrels of oil and draw up to twenty meters of water beneath the surface.",
+            "word_count": 27,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Underwater perspective of a massive VLCC crude oil tanker hull submerged in dark blue water, golden sunlight rays, 16:9",
+            "relative_filename": "images/level_2_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "ship_specs",
+              "vessel": "VLCC Supertanker",
+              "draft": "20.5m"
+            }
+          }
+        },
+        {
+          "global_frame_index": 12,
+          "level_number": 2,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "This leaves a razor-thin clearance of less than four to five meters between a multi-hundred-thousand-ton vessel's keel and the jagged sea floor.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Macro underwater view of ship keel hovering just meters above rocky seabed, warning glow, paper collage art, 16:9",
+            "relative_filename": "images/level_2_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "under_keel_clearance",
+              "clearance": "4.5 Meters"
+            }
+          }
+        },
+        {
+          "global_frame_index": 13,
+          "level_number": 2,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Navigating this shallow trench is compounded by migrating underwater sand waves, which can alter seabed elevations by several meters during seasonal monsoon tides.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "3D bathymetric animation graphic of shifting sand waves on the seabed floor, dark navy aesthetic, 16:9",
+            "relative_filename": "images/level_2_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "hazard_callout",
+              "hazard": "Migrating Sand Waves"
+            }
+          }
+        },
+        {
+          "global_frame_index": 14,
+          "level_number": 2,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Strong tidal currents pushing through the narrow strait can create powerful underwater eddies, pulling heavy deep-draft vessels off their intended navigation tracks.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Aerial illustration of swirling ocean currents around a container ship hull, vector water lines, 16:9",
+            "relative_filename": "images/level_2_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "current_vectors",
+              "force": "Strong Tidal Currents"
+            }
+          }
+        },
+        {
+          "global_frame_index": 15,
+          "level_number": 2,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Captains navigating the passage must maintain constant speed and rudder angle, as slowing down reduces steerage control and increases the risk of grounding.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Cargo ship bridge interior view at twilight, captain looking at illuminated nautical charts, high contrast paper style, 16:9",
+            "relative_filename": "images/level_2_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "bridge_status",
+              "status": "Steerage Control Critical"
+            }
+          }
+        },
+        {
+          "global_frame_index": 16,
+          "level_number": 2,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "A single navigational miscalculation by a helmsman could drive a two-billion-dollar vessel directly into a mudbank, triggering an immediate maritime disaster.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Dramatic vector visual of cargo ship bowing toward a shallow mudbank, red warning aura, 16:9",
+            "relative_filename": "images/level_2_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_2_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_2_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "risk_alert",
+              "alert": "Grounding Risk: EXTREME"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 3,
+      "title": "The Global Shipping Corridor",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_3.mp4",
+      "relative_level_audio": "audio/level_3_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 17,
+          "level_number": 3,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Despite these extreme physical limitations, the Strait of Malacca serves as the beating heart of international trade between Europe, the Middle East, and Asia.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Illuminated global trade route map with glowing golden arteries converging at Malacca, dark navy glassmorphic style, 16:9",
+            "relative_filename": "images/level_3_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "global_map",
+              "focus": "Global Maritime Arteries"
+            }
+          }
+        },
+        {
+          "global_frame_index": 18,
+          "level_number": 3,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Over ninety-four thousand ships transit the strait annually—representing roughly twenty-five percent of all world trade by volume.",
+            "word_count": 17,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Time-lapse vector illustration of dense shipping traffic lines streaming through Malacca, gold ship icons, 16:9",
+            "relative_filename": "images/level_3_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "stat_card",
+              "stat": "94,000+",
+              "label": "Vessels / Year"
+            }
+          }
+        },
+        {
+          "global_frame_index": 19,
+          "level_number": 3,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "On any given day, more than three billion dollars worth of manufactured goods, electronics, raw minerals, and consumer products pass through this waterway.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Stack of colorful shipping containers on a massive cargo vessel sailing through tropical waters, 16:9",
+            "relative_filename": "images/level_3_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "daily_value",
+              "value": "$3.2 Billion / Day"
+            }
+          }
+        },
+        {
+          "global_frame_index": 20,
+          "level_number": 3,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Container ships carrying industrial machinery from Germany, textiles from India, and microchips from Taiwan depend on this single corridor to reach global markets.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "World map showing diverse trade goods flowing through Malacca, icons for electronics, textiles, machinery, 16:9",
+            "relative_filename": "images/level_3_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "goods_flow",
+              "categories": [
+                "Electronics",
+                "Machinery",
+                "Textiles"
+              ]
+            }
+          }
+        },
+        {
+          "global_frame_index": 21,
+          "level_number": 3,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "For global shipping conglomerates like Maersk, MSC, and COSCO, routing ships through Malacca is the only economically viable option for East-West transit.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Logos and vector silhouettes of global container shipping vessels sailing in convoy, dark navy theme, 16:9",
+            "relative_filename": "images/level_3_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "carrier_list",
+              "carriers": [
+                "Maersk",
+                "MSC",
+                "COSCO",
+                "CMA CGM"
+              ]
+            }
+          }
+        },
+        {
+          "global_frame_index": 22,
+          "level_number": 3,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The traffic density in the strait is so extreme that maritime authorities created a Traffic Separation Scheme—similar to an ocean highway with dedicated lanes.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Nautical chart displaying dual inbound and outbound shipping lanes marked with green and red buoys, 16:9",
+            "relative_filename": "images/level_3_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "lane_diagram",
+              "scheme": "Traffic Separation Scheme (TSS)"
+            }
+          }
+        },
+        {
+          "global_frame_index": 23,
+          "level_number": 3,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Vessels must strictly stay within their designated two-mile-wide lanes, maintaining precise radio contact with Vessel Traffic Information Services in Singapore and Malaysia.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Vessel Traffic Information Service control room in Singapore, radar screens monitoring ship positions, 16:9",
+            "relative_filename": "images/level_3_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "vtis_monitor",
+              "status": "Lanes Monitored 24/7"
+            }
+          }
+        },
+        {
+          "global_frame_index": 24,
+          "level_number": 3,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Even a minor vessel breakdown inside these strict lanes causes immediate tailbacks, forcing trailing ships to anchor in congested waiting areas.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Aerial view of cargo ships queuing at anchor in a designated waiting zone near Singapore, twilight glow, 16:9",
+            "relative_filename": "images/level_3_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_3_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_3_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "queue_stat",
+              "waiting_vessels": "50+ Ships At Anchor"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 4,
+      "title": "The Energy Lifeline of East Asia",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_4.mp4",
+      "relative_level_audio": "audio/level_4_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 25,
+          "level_number": 4,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "While manufactured container goods represent vast financial value, the strait's most critical role is acting as the primary energy pipeline for East Asia.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Industrial vector artwork of crude oil floating on dark water, glowing golden oil barrels icon, paper cut keylines, 16:9",
+            "relative_filename": "images/level_4_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "energy_focus",
+              "title": "East Asia Energy Lifeline"
+            }
+          }
+        },
+        {
+          "global_frame_index": 26,
+          "level_number": 4,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Roughly fifteen million barrels of crude oil and refined petroleum products pass through the strait every twenty-four hours.",
+            "word_count": 18,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Graphic illustration of oil tankers lined up in a sea channel, amber oil drum icons, dark navy background, 16:9",
+            "relative_filename": "images/level_4_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "volume_card",
+              "daily_barrels": "15,000,000 bpd"
+            }
+          }
+        },
+        {
+          "global_frame_index": 27,
+          "level_number": 4,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "That represents over one-third of all seaborne oil traded across the entire globe, sourced predominantly from Persian Gulf producers like Saudi Arabia, Iraq, and the UAE.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Geopolitical oil trade map connecting Persian Gulf to Malacca, dark blue ocean, gold flow lines, 16:9",
+            "relative_filename": "images/level_4_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "oil_origin",
+              "source": "Persian Gulf",
+              "share": "33% Global Seaborne Oil"
+            }
+          }
+        },
+        {
+          "global_frame_index": 28,
+          "level_number": 4,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "This energy torrent powers the industrial grids and transportation networks of China, Japan, South Korea, and Taiwan.",
+            "word_count": 17,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Map of East Asian industrial centers glowing with electric lights, power grid lines extending from Malacca, 16:9",
+            "relative_filename": "images/level_4_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "consumer_nations",
+              "nations": [
+                "China",
+                "Japan",
+                "South Korea",
+                "Taiwan"
+              ]
+            }
+          }
+        },
+        {
+          "global_frame_index": 29,
+          "level_number": 4,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Japan relies on the Strait of Malacca for over eighty percent of its total crude oil supply, while South Korea depends on it for over seventy-five percent.",
+            "word_count": 27,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Bar chart comparing oil import dependency on Malacca for Japan and South Korea, 16:9",
+            "relative_filename": "images/level_4_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "dependency_chart",
+              "japan": "80%",
+              "south_korea": "75%"
+            }
+          }
+        },
+        {
+          "global_frame_index": 30,
+          "level_number": 4,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "In addition to liquid crude, over three point two million barrels of Liquefied Natural Gas transit the strait daily aboard specialized cryogenic tankers.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "High-tech LNG tanker with spherical aluminum cargo tanks sailing through twilight waters, blue glowing gas icons, 16:9",
+            "relative_filename": "images/level_4_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "lng_card",
+              "lng_volume": "3.2M Barrels LNG/day"
+            }
+          }
+        },
+        {
+          "global_frame_index": 31,
+          "level_number": 4,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Without this continuous daily delivery of hydrocarbons, utility companies in Tokyo, Seoul, and Shanghai would face rolling power blackouts within weeks.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Dramatic night cityscape with city lights dimming into dark silhouettes, paper collage art style, 16:9",
+            "relative_filename": "images/level_4_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "blackout_risk",
+              "reserve_buffer": "14-30 Days"
+            }
+          }
+        },
+        {
+          "global_frame_index": 32,
+          "level_number": 4,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "This absolute dependence on a single maritime conduit makes East Asia's economic survival bound directly to the security of this narrow sea passage.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Editorial illustration of a heart pulse line overlaid on a nautical chart of Malacca, dark navy glassmorphic art, 16:9",
+            "relative_filename": "images/level_4_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_4_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_4_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "vital_sign",
+              "status": "Critical Dependency"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 5,
+      "title": "Singapore & The Transshipment Engine",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_5.mp4",
+      "relative_level_audio": "audio/level_5_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 33,
+          "level_number": 5,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "At the southern tip of the strait sits the island nation of Singapore—a global economic miracle built entirely on its strategic control of this maritime bottleneck.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Panaromic skyline of Singapore harbour with container cranes and skyscrapers at sunset, paper cut keylines, 16:9",
+            "relative_filename": "images/level_5_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "city_profile",
+              "city": "Singapore",
+              "role": "Global Maritime Hub"
+            }
+          }
+        },
+        {
+          "global_frame_index": 34,
+          "level_number": 5,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Founded as a British trading post in eighteen nineteen due to its location, Singapore has evolved into the world's premier transshipment hub.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Historical 19th-century map of Singapore Strait blending into a modern vector port diagram, vintage paper texture, 16:9",
+            "relative_filename": "images/level_5_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "history_card",
+              "founded": "1819",
+              "founder": "Stamford Raffles"
+            }
+          }
+        },
+        {
+          "global_frame_index": 35,
+          "level_number": 5,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Transshipment involves transferring cargo containers from ultra-large ocean-going vessels onto smaller regional feeder ships bound for shallower Asian ports.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "3D diagram showing a mega container ship offloading containers onto smaller feeder vessels in Singapore port, 16:9",
+            "relative_filename": "images/level_5_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "transshipment_diagram",
+              "process": "Hub & Spoke Logistics"
+            }
+          }
+        },
+        {
+          "global_frame_index": 36,
+          "level_number": 5,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The Port of Singapore processes over thirty-seven million TEU container units annually, managing connected trade routes to over six hundred ports worldwide.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Futuristic automated port terminal in Singapore with automated guided vehicles moving containers, dark blue lights, 16:9",
+            "relative_filename": "images/level_5_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "port_stats",
+              "throughput": "37.3 Million TEU",
+              "connected_ports": "600+"
+            }
+          }
+        },
+        {
+          "global_frame_index": 37,
+          "level_number": 5,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Singapore also serves as the world's largest bunkering port, supplying over fifty million tons of marine fuel to transiting ships every year.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Fuel bunkering barge moored alongside a massive container ship, refueling pipes attached, paper cut keylines, 16:9",
+            "relative_filename": "images/level_5_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "bunkering_stat",
+              "annual_fuel": "50M+ Tons Marine Fuel"
+            }
+          }
+        },
+        {
+          "global_frame_index": 38,
+          "level_number": 5,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The maritime sector accounts for over seven percent of Singapore's Gross Domestic Product and supports over one hundred and seventy thousand jobs.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Financial bar chart showing maritime contribution to Singapore GDP, dark navy theme with gold bars, 16:9",
+            "relative_filename": "images/level_5_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "gdp_impact",
+              "share": "7% GDP",
+              "jobs": "170,000+"
+            }
+          }
+        },
+        {
+          "global_frame_index": 39,
+          "level_number": 5,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "To maintain its dominant edge, Singapore recently opened the Tuas Mega Port—a fully automated twenty-billion-dollar facility designed to handle sixty million TEUs annually.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Architectural rendering of the massive Tuas Port facility in Singapore with automated electric cranes, 16:9",
+            "relative_filename": "images/level_5_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "megaproject_card",
+              "project": "Tuas Mega Port",
+              "cost": "$20 Billion",
+              "capacity": "60M TEU"
+            }
+          }
+        },
+        {
+          "global_frame_index": 40,
+          "level_number": 5,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Singapore's prosperity is proof of how controlling a primary geographical bottleneck can transform a tiny nation into a global economic power.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Gold crest of Singapore floating over a glowing digital trade map, paper collage aesthetic, 16:9",
+            "relative_filename": "images/level_5_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_5_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_5_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "summary_badge",
+              "title": "Strategic Geography Mastered"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 6,
+      "title": "The Malacca Dilemma (China's Strategic Risk)",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_6.mp4",
+      "relative_level_audio": "audio/level_6_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 41,
+          "level_number": 6,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "While Singapore has profited immensely from the strait, for the People's Republic of China, this narrow passage represents an existential national security nightmare.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Editorial graphic of Chinese flag motif transparently layered over a satellite map of Malacca Strait, red warning glow, 16:9",
+            "relative_filename": "images/level_6_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "geopolitical_focus",
+              "nation": "China",
+              "assessment": "Vulnerability"
+            }
+          }
+        },
+        {
+          "global_frame_index": 42,
+          "level_number": 6,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "In two thousand and three, Chinese President Hu Jintao formally addressed the Politburo, coining the famous term: The Malacca Dilemma.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Briefing room illustration in Beijing with senior officials looking at a illuminated map of Southeast Asian sea lanes, 16:9",
+            "relative_filename": "images/level_6_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "quote_banner",
+              "speaker": "President Hu Jintao (2003)",
+              "term": "The Malacca Dilemma"
+            }
+          }
+        },
+        {
+          "global_frame_index": 43,
+          "level_number": 6,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Hu Jintao pointed out that China relied on the Strait of Malacca for over eighty percent of its crude oil imports and sixty percent of its total trade value.",
+            "word_count": 29,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Infographic pie chart showing 80% oil import reliance on Malacca for China, dark navy background, 16:9",
+            "relative_filename": "images/level_6_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "dependency_stat",
+              "oil_import_via_malacca": "80%"
+            }
+          }
+        },
+        {
+          "global_frame_index": 44,
+          "level_number": 6,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "If a hostile naval power were to establish a distant blockade at the entrance of the strait during a military crisis, China's industrial economy would paralyze.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Military naval blockade simulation graphic showing warships forming a barrier line at the Andaman Sea, 16:9",
+            "relative_filename": "images/level_6_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "blockade_sim",
+              "scenario": "Distant Blockade",
+              "impact": "Oil Supply Cutoff"
+            }
+          }
+        },
+        {
+          "global_frame_index": 45,
+          "level_number": 6,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "China's strategic reserve of crude oil is estimated at sixty to ninety days of consumption. Beyond that window, refineries, power plants, and factories would shut down.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Gauge meter showing China strategic oil reserves ticking down from 90 days to 0, red alert colors, 16:9",
+            "relative_filename": "images/level_6_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "reserve_clock",
+              "max_buffer": "90 Days"
+            }
+          }
+        },
+        {
+          "global_frame_index": 46,
+          "level_number": 6,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "To mitigate this threat, China launched the multi-trillion-dollar Belt and Road Initiative to construct overland energy pipelines bypassing Malacca.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Global map highlighting China's Belt and Road pipeline corridors cutting across Central and South Asia, 16:9",
+            "relative_filename": "images/level_6_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "bri_map",
+              "investment": "$1+ Trillion",
+              "goal": "Bypass Malacca"
+            }
+          }
+        },
+        {
+          "global_frame_index": 47,
+          "level_number": 6,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Projects like the China-Myanmar Oil and Gas Pipeline transport crude directly from the Indian Ocean across Myanmar into Yunnan province.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Architectural visual of an oil pipeline cutting through lush green mountains in Myanmar into China, 16:9",
+            "relative_filename": "images/level_6_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "pipeline_card",
+              "name": "China-Myanmar Pipeline",
+              "capacity": "400,000 bpd"
+            }
+          }
+        },
+        {
+          "global_frame_index": 48,
+          "level_number": 6,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "However, these overland pipelines can only carry less than fifteen percent of China's total oil requirements, leaving Beijing overwhelmingly exposed.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Bar graph comparing pipeline capacity vs total maritime oil needs for China, paper cut keylines, 16:9",
+            "relative_filename": "images/level_6_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_6_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_6_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "gap_analysis",
+              "pipeline_share": "15%",
+              "malacca_share": "85%"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 7,
+      "title": "Naval Supremacy & The US 7th Fleet",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_7.mp4",
+      "relative_level_audio": "audio/level_7_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 49,
+          "level_number": 7,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The primary reason the Malacca Dilemma haunts Beijing's military planners is the overwhelming naval presence of the United States and its regional allies.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Cinematic visual of a US Navy guided-missile destroyer sailing alongside an aircraft carrier in tropical waters, 16:9",
+            "relative_filename": "images/level_7_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "force_presence",
+              "fleet": "US Navy 7th Fleet"
+            }
+          }
+        },
+        {
+          "global_frame_index": 50,
+          "level_number": 7,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The US Navy's Seventh Fleet, headquartered in Yokosuka, Japan, maintains operational command over the Indian and Western Pacific Oceans.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Map of Asia-Pacific showing US Seventh Fleet area of responsibility encompassing Malacca, 16:9",
+            "relative_filename": "images/level_7_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "aor_map",
+              "command": "US 7th Fleet AOR"
+            }
+          }
+        },
+        {
+          "global_frame_index": 51,
+          "level_number": 7,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Just miles from the Phillips Channel, the US Navy operates out of Singapore's Changi Naval Base, maintaining logistics support and littoral combat ship deployments.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Vector diagram of Changi Naval Base in Singapore with naval vessel silhouettes docked at piers, 16:9",
+            "relative_filename": "images/level_7_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "base_tag",
+              "base": "Changi Naval Base",
+              "user": "US & Singapore Navy"
+            }
+          }
+        },
+        {
+          "global_frame_index": 52,
+          "level_number": 7,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "In the event of a conflict over Taiwan, the US Navy would not need to fight inside the narrow Taiwan Strait; it could execute a distant blockade at Malacca.",
+            "word_count": 29,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Geopolitical strategy map contrasting Taiwan Strait conflict zone with Malacca distant blockade point, 16:9",
+            "relative_filename": "images/level_7_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "strategy_map",
+              "concept": "Distant Sea-Lane Interdiction"
+            }
+          }
+        },
+        {
+          "global_frame_index": 53,
+          "level_number": 7,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "By choking off China's oil supply six thousand kilometers away from mainland air defense umbrellas, Washington retains immense strategic leverage.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "High-altitude strategic map view showing distance between Beijing and Malacca chokepoint, 16:9",
+            "relative_filename": "images/level_7_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "distance_ruler",
+              "distance": "6,000 km"
+            }
+          }
+        },
+        {
+          "global_frame_index": 54,
+          "level_number": 7,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "To counter this, China's People's Liberation Army Navy has rapidly expanded into a blue-water fleet, establishing its first overseas naval base in Djibouti.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Chinese PLAN naval destroyer sailing in open ocean waters with golden sunset reflection, 16:9",
+            "relative_filename": "images/level_7_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "plan_expansion",
+              "navy": "PLAN Blue-Water Fleet"
+            }
+          }
+        },
+        {
+          "global_frame_index": 55,
+          "level_number": 7,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "China is also deploying intelligence-gathering ships and submarine patrols into the Indian Ocean to monitor maritime choke points.",
+            "word_count": 18,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Submarine underwater silhouette navigating dark blue deep waters, sonar ping waves graphic, 16:9",
+            "relative_filename": "images/level_7_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "sub_patrol",
+              "vessel": "Type 093 Submarine"
+            }
+          }
+        },
+        {
+          "global_frame_index": 56,
+          "level_number": 7,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "This ongoing naval chess match has turned the quiet waters of Malacca into one of the most heavily monitored strategic theaters on Earth.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Chessboard concept art overlaid on a radar map of Malacca Strait, dark navy paper collage aesthetic, 16:9",
+            "relative_filename": "images/level_7_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_7_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_7_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "theater_badge",
+              "status": "High Geopolitical Friction"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 8,
+      "title": "The Physics of Collapse & Suez Parallels",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_8.mp4",
+      "relative_level_audio": "audio/level_8_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 57,
+          "level_number": 8,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "While geopolitical blockades represent a military threat, physical accidents and environmental disasters pose a far more immediate risk of closing the strait.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Dramatic vector visual of a cargo ship listing in stormy seas, warning aura, 16:9",
+            "relative_filename": "images/level_8_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "hazard_intro",
+              "focus": "Physical & Accidental Blockade"
+            }
+          }
+        },
+        {
+          "global_frame_index": 58,
+          "level_number": 8,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The world received a terrifying preview of maritime choke point fragility in March twenty twenty-one, when the Ever Given wedged in the Suez Canal.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Editorial illustration of the giant container ship Ever Given stuck diagonally across Suez Canal, paper cut art, 16:9",
+            "relative_filename": "images/level_8_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "suez_recap",
+              "ship": "Ever Given",
+              "duration": "6 Days"
+            }
+          }
+        },
+        {
+          "global_frame_index": 59,
+          "level_number": 8,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "That single six-day blockage in Egypt held up an estimated fifty-nine billion dollars in trade, creating global supply chain chaos for months.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Global map showing trade impact ripple effects radiating from Suez Canal across Europe and Asia, 16:9",
+            "relative_filename": "images/level_8_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "suez_cost",
+              "daily_damage": "$9.6 Billion / Day"
+            }
+          }
+        },
+        {
+          "global_frame_index": 60,
+          "level_number": 8,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "However, maritime logistics experts warn that a major grounding or collision in the Strait of Malacca would be significantly worse than Suez.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Comparative graphic pitting Suez Canal vs Malacca Strait trade volumes and channel width, 16:9",
+            "relative_filename": "images/level_8_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "severity_index",
+              "suez_risk": "High",
+              "malacca_risk": "CRITICAL"
+            }
+          }
+        },
+        {
+          "global_frame_index": 61,
+          "level_number": 8,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Because the Suez Canal is an artificial ditch with soft sandbanks, tugboats were eventually able to dig out the Ever Given's bow.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Tugboats pulling a container ship in a narrow canal, dredging machinery working at bow, 16:9",
+            "relative_filename": "images/level_8_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "salvage_note",
+              "method": "Soft Sand Dredging"
+            }
+          }
+        },
+        {
+          "global_frame_index": 62,
+          "level_number": 8,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "In contrast, parts of the Phillips Channel feature hard granite rock seabed outcroppings. A grounding at high speed could breach a vessel's hull instantly.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Underwater bathymetric cross-section showing jagged granite rock outcropping striking a ship hull, 16:9",
+            "relative_filename": "images/level_8_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "seabed_composition",
+              "rock": "Granite Outcroppings"
+            }
+          }
+        },
+        {
+          "global_frame_index": 63,
+          "level_number": 8,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "If an Ultra-Large Container Vessel carrying twenty-four thousand containers sank or grounded in the narrow shipping lane, salvage operations could take months.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Salvage crane vessel operating next to a partially submerged mega container ship in a narrow strait, 16:9",
+            "relative_filename": "images/level_8_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "salvage_timeline",
+              "estimated_salvage": "30 to 90 Days"
+            }
+          }
+        },
+        {
+          "global_frame_index": 64,
+          "level_number": 8,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The resulting environmental oil spill would contaminate regional marine ecosystems and force maritime authorities to shut down traffic completely.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Oil spill containment boom drifting on ocean surface around a damaged tanker, aerial view, 16:9",
+            "relative_filename": "images/level_8_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_8_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_8_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "spill_impact",
+              "hazard": "Environmental & Traffic Shutdown"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 9,
+      "title": "Piracy, Subsurface Sabotage & Seismic Faults",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_9.mp4",
+      "relative_level_audio": "audio/level_9_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 65,
+          "level_number": 9,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Physical accidents are not the only hazard. The Strait of Malacca has a long and notorious history as one of the world's primary piracy hotspots.",
+            "word_count": 25,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Nighttime maritime aesthetic of a speed boat approaching a cargo ship in dark waters, paper collage style, 16:9",
+            "relative_filename": "images/level_9_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "piracy_tag",
+              "threat": "Maritime Armed Robbery"
+            }
+          }
+        },
+        {
+          "global_frame_index": 66,
+          "level_number": 9,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "While modern joint naval patrols by Indonesia, Malaysia, Singapore, and Thailand have suppressed major hijackings, small-scale armed robberies persist.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Naval patrol boat speeding across tropical waters with searchlights cutting through night fog, 16:9",
+            "relative_filename": "images/level_9_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "patrol_force",
+              "joint_patrol": "Malacca Straits Patrol (MSP)"
+            }
+          }
+        },
+        {
+          "global_frame_index": 67,
+          "level_number": 9,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Pirates exploit the thousands of small islands and dense mangrove swamps along the Sumatran coastline to launch surprise boardings at night.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Topographic map of Sumatran coastline showing complex island archipelago and mangrove hideouts, 16:9",
+            "relative_filename": "images/level_9_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "hideout_map",
+              "geography": "Riau Archipelago"
+            }
+          }
+        },
+        {
+          "global_frame_index": 68,
+          "level_number": 9,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "In a state-sponsored conflict scenario, the threat escalates to subsurface sabotage—such as deploying smart sea mines in the shallow Phillips Channel.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Subsurface visual of sea mines tethered to ocean seabed in shallow water, glowing red sensors, 16:9",
+            "relative_filename": "images/level_9_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "sabotage_alert",
+              "weapon": "Moored Sea Mines"
+            }
+          }
+        },
+        {
+          "global_frame_index": 69,
+          "level_number": 9,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Clearing sea mines from a shallow twenty-five-meter trench would require specialized minesweeping operations, halting commercial traffic for weeks.",
+            "word_count": 18,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Naval minesweeper vessel deploying unmanned underwater clearance vehicle, dark ocean backdrop, 16:9",
+            "relative_filename": "images/level_9_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "minesweeping_time",
+              "clearance_est": "14 to 21 Days"
+            }
+          }
+        },
+        {
+          "global_frame_index": 70,
+          "level_number": 9,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Nature presents another unpredictable wild card: dense haze from regional peatland forest fires frequently reduces visibility to near zero.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Cargo ship bridge view peering into thick orange smoke and fog over dark ocean water, 16:9",
+            "relative_filename": "images/level_9_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "haze_hazard",
+              "visibility": "<500 Meters"
+            }
+          }
+        },
+        {
+          "global_frame_index": 71,
+          "level_number": 9,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Finally, the strait lies adjacent to the volatile Sunda Megathrust—one of the most active earthquake zones on the planet.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "3D tectonic map showing Sunda Megathrust fault line beneath the Indian Ocean near Sumatra, 16:9",
+            "relative_filename": "images/level_9_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "tectonic_map",
+              "fault": "Sunda Megathrust"
+            }
+          }
+        },
+        {
+          "global_frame_index": 72,
+          "level_number": 9,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "A major subsea earthquake could trigger massive underwater landslides, shifting sandbanks overnight and rendering existing depth charts useless.",
+            "word_count": 18,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Underwater bathymetric simulation of a landslide shifting seabed contours near shipping lanes, 16:9",
+            "relative_filename": "images/level_9_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_9_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_9_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "seismic_shock",
+              "effect": "Depth Chart Invalidation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 10,
+      "title": "The 2-Week Rerouting Crisis (Sunda & Lombok)",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_10.mp4",
+      "relative_level_audio": "audio/level_10_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 73,
+          "level_number": 10,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "If a catastrophe or conflict were to completely close the Strait of Malacca for just two weeks, global trade would face an immediate operational crisis.",
+            "word_count": 25,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Editorial vector illustration of a massive red 'CLOSED' stamp over a map of the Strait of Malacca, 16:9",
+            "relative_filename": "images/level_10_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "crisis_header",
+              "scenario": "Complete Malacca Closure"
+            }
+          }
+        },
+        {
+          "global_frame_index": 74,
+          "level_number": 10,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Ship captains and maritime dispatchers would have no choice but to reroute vessels through alternative Indonesian straits.",
+            "word_count": 17,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Global maritime dispatch center screen showing thousands of ship icons rerouting south, 16:9",
+            "relative_filename": "images/level_10_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "reroute_order",
+              "status": "Global Rerouting Initiated"
+            }
+          }
+        },
+        {
+          "global_frame_index": 75,
+          "level_number": 10,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The two primary alternative passages are the Sunda Strait—between Java and Sumatra—and the Lombok Strait—between Bali and Lombok.",
+            "word_count": 18,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Map of Indonesia highlighting Sunda Strait and Lombok Strait as southern detour passages, 16:9",
+            "relative_filename": "images/level_10_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "detour_map",
+              "straits": [
+                "Sunda Strait",
+                "Lombok Strait"
+              ]
+            }
+          }
+        },
+        {
+          "global_frame_index": 76,
+          "level_number": 10,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "While the Lombok Strait is deep and wide enough to accommodate giant VLCC tankers, taking this detour adds over three thousand nautical miles to every trip.",
+            "word_count": 26,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Nautical chart comparing Malacca direct route vs Lombok detour route around Australia/Indonesia, 16:9",
+            "relative_filename": "images/level_10_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "distance_penalty",
+              "extra_distance": "+3,500 NM"
+            }
+          }
+        },
+        {
+          "global_frame_index": 77,
+          "level_number": 10,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Bypassing through Lombok adds up to seven extra sailing days for vessels travelling between the Middle East and East Asia.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Calendar graphic ticking forward 7 extra days, background ship sailing on high seas, 16:9",
+            "relative_filename": "images/level_10_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "delay_card",
+              "transit_delay": "+7 Days per Voyage"
+            }
+          }
+        },
+        {
+          "global_frame_index": 78,
+          "level_number": 10,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "This extra sailing time consumes millions of additional tons of marine bunker fuel, exploding shipping costs by hundreds of thousands of dollars per vessel.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Industrial fuel gauge dipping into empty red zone, background oil tanker at sea, 16:9",
+            "relative_filename": "images/level_10_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "fuel_cost",
+              "extra_fuel_cost": "+$800,000 / Vessel"
+            }
+          }
+        },
+        {
+          "global_frame_index": 79,
+          "level_number": 10,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Global container shipping capacity would instantly shrink by ten to fifteen percent, as ships remain trapped at sea longer for each round trip.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Bar chart illustrating global container fleet effective capacity dropping by 15%, 16:9",
+            "relative_filename": "images/level_10_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "capacity_drop",
+              "effective_capacity": "-15%"
+            }
+          }
+        },
+        {
+          "global_frame_index": 80,
+          "level_number": 10,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Smaller regional ports along the Sunda and Lombok Straits lack the massive transshipment infrastructure of Singapore, causing immediate bottlenecking.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Overcrowded small port harbour with container vessels waiting off coast at anchor, 16:9",
+            "relative_filename": "images/level_10_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_10_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_10_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "port_bottleneck",
+              "location": "Sunda / Lombok Approach"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 11,
+      "title": "Global Market Shockwaves & Energy Stagflation",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_11.mp4",
+      "relative_level_audio": "audio/level_11_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 81,
+          "level_number": 11,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The financial fallout from a Malacca closure would hit energy and commodity markets within minutes of trading desks opening.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Financial trading floor monitors glowing with volatile red energy stock tickers, 16:9",
+            "relative_filename": "images/level_11_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "market_shock",
+              "status": "Wall Street Panic"
+            }
+          }
+        },
+        {
+          "global_frame_index": 82,
+          "level_number": 11,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Global crude oil prices would spike by an estimated twenty to forty dollars per barrel as oil traders scramble to secure available spot cargoes.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Oil barrel graphic with upward shooting red price curve graph, dark navy glassmorphic style, 16:9",
+            "relative_filename": "images/level_11_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "oil_spike",
+              "price_increase": "+$30 - $40 / Barrel"
+            }
+          }
+        },
+        {
+          "global_frame_index": 83,
+          "level_number": 11,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Refineries in Japan, South Korea, and China would be forced to cut throughput, triggering nationwide petrol and diesel rationing.",
+            "word_count": 19,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Industrial oil refinery silhouetted at dusk with flare stacks burning dim, paper cut keylines, 16:9",
+            "relative_filename": "images/level_11_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "refinery_impact",
+              "action": "Fuel Rationing Enacted"
+            }
+          }
+        },
+        {
+          "global_frame_index": 84,
+          "level_number": 11,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Just-in-time manufacturing plants in Shanghai, Shenzhen, and Tokyo would run out of imported components, forcing factory closures within a week.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Empty factory floor with stopped conveyor belts and dark assembly lines, 16:9",
+            "relative_filename": "images/level_11_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "factory_status",
+              "status": "Assembly Lines Idled"
+            }
+          }
+        },
+        {
+          "global_frame_index": 85,
+          "level_number": 11,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Consumer electronics, automotive parts, and pharmaceutical supplies bound for Europe and North America would face multi-month delivery delays.",
+            "word_count": 18,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Empty store shelves graphic with delivery delay warning overlays, paper collage style, 16:9",
+            "relative_filename": "images/level_11_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "shortage_alert",
+              "affected_sectors": [
+                "Tech",
+                "Auto",
+                "Pharma"
+              ]
+            }
+          }
+        },
+        {
+          "global_frame_index": 86,
+          "level_number": 11,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Economists estimate that a two-week closure of the strait would inflict over fifty billion dollars in direct economic damage to global GDP.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Infographic displaying global GDP loss estimates across regions, 16:9",
+            "relative_filename": "images/level_11_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "gdp_damage",
+              "total_loss": "$50,000,000,000"
+            }
+          }
+        },
+        {
+          "global_frame_index": 87,
+          "level_number": 11,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "If a closure dragged on for months, the resulting supply shock would trigger severe global stagflation—combining high inflation with economic stagnation.",
+            "word_count": 21,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Economic trend graph showing inflation spiking while GDP growth drops into negative territory, 16:9",
+            "relative_filename": "images/level_11_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "stagflation_warning",
+              "condition": "Global Stagflation"
+            }
+          }
+        },
+        {
+          "global_frame_index": 88,
+          "level_number": 11,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "This immense financial vulnerability explains why world powers consider bypassing Malacca to be an urgent national priority.",
+            "word_count": 17,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Editorial illustration of a globe bound in heavy chain links anchored to Malacca, 16:9",
+            "relative_filename": "images/level_11_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_11_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_11_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "conclusion_tag",
+              "urgency": "High Priority Bypass Search"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "level_number": 12,
+      "title": "Kra Landbridge, Arctic Routes & The Future",
+      "total_frames": 8,
+      "target_level_duration_s": 104.0,
+      "relative_level_video": "output/level_12.mp4",
+      "relative_level_audio": "audio/level_12_master.mp3",
+      "frames": [
+        {
+          "global_frame_index": 89,
+          "level_number": 12,
+          "frame_in_level": 1,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "To reduce their vulnerability, regional nations are proposing ambitious engineering megaprojects to create alternative global trade corridors.",
+            "word_count": 17,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Blueprint map of Southeast Asia showing proposed landbridges and canals in gold lines, 16:9",
+            "relative_filename": "images/level_12_frame_01.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_01.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_01.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "future_projects",
+              "focus": "Megaproject Bypasses"
+            }
+          }
+        },
+        {
+          "global_frame_index": 90,
+          "level_number": 12,
+          "frame_in_level": 2,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The most famous concept is Thailand's historic Kra Canal proposal—a plan to dig a ocean-level canal across the narrow Kra Isthmus in southern Thailand.",
+            "word_count": 24,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Satellite map of Kra Isthmus in Thailand with a glowing red canal path cutting across the land, 16:9",
+            "relative_filename": "images/level_12_frame_02.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_02.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_02.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "kra_canal",
+              "location": "Kra Isthmus, Thailand"
+            }
+          }
+        },
+        {
+          "global_frame_index": 91,
+          "level_number": 12,
+          "frame_in_level": 3,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "A Kra Canal would allow ships to bypass Malacca and Singapore entirely, saving twelve hundred kilometers and three days of sailing time.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Nautical chart comparing Malacca route vs Kra Canal shortcut, 16:9",
+            "relative_filename": "images/level_12_frame_03.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_03.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_03.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "kra_savings",
+              "distance_saved": "1,200 km",
+              "time_saved": "72 Hours"
+            }
+          }
+        },
+        {
+          "global_frame_index": 92,
+          "level_number": 12,
+          "frame_in_level": 4,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "However, due to a thirty-billion-dollar price tag and political fears of splitting Thailand in two, Bangkok has shifted focus to a Landbridge project.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Architectural vector render of a dual-port rail landbridge across Thailand, 16:9",
+            "relative_filename": "images/level_12_frame_04.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_04.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_04.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "landbridge_card",
+              "project": "Thai Landbridge",
+              "cost": "$28 Billion"
+            }
+          }
+        },
+        {
+          "global_frame_index": 93,
+          "level_number": 12,
+          "frame_in_level": 5,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The Thai Landbridge would transport containerized cargo across the isthmus via high-speed freight rail connecting deep-water ports on both coasts.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "High-speed freight train loaded with containers speeding through a Thai mountain corridor at sunset, 16:9",
+            "relative_filename": "images/level_12_frame_05.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_05.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_05.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "rail_specs",
+              "capacity": "20 Million TEU"
+            }
+          }
+        },
+        {
+          "global_frame_index": 94,
+          "level_number": 12,
+          "frame_in_level": 6,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Farther north, climate change is opening the Arctic Northern Sea Route along Russia's coast, offering a summer shortcut between Europe and Asia.",
+            "word_count": 22,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Cinematic shot of an icebreaking container vessel breaking through Arctic ice under northern lights, 16:9",
+            "relative_filename": "images/level_12_frame_06.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_06.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_06.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "arctic_card",
+              "route": "Northern Sea Route",
+              "distance_savings": "-40%"
+            }
+          }
+        },
+        {
+          "global_frame_index": 95,
+          "level_number": 12,
+          "frame_in_level": 7,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "Yet despite these ambitious alternatives, none can match the year-round capacity, low cost, and established infrastructure of the Malacca Strait.",
+            "word_count": 20,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Superb aerial sunset shot of container ships gliding seamlessly through Singapore Strait, 16:9",
+            "relative_filename": "images/level_12_frame_07.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_07.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_07.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "verdict_tag",
+              "verdict": "Malacca Remains Unmatched"
+            }
+          }
+        },
+        {
+          "global_frame_index": 96,
+          "level_number": 12,
+          "frame_in_level": 8,
+          "duration_target_seconds": 13.0,
+          "script": {
+            "text": "The Strait of Malacca will remain the irreplaceable arterial bottleneck of global commerce—and its most dangerous single point of failure—for generations to come.",
+            "word_count": 23,
+            "estimated_duration_s": 13.0
+          },
+          "visual_hero_layer": {
+            "engine": "google_imagen_3_sdk",
+            "aspect_ratio": "16:9",
+            "resolution": [
+              1920,
+              1080
+            ],
+            "prompt": "Dramatic dark navy paper collage artwork of a vessel sailing into an open ocean horizon, gold lighting, 16:9",
+            "relative_filename": "images/level_12_frame_08.png"
+          },
+          "audio_layer": {
+            "relative_audio_filename": "audio/level_12_frame_08.mp3",
+            "relative_vtt_filename": "subtitles/level_12_frame_08.vtt"
+          },
+          "motion_graphics_overlay": {
+            "zIndex": 15,
+            "config": {
+              "type": "end_title",
+              "title": "Strait of Malacca",
+              "subtitle": "60% of World Trade • 1 Single Vulnerability"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

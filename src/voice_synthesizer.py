@@ -163,7 +163,25 @@ class EdgeTTSSynthesizer(BaseTTSSynthesizer):
             prev_end = w_end
             max_end_time = max(max_end_time, w_end)
 
-        duration = max_end_time + 0.35 if max_end_time > 0 else 5.0
+        # Calculate physical MP3 file duration using FFmpeg to ensure 100% exact sync
+        physical_duration = 0.0
+        ffmpeg_exe = Path("node_modules/@remotion/compositor-win32-x64-msvc/ffmpeg.exe")
+        if not ffmpeg_exe.exists():
+            for p in Path("node_modules").glob("**/ffmpeg.exe"):
+                ffmpeg_exe = p
+                break
+        if ffmpeg_exe.exists():
+            try:
+                res = subprocess.run([str(ffmpeg_exe), "-i", str(output_path)], capture_output=True, text=True)
+                for line in res.stderr.splitlines():
+                    if "Duration:" in line:
+                        dur_str = line.split("Duration:")[1].split(",")[0].strip()
+                        h, m, s = dur_str.split(":")
+                        physical_duration = round(float(h)*3600 + float(m)*60 + float(s), 3)
+            except Exception:
+                pass
+
+        duration = physical_duration if physical_duration > 0 else (max_end_time + 0.35 if max_end_time > 0 else 5.0)
 
         return VoiceSynthesisResult(
             audio_path=str(output_path),

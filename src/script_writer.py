@@ -16,6 +16,7 @@ class VoxScene(BaseModel):
     lower_third: Optional[str] = Field(default=None, description="Typewriter caption strip or stamp text.")
     highlight_words: List[str] = Field(default_factory=list, description="Key words for hot red or mustard yellow highlight.")
     transition_style: str = Field(default="ken_burns_in", description="Visual motion style: classic, kinetic, deep_diorama, paper_tear, map_pin.")
+    motion_graphics_overlay: Optional[Dict[str, Any]] = Field(default=None, description="Motion graphics configuration object for Remotion overlays (route_tracer, chokepoint_ruler, map_highlight, stat_callout).")
 
 class VoxScriptBlueprint(BaseModel):
     title: str
@@ -58,7 +59,8 @@ class VoxScriptWriter:
                 imagen_prompt=f"A halftone black and white photograph cutout representing {clean_topic} with rough scissor-cut edges and a red offset stroke, set on aged newsprint, {Config.STYLE_BLOCK}",
                 lower_third=f"CASE FILE: {upper_topic} ORIGINS",
                 highlight_words=[clean_topic.split()[0], "force", "history"],
-                transition_style="ken_burns_in"
+                transition_style="ken_burns_in",
+                motion_graphics_overlay={"type": "map_highlight", "label": f"{upper_topic} HUB", "coords": "37.7° N, 122.4° W"}
             ),
             VoxScene(
                 scene_index=2,
@@ -67,7 +69,8 @@ class VoxScriptWriter:
                 imagen_prompt=f"A torn paper document cutout showing a technical schematic diagram of {clean_topic}, red string pinned between key nodes, rubber stamp mark reading CONFIDENTIAL, {Config.STYLE_BLOCK}",
                 lower_third="ANALYSIS: MONOPOLY RISKS",
                 highlight_words=["chokepoint", "controlled"],
-                transition_style="paper_tear"
+                transition_style="paper_tear",
+                motion_graphics_overlay={"type": "chokepoint_ruler", "width": "2.8 KM (PRIMARY CHOKEPOINT)"}
             ),
             VoxScene(
                 scene_index=3,
@@ -76,7 +79,8 @@ class VoxScriptWriter:
                 imagen_prompt=f"A massive stat counter reading 100 BILLION in condensed bold red numbers, surrounded by black and white halftone industrial cutouts, {Config.STYLE_BLOCK}",
                 lower_third=f"IMPACT: {upper_topic} DISRUPTIONS",
                 highlight_words=["surged", "disruption"],
-                transition_style="kinetic"
+                transition_style="kinetic",
+                motion_graphics_overlay={"type": "stat_callout", "stat": "GLOBAL DEMAND SURGE", "value": "100 BILLION UNITS"}
             ),
             VoxScene(
                 scene_index=4,
@@ -85,7 +89,8 @@ class VoxScriptWriter:
                 imagen_prompt=f"An archival world map surface with red yarn stretched between brass pins connecting supply nodes of {clean_topic}, paper tape fragments, {Config.STYLE_BLOCK}",
                 lower_third="GLOBAL STRATEGY MAP",
                 highlight_words=["superpowers", "dominance"],
-                transition_style="map_pin"
+                transition_style="map_pin",
+                motion_graphics_overlay={"type": "route_tracer", "distance": "5,800 NAUTICAL MILES"}
             ),
             VoxScene(
                 scene_index=5,
@@ -94,7 +99,8 @@ class VoxScriptWriter:
                 imagen_prompt=f"A black and white halftone cutout of microscopic structures in {clean_topic} with a bright mustard yellow highlight circle drawn around the core, {Config.STYLE_BLOCK}",
                 lower_third="PHYSICS BOUNDARY",
                 highlight_words=["limits", "engineers"],
-                transition_style="deep_diorama"
+                transition_style="deep_diorama",
+                motion_graphics_overlay={"type": "map_highlight", "label": "PHYSICAL ATOMIC BOUNDARY", "coords": "2.0 NANOMETERS"}
             ),
             VoxScene(
                 scene_index=6,
@@ -103,7 +109,8 @@ class VoxScriptWriter:
                 imagen_prompt=f"A lonely archival cardboard box cutout with a bold red REJECTED rubber stamp, masking tape fragments on aged newsprint, {Config.STYLE_BLOCK}",
                 lower_third="CLASSIFIED ENDING",
                 highlight_words=["race", "unanswered", "era"],
-                transition_style="paper_tear"
+                transition_style="paper_tear",
+                motion_graphics_overlay={"type": "stat_callout", "stat": "UNRESOLVED FUTURE", "value": "STAKE: GLOBAL SUPREMACY"}
             )
         ]
 

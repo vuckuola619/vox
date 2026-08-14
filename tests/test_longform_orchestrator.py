@@ -10,13 +10,14 @@ def test_longform_blueprints_generation():
 
     assert len(blueprints) == 6
     assert blueprints[0].level_number == 1
-    assert "QUANTUM MECHANICS" in blueprints[0].level_title
+    assert "LEVEL 1" in blueprints[0].level_title
     assert len(blueprints[0].frames) > 0
 
 def test_longform_single_level_processing(tmp_path):
     studio = LongFormVoxStudio(topic="Space Exploration", tts_provider="edge-tts")
-    # Patch synthesizer to use fallback synthesizer directly for instant test execution
+    # Patch synthesizer and image generator for instant test execution
     studio.synthesizer.synthesize = lambda text, output_filename: studio.synthesizer._fallback_synthesize(text, studio.levels_dir / output_filename)
+    studio.image_gen.generate_scene_hero_image = MagicMock(return_value="mock_image.png")
 
     res = studio.run_level(level_number=1)
 

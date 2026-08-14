@@ -33,39 +33,71 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
   };
 
   const resolvedSrc = getResolvedSrc(imagePath);
+
+  // 1. KINETIC PUNCH-ZOOM (SNAPPY 20% PUNCH WITH HARD STOP)
+  if (transitionStyle === 'kinetic' || transitionStyle === 'kinetic_punch') {
+    const punchScale = interpolate(frame, [0, 8, 12, durationInFrames], [1.0, 1.22, 1.18, 1.20], { extrapolateRight: 'clamp' });
+    const shakeX = frame >= 8 && frame <= 14 ? Math.sin(frame * 3.5) * 5 : 0;
+
+    return (
+      <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'hidden', backgroundColor: '#111111' }}>
+        {resolvedSrc ? (
+          <Img
+            src={resolvedSrc}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transform: `scale(${punchScale}) translate(${shakeX}px, 0px)`
+            }}
+          />
+        ) : null}
+      </div>
+    );
+  }
+
+  // 2. DEEP 3D DIORAMA (PERSPECTIVE 3D ORBIT CAMERA MOVE)
+  if (transitionStyle === 'deep_diorama' || transitionStyle === 'map_pin') {
+    const rotateY = interpolate(frame, [0, durationInFrames], [-6, 6], { extrapolateRight: 'clamp' });
+    const rotateX = interpolate(frame, [0, durationInFrames], [4, -3], { extrapolateRight: 'clamp' });
+    const scale = interpolate(frame, [0, durationInFrames], [1.05, 1.15], { extrapolateRight: 'clamp' });
+
+    return (
+      <div
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+          backgroundColor: '#111111',
+          perspective: '1200px'
+        }}
+      >
+        {resolvedSrc ? (
+          <Img
+            src={resolvedSrc}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transform: `perspective(1200px) scale(${scale}) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`,
+              transformOrigin: 'center center',
+              boxShadow: '0 20px 50px rgba(0,0,0,0.6)'
+            }}
+          />
+        ) : null}
+      </div>
+    );
+  }
+
+  // 3. CLASSIC KEN BURNS IN / OUT
   const isZoomOut = transitionStyle === 'ken_burns_out';
-
-  const scale = interpolate(
-    frame,
-    [0, durationInFrames],
-    isZoomOut ? [1.15, 1.0] : [1.0, 1.15],
-    { extrapolateRight: 'clamp' }
-  );
-
-  const translateX = interpolate(
-    frame,
-    [0, durationInFrames],
-    isZoomOut ? [-20, 20] : [0, -30],
-    { extrapolateRight: 'clamp' }
-  );
-
-  const translateY = interpolate(
-    frame,
-    [0, durationInFrames],
-    [0, -15],
-    { extrapolateRight: 'clamp' }
-  );
+  const scale = interpolate(frame, [0, durationInFrames], isZoomOut ? [1.14, 1.02] : [1.02, 1.14], { extrapolateRight: 'clamp' });
+  const translateX = interpolate(frame, [0, durationInFrames], isZoomOut ? [-20, 20] : [0, -25], { extrapolateRight: 'clamp' });
+  const translateY = interpolate(frame, [0, durationInFrames], [0, -12], { extrapolateRight: 'clamp' });
 
   return (
-    <div
-      style={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-        backgroundColor: '#111111'
-      }}
-    >
+    <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'hidden', backgroundColor: '#111111' }}>
       {resolvedSrc ? (
         <Img
           src={resolvedSrc}
@@ -76,35 +108,7 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
             transform: `scale(${scale}) translate(${translateX}px, ${translateY}px)`
           }}
         />
-      ) : (
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: 'linear-gradient(135deg, #111111 0%, #1d2d44 50%, #0d1b2a 100%)',
-            transform: `scale(${scale})`
-          }}
-        >
-          <div
-            style={{
-              width: '80%',
-              height: '80%',
-              border: '2px dashed rgba(255, 221, 0, 0.4)',
-              borderRadius: '8px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-          >
-            <h2 style={{ color: '#F3EFE0', fontFamily: 'Arial, sans-serif', opacity: 0.6 }}>
-              VOX EDITORIAL GRAPHIC
-            </h2>
-          </div>
-        </div>
-      )}
+      ) : null}
     </div>
   );
 };

@@ -21,6 +21,10 @@ out/
 public/assets/audio/*.mp3
 public/assets/images/*.png
 public/assets/images/*.jpg
+projects/
+public/projects/
+scratch/
+test_fresh_ai.png
 
 # OS Junk
 .DS_Store

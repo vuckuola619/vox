@@ -1,1052 +1,977 @@
 {
-  "title": "Why The Strait of Malacca Holds 60% of World Trade (And How It Could Collapse) - Level 8: The Physics of Collapse & Suez Parallels",
-  "topic": "Why The Strait of Malacca Holds 60% of World Trade (And How It Could Collapse)",
-  "levelNumber": 8,
-  "levelTitle": "The Physics of Collapse & Suez Parallels",
-  "totalDurationSeconds": 72.73,
-  "totalFrames": 2181,
+  "title": "The Gate of Tears: How 18 Miles of Ocean Hijacked Global Trade - Level 2: The Bloodline of European & Asian Commerce",
+  "topic": "The Gate of Tears: How 18 Miles of Ocean Hijacked Global Trade",
+  "levelNumber": 2,
+  "levelTitle": "The Bloodline of European & Asian Commerce",
+  "totalDurationSeconds": 70.9,
+  "totalFrames": 2127,
   "fps": 30,
   "width": 1920,
   "height": 1080,
-  "masterAudioPath": "assets/audio/level_8_master.mp3",
+  "masterAudioPath": "assets/audio/level_2_master.mp3",
   "scenes": [
     {
       "sceneIndex": 1,
-      "globalFrameIndex": 57,
-      "narrationText": "While geopolitical blockades represent a military threat, physical accidents and environmental disasters pose a far more immediate risk of closing the strait.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 1",
-      "prompt": "Dramatic vector visual of a cargo ship listing in stormy seas, warning aura, 16:9",
-      "audioPath": "assets/audio/level_8_frame_1_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_1_image.png",
+      "globalFrameIndex": 9,
+      "narrationText": "Every major shipping route linking the factories of China, Japan, South Korea, and Southeast Asia to Europe relies on Bab el-Mandeb.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "World maritime trade map showing massive red commerce vectors flowing from East Asia into the Red Sea, paper collage, 16:9",
+      "audioPath": "assets/audio/level_2_frame_1_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_1_image.png",
       "startTime": 0.0,
-      "endTime": 9.58,
-      "duration": 9.58,
+      "endTime": 9.29,
+      "duration": 9.29,
       "wordTimestamps": [
         {
-          "word": "While",
+          "word": "Every",
           "startTime": 0.1,
-          "endTime": 0.425
+          "endTime": 0.412
         },
         {
-          "word": "geopolitical",
-          "startTime": 0.438,
-          "endTime": 1.2
+          "word": "major",
+          "startTime": 0.425,
+          "endTime": 0.8
         },
         {
-          "word": "blockades",
-          "startTime": 1.212,
-          "endTime": 1.75
+          "word": "shipping",
+          "startTime": 0.812,
+          "endTime": 1.225
         },
         {
-          "word": "represent",
-          "startTime": 1.762,
-          "endTime": 2.212
+          "word": "route",
+          "startTime": 1.238,
+          "endTime": 1.5
         },
         {
-          "word": "a",
-          "startTime": 2.225,
-          "endTime": 2.275
-        },
-        {
-          "word": "military",
-          "startTime": 2.288,
-          "endTime": 2.812
-        },
-        {
-          "word": "threat",
-          "startTime": 2.825,
-          "endTime": 3.188
-        },
-        {
-          "word": "physical",
-          "startTime": 3.487,
-          "endTime": 3.925
-        },
-        {
-          "word": "accidents",
-          "startTime": 3.938,
-          "endTime": 4.475
-        },
-        {
-          "word": "and",
-          "startTime": 4.575,
-          "endTime": 4.662
-        },
-        {
-          "word": "environmental",
-          "startTime": 4.675,
-          "endTime": 5.275
-        },
-        {
-          "word": "disasters",
-          "startTime": 5.287,
-          "endTime": 5.9
-        },
-        {
-          "word": "pose",
-          "startTime": 5.912,
-          "endTime": 6.213
-        },
-        {
-          "word": "a",
-          "startTime": 6.225,
-          "endTime": 6.3
-        },
-        {
-          "word": "far",
-          "startTime": 6.312,
-          "endTime": 6.612
-        },
-        {
-          "word": "more",
-          "startTime": 6.625,
-          "endTime": 6.862
-        },
-        {
-          "word": "immediate",
-          "startTime": 6.875,
-          "endTime": 7.312
-        },
-        {
-          "word": "risk",
-          "startTime": 7.325,
-          "endTime": 7.6
-        },
-        {
-          "word": "of",
-          "startTime": 7.612,
-          "endTime": 7.713
-        },
-        {
-          "word": "closing",
-          "startTime": 7.725,
-          "endTime": 8.125
+          "word": "linking",
+          "startTime": 1.512,
+          "endTime": 1.837
         },
         {
           "word": "the",
-          "startTime": 8.137,
-          "endTime": 8.213
+          "startTime": 1.85,
+          "endTime": 1.925
         },
         {
-          "word": "strait",
-          "startTime": 8.225,
-          "endTime": 8.7
+          "word": "factories",
+          "startTime": 1.938,
+          "endTime": 2.462
+        },
+        {
+          "word": "of",
+          "startTime": 2.475,
+          "endTime": 2.562
+        },
+        {
+          "word": "China",
+          "startTime": 2.575,
+          "endTime": 2.987
+        },
+        {
+          "word": "Japan",
+          "startTime": 3.212,
+          "endTime": 3.75
+        },
+        {
+          "word": "South",
+          "startTime": 4.0,
+          "endTime": 4.325
+        },
+        {
+          "word": "Korea",
+          "startTime": 4.338,
+          "endTime": 4.825
+        },
+        {
+          "word": "and",
+          "startTime": 5.062,
+          "endTime": 5.237
+        },
+        {
+          "word": "Southeast",
+          "startTime": 5.25,
+          "endTime": 5.862
+        },
+        {
+          "word": "Asia",
+          "startTime": 5.875,
+          "endTime": 6.263
+        },
+        {
+          "word": "to",
+          "startTime": 6.275,
+          "endTime": 6.388
+        },
+        {
+          "word": "Europe",
+          "startTime": 6.4,
+          "endTime": 6.825
+        },
+        {
+          "word": "relies",
+          "startTime": 6.838,
+          "endTime": 7.275
+        },
+        {
+          "word": "on",
+          "startTime": 7.287,
+          "endTime": 7.425
+        },
+        {
+          "word": "Bab",
+          "startTime": 7.438,
+          "endTime": 7.75
+        },
+        {
+          "word": "el-Mandeb",
+          "startTime": 7.763,
+          "endTime": 8.425
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "hazard_intro",
-        "focus": "Physical & Accidental Blockade"
+        "type": "trade_flow",
+        "label": "Asia-Europe Maritime Route",
+        "volume": "Major Global Arterial"
       }
     },
     {
       "sceneIndex": 2,
-      "globalFrameIndex": 58,
-      "narrationText": "The world received a terrifying preview of maritime choke point fragility in March twenty twenty-one, when the Ever Given wedged in the Suez Canal.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 2",
-      "prompt": "Editorial illustration of the giant container ship Ever Given stuck diagonally across Suez Canal, paper cut art, 16:9",
-      "audioPath": "assets/audio/level_8_frame_2_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_2_image.png",
-      "startTime": 9.58,
-      "endTime": 18.41,
-      "duration": 8.83,
+      "globalFrameIndex": 10,
+      "narrationText": "Ultra-large container ships carrying up to twenty-four thousand steel containers rely on this passage to maintain precise just-in-time supply chains.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "Massive 24,000 TEU container ship loaded high with multi-colored containers navigating blue sea, paper cutout style, 16:9",
+      "audioPath": "assets/audio/level_2_frame_2_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_2_image.png",
+      "startTime": 9.29,
+      "endTime": 18.34,
+      "duration": 9.05,
       "wordTimestamps": [
         {
-          "word": "The",
-          "startTime": 9.68,
-          "endTime": 9.817
+          "word": "Ultra-large",
+          "startTime": 9.39,
+          "endTime": 10.077
         },
         {
-          "word": "world",
-          "startTime": 9.83,
-          "endTime": 10.117
+          "word": "container",
+          "startTime": 10.09,
+          "endTime": 10.59
         },
         {
-          "word": "received",
-          "startTime": 10.13,
-          "endTime": 10.53
+          "word": "ships",
+          "startTime": 10.602,
+          "endTime": 10.953
         },
         {
-          "word": "a",
-          "startTime": 10.543,
-          "endTime": 10.605
+          "word": "carrying",
+          "startTime": 10.965,
+          "endTime": 11.39
         },
         {
-          "word": "terrifying",
-          "startTime": 10.618,
-          "endTime": 11.243
+          "word": "up",
+          "startTime": 11.402,
+          "endTime": 11.54
         },
         {
-          "word": "preview",
-          "startTime": 11.255,
-          "endTime": 11.667
+          "word": "to",
+          "startTime": 11.553,
+          "endTime": 11.64
         },
         {
-          "word": "of",
-          "startTime": 11.68,
-          "endTime": 11.792
+          "word": "twenty-four",
+          "startTime": 11.652,
+          "endTime": 12.178
         },
         {
-          "word": "maritime",
-          "startTime": 11.805,
-          "endTime": 12.392
+          "word": "thousand",
+          "startTime": 12.19,
+          "endTime": 12.64
         },
         {
-          "word": "choke",
-          "startTime": 12.405,
-          "endTime": 12.718
+          "word": "steel",
+          "startTime": 12.652,
+          "endTime": 12.99
         },
         {
-          "word": "point",
-          "startTime": 12.73,
-          "endTime": 12.98
+          "word": "containers",
+          "startTime": 13.002,
+          "endTime": 13.565
         },
         {
-          "word": "fragility",
-          "startTime": 12.993,
-          "endTime": 13.567
+          "word": "rely",
+          "startTime": 13.577,
+          "endTime": 13.978
         },
         {
-          "word": "in",
-          "startTime": 13.58,
-          "endTime": 13.668
+          "word": "on",
+          "startTime": 13.99,
+          "endTime": 14.065
         },
         {
-          "word": "March",
-          "startTime": 13.68,
-          "endTime": 14.005
+          "word": "this",
+          "startTime": 14.077,
+          "endTime": 14.228
         },
         {
-          "word": "twenty",
-          "startTime": 14.018,
-          "endTime": 14.305
+          "word": "passage",
+          "startTime": 14.24,
+          "endTime": 14.765
         },
         {
-          "word": "twenty-one",
-          "startTime": 14.317,
-          "endTime": 14.892
+          "word": "to",
+          "startTime": 14.777,
+          "endTime": 14.878
         },
         {
-          "word": "when",
-          "startTime": 15.218,
-          "endTime": 15.343
+          "word": "maintain",
+          "startTime": 14.89,
+          "endTime": 15.34
         },
         {
-          "word": "the",
-          "startTime": 15.355,
-          "endTime": 15.43
+          "word": "precise",
+          "startTime": 15.352,
+          "endTime": 15.827
         },
         {
-          "word": "Ever",
-          "startTime": 15.442,
-          "endTime": 15.73
+          "word": "just-in-time",
+          "startTime": 15.84,
+          "endTime": 16.478
         },
         {
-          "word": "Given",
-          "startTime": 15.742,
-          "endTime": 16.005
+          "word": "supply",
+          "startTime": 16.49,
+          "endTime": 16.865
         },
         {
-          "word": "wedged",
-          "startTime": 16.018,
-          "endTime": 16.392
-        },
-        {
-          "word": "in",
-          "startTime": 16.405,
-          "endTime": 16.48
-        },
-        {
-          "word": "the",
-          "startTime": 16.492,
-          "endTime": 16.567
-        },
-        {
-          "word": "Suez",
-          "startTime": 16.58,
-          "endTime": 16.992
-        },
-        {
-          "word": "Canal",
-          "startTime": 17.005,
-          "endTime": 17.543
+          "word": "chains",
+          "startTime": 16.878,
+          "endTime": 17.478
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "suez_recap",
-        "ship": "Ever Given",
-        "duration": "6 Days"
+        "type": "ship_spec",
+        "label": "Megaship Capacity",
+        "value": "24,000 TEU Containers"
       }
     },
     {
       "sceneIndex": 3,
-      "globalFrameIndex": 59,
-      "narrationText": "That single six-day blockage in Egypt held up an estimated fifty-nine billion dollars in trade, creating global supply chain chaos for months.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 3",
-      "prompt": "Global map showing trade impact ripple effects radiating from Suez Canal across Europe and Asia, 16:9",
-      "audioPath": "assets/audio/level_8_frame_3_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_3_image.png",
-      "startTime": 18.41,
-      "endTime": 27.58,
-      "duration": 9.17,
+      "globalFrameIndex": 11,
+      "narrationText": "In addition to crude oil, liquefied natural gas carriers from Qatar and fuel tankers from the Gulf sail north through the strait toward Mediterranean ports.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "Spherical LNG gas carrier ship navigating Red Sea waters, industrial LNG tank diagram overlay, paper art, 16:9",
+      "audioPath": "assets/audio/level_2_frame_3_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_3_image.png",
+      "startTime": 18.34,
+      "endTime": 27.82,
+      "duration": 9.48,
       "wordTimestamps": [
         {
-          "word": "That",
-          "startTime": 18.51,
-          "endTime": 18.785
+          "word": "In",
+          "startTime": 18.44,
+          "endTime": 18.59
         },
         {
-          "word": "single",
-          "startTime": 18.798,
-          "endTime": 19.172
+          "word": "addition",
+          "startTime": 18.603,
+          "endTime": 19.002
         },
         {
-          "word": "six-day",
-          "startTime": 19.185,
-          "endTime": 19.672
+          "word": "to",
+          "startTime": 19.015,
+          "endTime": 19.115
         },
         {
-          "word": "blockage",
-          "startTime": 19.685,
-          "endTime": 20.185
+          "word": "crude",
+          "startTime": 19.127,
+          "endTime": 19.415
         },
         {
-          "word": "in",
-          "startTime": 20.198,
-          "endTime": 20.335
+          "word": "oil",
+          "startTime": 19.427,
+          "endTime": 19.79
         },
         {
-          "word": "Egypt",
-          "startTime": 20.348,
-          "endTime": 20.722
+          "word": "liquefied",
+          "startTime": 20.052,
+          "endTime": 20.603
         },
         {
-          "word": "held",
-          "startTime": 20.735,
-          "endTime": 20.972
+          "word": "natural",
+          "startTime": 20.615,
+          "endTime": 21.028
         },
         {
-          "word": "up",
-          "startTime": 20.985,
-          "endTime": 21.098
+          "word": "gas",
+          "startTime": 21.04,
+          "endTime": 21.378
         },
         {
-          "word": "an",
-          "startTime": 21.11,
-          "endTime": 21.222
+          "word": "carriers",
+          "startTime": 21.39,
+          "endTime": 21.865
         },
         {
-          "word": "estimated",
-          "startTime": 21.235,
-          "endTime": 21.76
+          "word": "from",
+          "startTime": 21.878,
+          "endTime": 22.04
         },
         {
-          "word": "fifty-nine",
-          "startTime": 21.772,
-          "endTime": 22.385
+          "word": "Qatar",
+          "startTime": 22.052,
+          "endTime": 22.553
         },
         {
-          "word": "billion",
-          "startTime": 22.397,
-          "endTime": 22.772
+          "word": "and",
+          "startTime": 22.565,
+          "endTime": 22.665
         },
         {
-          "word": "dollars",
-          "startTime": 22.785,
-          "endTime": 23.173
+          "word": "fuel",
+          "startTime": 22.678,
+          "endTime": 22.978
         },
         {
-          "word": "in",
-          "startTime": 23.185,
-          "endTime": 23.285
+          "word": "tankers",
+          "startTime": 22.99,
+          "endTime": 23.465
         },
         {
-          "word": "trade",
-          "startTime": 23.298,
-          "endTime": 23.697
+          "word": "from",
+          "startTime": 23.478,
+          "endTime": 23.603
         },
         {
-          "word": "creating",
-          "startTime": 24.01,
-          "endTime": 24.435
+          "word": "the",
+          "startTime": 23.615,
+          "endTime": 23.702
         },
         {
-          "word": "global",
-          "startTime": 24.447,
-          "endTime": 24.772
+          "word": "Gulf",
+          "startTime": 23.715,
+          "endTime": 23.978
         },
         {
-          "word": "supply",
-          "startTime": 24.785,
-          "endTime": 25.197
+          "word": "sail",
+          "startTime": 23.99,
+          "endTime": 24.377
         },
         {
-          "word": "chain",
-          "startTime": 25.21,
-          "endTime": 25.572
+          "word": "north",
+          "startTime": 24.39,
+          "endTime": 24.715
         },
         {
-          "word": "chaos",
-          "startTime": 25.585,
-          "endTime": 26.072
+          "word": "through",
+          "startTime": 24.728,
+          "endTime": 24.902
         },
         {
-          "word": "for",
-          "startTime": 26.085,
-          "endTime": 26.21
+          "word": "the",
+          "startTime": 24.915,
+          "endTime": 25.002
         },
         {
-          "word": "months",
-          "startTime": 26.222,
-          "endTime": 26.697
+          "word": "strait",
+          "startTime": 25.015,
+          "endTime": 25.402
+        },
+        {
+          "word": "toward",
+          "startTime": 25.415,
+          "endTime": 25.702
+        },
+        {
+          "word": "Mediterranean",
+          "startTime": 25.715,
+          "endTime": 26.39
+        },
+        {
+          "word": "ports",
+          "startTime": 26.402,
+          "endTime": 26.94
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "suez_cost",
-        "daily_damage": "$9.6 Billion / Day"
+        "type": "gas_stat",
+        "label": "European LNG Supply",
+        "value": "Qatar-Europe LNG Corridor"
       }
     },
     {
       "sceneIndex": 4,
-      "globalFrameIndex": 60,
-      "narrationText": "However, maritime logistics experts warn that a major grounding or collision in the Strait of Malacca would be significantly worse than Suez.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 4",
-      "prompt": "Comparative graphic pitting Suez Canal vs Malacca Strait trade volumes and channel width, 16:9",
-      "audioPath": "assets/audio/level_8_frame_4_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_4_image.png",
-      "startTime": 27.58,
-      "endTime": 36.1,
-      "duration": 8.52,
+      "globalFrameIndex": 12,
+      "narrationText": "Car manufacturers in Germany, electronics assembly plants in Asia, and agricultural exporters depend on weekly scheduled vessel transits.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "Industrial supply chain collage showing factory assembly lines, cargo cranes, and container ships, paper collage texture, 16:9",
+      "audioPath": "assets/audio/level_2_frame_4_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_4_image.png",
+      "startTime": 27.82,
+      "endTime": 37.01,
+      "duration": 9.19,
       "wordTimestamps": [
         {
-          "word": "However",
-          "startTime": 27.68,
-          "endTime": 28.18
+          "word": "Car",
+          "startTime": 27.92,
+          "endTime": 28.245
         },
         {
-          "word": "maritime",
-          "startTime": 28.38,
-          "endTime": 28.943
-        },
-        {
-          "word": "logistics",
-          "startTime": 28.955,
-          "endTime": 29.493
-        },
-        {
-          "word": "experts",
-          "startTime": 29.505,
-          "endTime": 29.955
-        },
-        {
-          "word": "warn",
-          "startTime": 29.968,
-          "endTime": 30.317
-        },
-        {
-          "word": "that",
-          "startTime": 30.33,
-          "endTime": 30.442
-        },
-        {
-          "word": "a",
-          "startTime": 30.455,
-          "endTime": 30.505
-        },
-        {
-          "word": "major",
-          "startTime": 30.505,
-          "endTime": 30.892
-        },
-        {
-          "word": "grounding",
-          "startTime": 30.905,
-          "endTime": 31.368
-        },
-        {
-          "word": "or",
-          "startTime": 31.38,
-          "endTime": 31.505
-        },
-        {
-          "word": "collision",
-          "startTime": 31.518,
-          "endTime": 31.992
+          "word": "manufacturers",
+          "startTime": 28.258,
+          "endTime": 29.108
         },
         {
           "word": "in",
-          "startTime": 32.005,
-          "endTime": 32.067
+          "startTime": 29.12,
+          "endTime": 29.233
         },
         {
-          "word": "the",
-          "startTime": 32.08,
-          "endTime": 32.155
+          "word": "Germany",
+          "startTime": 29.245,
+          "endTime": 29.707
         },
         {
-          "word": "Strait",
-          "startTime": 32.168,
-          "endTime": 32.505
+          "word": "electronics",
+          "startTime": 29.983,
+          "endTime": 30.632
         },
         {
-          "word": "of",
-          "startTime": 32.518,
-          "endTime": 32.58
+          "word": "assembly",
+          "startTime": 30.645,
+          "endTime": 31.083
         },
         {
-          "word": "Malacca",
-          "startTime": 32.593,
-          "endTime": 33.105
+          "word": "plants",
+          "startTime": 31.095,
+          "endTime": 31.495
         },
         {
-          "word": "would",
-          "startTime": 33.117,
-          "endTime": 33.268
+          "word": "in",
+          "startTime": 31.508,
+          "endTime": 31.657
         },
         {
-          "word": "be",
-          "startTime": 33.28,
-          "endTime": 33.38
+          "word": "Asia",
+          "startTime": 31.67,
+          "endTime": 32.083
         },
         {
-          "word": "significantly",
-          "startTime": 33.392,
-          "endTime": 34.067
+          "word": "and",
+          "startTime": 32.345,
+          "endTime": 32.533
         },
         {
-          "word": "worse",
-          "startTime": 34.08,
-          "endTime": 34.392
+          "word": "agricultural",
+          "startTime": 32.545,
+          "endTime": 33.22
         },
         {
-          "word": "than",
-          "startTime": 34.405,
-          "endTime": 34.555
+          "word": "exporters",
+          "startTime": 33.232,
+          "endTime": 33.745
         },
         {
-          "word": "Suez",
-          "startTime": 34.567,
-          "endTime": 35.218
+          "word": "depend",
+          "startTime": 33.758,
+          "endTime": 34.158
+        },
+        {
+          "word": "on",
+          "startTime": 34.17,
+          "endTime": 34.295
+        },
+        {
+          "word": "weekly",
+          "startTime": 34.307,
+          "endTime": 34.632
+        },
+        {
+          "word": "scheduled",
+          "startTime": 34.645,
+          "endTime": 35.083
+        },
+        {
+          "word": "vessel",
+          "startTime": 35.095,
+          "endTime": 35.432
+        },
+        {
+          "word": "transits",
+          "startTime": 35.445,
+          "endTime": 36.132
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "severity_index",
-        "suez_risk": "High",
-        "malacca_risk": "CRITICAL"
+        "type": "supply_chain",
+        "label": "Just-In-Time Logistics",
+        "sectors": [
+          "Automotive",
+          "Electronics",
+          "Agriculture"
+        ]
       }
     },
     {
       "sceneIndex": 5,
-      "globalFrameIndex": 61,
-      "narrationText": "Because the Suez Canal is an artificial ditch with soft sandbanks, tugboats were eventually able to dig out the Ever Given's bow.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 5",
-      "prompt": "Tugboats pulling a container ship in a narrow canal, dredging machinery working at bow, 16:9",
-      "audioPath": "assets/audio/level_8_frame_5_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_5_image.png",
-      "startTime": 36.1,
-      "endTime": 44.28,
-      "duration": 8.18,
+      "globalFrameIndex": 13,
+      "narrationText": "If shipping through Bab el-Mandeb is halted, cargo does not simply stop\u2014it accumulates in massive bottlenecks across intermediate ports.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "Digital map showing cargo vessel dots stacking up outside Red Sea entrances, paper cutout vector art, 16:9",
+      "audioPath": "assets/audio/level_2_frame_5_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_5_image.png",
+      "startTime": 37.01,
+      "endTime": 45.82,
+      "duration": 8.81,
       "wordTimestamps": [
         {
-          "word": "Because",
-          "startTime": 36.2,
-          "endTime": 36.575
+          "word": "If",
+          "startTime": 37.11,
+          "endTime": 37.273
         },
         {
-          "word": "the",
-          "startTime": 36.587,
-          "endTime": 36.7
+          "word": "shipping",
+          "startTime": 37.285,
+          "endTime": 37.698
         },
         {
-          "word": "Suez",
-          "startTime": 36.713,
-          "endTime": 37.162
+          "word": "through",
+          "startTime": 37.71,
+          "endTime": 37.922
         },
         {
-          "word": "Canal",
-          "startTime": 37.175,
-          "endTime": 37.65
+          "word": "Bab",
+          "startTime": 37.935,
+          "endTime": 38.235
+        },
+        {
+          "word": "el-Mandeb",
+          "startTime": 38.248,
+          "endTime": 38.822
         },
         {
           "word": "is",
-          "startTime": 37.662,
-          "endTime": 37.788
+          "startTime": 38.835,
+          "endTime": 38.948
         },
         {
-          "word": "an",
-          "startTime": 37.8,
-          "endTime": 37.9
+          "word": "halted",
+          "startTime": 38.96,
+          "endTime": 39.385
         },
         {
-          "word": "artificial",
-          "startTime": 37.912,
-          "endTime": 38.488
+          "word": "cargo",
+          "startTime": 39.635,
+          "endTime": 40.048
         },
         {
-          "word": "ditch",
-          "startTime": 38.5,
-          "endTime": 38.788
+          "word": "does",
+          "startTime": 40.06,
+          "endTime": 40.222
         },
         {
-          "word": "with",
-          "startTime": 38.8,
-          "endTime": 38.95
+          "word": "not",
+          "startTime": 40.235,
+          "endTime": 40.46
         },
         {
-          "word": "soft",
-          "startTime": 38.962,
-          "endTime": 39.312
+          "word": "simply",
+          "startTime": 40.472,
+          "endTime": 40.835
         },
         {
-          "word": "sandbanks",
-          "startTime": 39.325,
-          "endTime": 40.062
+          "word": "stop",
+          "startTime": 40.847,
+          "endTime": 41.285
         },
         {
-          "word": "tugboats",
-          "startTime": 40.3,
-          "endTime": 40.837
+          "word": "it",
+          "startTime": 41.61,
+          "endTime": 41.672
         },
         {
-          "word": "were",
-          "startTime": 40.85,
-          "endTime": 40.95
+          "word": "accumulates",
+          "startTime": 41.685,
+          "endTime": 42.348
         },
         {
-          "word": "eventually",
-          "startTime": 40.962,
-          "endTime": 41.462
+          "word": "in",
+          "startTime": 42.36,
+          "endTime": 42.485
         },
         {
-          "word": "able",
-          "startTime": 41.475,
-          "endTime": 41.7
+          "word": "massive",
+          "startTime": 42.497,
+          "endTime": 42.91
         },
         {
-          "word": "to",
-          "startTime": 41.712,
-          "endTime": 41.8
+          "word": "bottlenecks",
+          "startTime": 42.922,
+          "endTime": 43.448
         },
         {
-          "word": "dig",
-          "startTime": 41.813,
-          "endTime": 42.075
+          "word": "across",
+          "startTime": 43.46,
+          "endTime": 43.822
         },
         {
-          "word": "out",
-          "startTime": 42.087,
-          "endTime": 42.25
+          "word": "intermediate",
+          "startTime": 43.835,
+          "endTime": 44.385
         },
         {
-          "word": "the",
-          "startTime": 42.262,
-          "endTime": 42.35
-        },
-        {
-          "word": "Ever",
-          "startTime": 42.363,
-          "endTime": 42.65
-        },
-        {
-          "word": "Given's",
-          "startTime": 42.662,
-          "endTime": 43.012
-        },
-        {
-          "word": "bow",
-          "startTime": 43.025,
-          "endTime": 43.4
+          "word": "ports",
+          "startTime": 44.398,
+          "endTime": 44.948
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "salvage_note",
-        "method": "Soft Sand Dredging"
+        "type": "bottleneck_alert",
+        "label": "Port Congestion Risk",
+        "status": "Global Supply Backup"
       }
     },
     {
       "sceneIndex": 6,
-      "globalFrameIndex": 62,
-      "narrationText": "In contrast, parts of the Phillips Channel feature hard granite rock seabed outcroppings. A grounding at high speed could breach a vessel's hull instantly.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 6",
-      "prompt": "Underwater bathymetric cross-section showing jagged granite rock outcropping striking a ship hull, 16:9",
-      "audioPath": "assets/audio/level_8_frame_6_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_6_image.png",
-      "startTime": 44.28,
-      "endTime": 54.58,
-      "duration": 10.3,
+      "globalFrameIndex": 14,
+      "narrationText": "Insurance syndicates in London monitor vessel movement through Bab el-Mandeb second-by-second using satellite automatic identification systems.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "Digital satellite tracking room with monitors displaying ship dots along Red Sea strait, paper cut aesthetics, 16:9",
+      "audioPath": "assets/audio/level_2_frame_6_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_6_image.png",
+      "startTime": 45.82,
+      "endTime": 54.65,
+      "duration": 8.83,
       "wordTimestamps": [
         {
-          "word": "In",
-          "startTime": 44.38,
-          "endTime": 44.567
+          "word": "Insurance",
+          "startTime": 45.92,
+          "endTime": 46.52
         },
         {
-          "word": "contrast",
-          "startTime": 44.58,
-          "endTime": 45.305
+          "word": "syndicates",
+          "startTime": 46.533,
+          "endTime": 47.045
         },
         {
-          "word": "parts",
-          "startTime": 45.518,
-          "endTime": 45.792
+          "word": "in",
+          "startTime": 47.058,
+          "endTime": 47.22
         },
         {
-          "word": "of",
-          "startTime": 45.805,
-          "endTime": 45.88
+          "word": "London",
+          "startTime": 47.233,
+          "endTime": 47.558
         },
         {
-          "word": "the",
-          "startTime": 45.893,
-          "endTime": 45.98
+          "word": "monitor",
+          "startTime": 47.57,
+          "endTime": 47.97
         },
         {
-          "word": "Phillips",
-          "startTime": 45.992,
-          "endTime": 46.43
+          "word": "vessel",
+          "startTime": 47.983,
+          "endTime": 48.345
         },
         {
-          "word": "Channel",
-          "startTime": 46.443,
-          "endTime": 46.805
+          "word": "movement",
+          "startTime": 48.358,
+          "endTime": 48.745
         },
         {
-          "word": "feature",
-          "startTime": 46.818,
-          "endTime": 47.218
+          "word": "through",
+          "startTime": 48.758,
+          "endTime": 48.995
         },
         {
-          "word": "hard",
-          "startTime": 47.23,
-          "endTime": 47.48
+          "word": "Bab",
+          "startTime": 49.008,
+          "endTime": 49.333
         },
         {
-          "word": "granite",
-          "startTime": 47.492,
-          "endTime": 47.867
+          "word": "el-Mandeb",
+          "startTime": 49.345,
+          "endTime": 49.932
         },
         {
-          "word": "rock",
-          "startTime": 47.88,
-          "endTime": 48.142
+          "word": "second-by-second",
+          "startTime": 49.945,
+          "endTime": 50.882
         },
         {
-          "word": "seabed",
-          "startTime": 48.155,
-          "endTime": 48.618
+          "word": "using",
+          "startTime": 50.895,
+          "endTime": 51.195
         },
         {
-          "word": "outcroppings",
-          "startTime": 48.63,
-          "endTime": 49.48
+          "word": "satellite",
+          "startTime": 51.208,
+          "endTime": 51.745
         },
         {
-          "word": "A",
-          "startTime": 50.342,
-          "endTime": 50.468
+          "word": "automatic",
+          "startTime": 51.758,
+          "endTime": 52.295
         },
         {
-          "word": "grounding",
-          "startTime": 50.48,
-          "endTime": 50.98
+          "word": "identification",
+          "startTime": 52.307,
+          "endTime": 53.132
         },
         {
-          "word": "at",
-          "startTime": 50.993,
-          "endTime": 51.067
-        },
-        {
-          "word": "high",
-          "startTime": 51.08,
-          "endTime": 51.33
-        },
-        {
-          "word": "speed",
-          "startTime": 51.342,
-          "endTime": 51.78
-        },
-        {
-          "word": "could",
-          "startTime": 51.793,
-          "endTime": 51.98
-        },
-        {
-          "word": "breach",
-          "startTime": 51.993,
-          "endTime": 52.255
-        },
-        {
-          "word": "a",
-          "startTime": 52.267,
-          "endTime": 52.33
-        },
-        {
-          "word": "vessel's",
-          "startTime": 52.342,
-          "endTime": 52.768
-        },
-        {
-          "word": "hull",
-          "startTime": 52.78,
-          "endTime": 53.042
-        },
-        {
-          "word": "instantly",
-          "startTime": 53.055,
-          "endTime": 53.705
+          "word": "systems",
+          "startTime": 53.145,
+          "endTime": 53.783
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "seabed_composition",
-        "rock": "Granite Outcroppings"
+        "type": "radar_screen",
+        "label": "AIS Tracking Grid",
+        "status": "Live Satellite Surveillance"
       }
     },
     {
       "sceneIndex": 7,
-      "globalFrameIndex": 63,
-      "narrationText": "If an Ultra-Large Container Vessel carrying twenty-four thousand containers sank or grounded in the narrow shipping lane, salvage operations could take months.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 7",
-      "prompt": "Salvage crane vessel operating next to a partially submerged mega container ship in a narrow strait, 16:9",
-      "audioPath": "assets/audio/level_8_frame_7_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_7_image.png",
-      "startTime": 54.58,
-      "endTime": 63.92,
-      "duration": 9.34,
+      "globalFrameIndex": 15,
+      "narrationText": "Off the coast of Aden and Djibouti, commercial vessels hover in anchorage zones waiting for security clearance before entering the Narrows.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "Aerial view of anchorage off Djibouti coast filled with anchored cargo ships, dusk lighting, paper collage style, 16:9",
+      "audioPath": "assets/audio/level_2_frame_7_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_7_image.png",
+      "startTime": 54.65,
+      "endTime": 62.91,
+      "duration": 8.26,
       "wordTimestamps": [
         {
-          "word": "If",
-          "startTime": 54.68,
-          "endTime": 54.843
-        },
-        {
-          "word": "an",
-          "startTime": 54.855,
-          "endTime": 54.992
-        },
-        {
-          "word": "Ultra-Large",
-          "startTime": 55.005,
-          "endTime": 55.618
-        },
-        {
-          "word": "Container",
-          "startTime": 55.63,
-          "endTime": 56.092
-        },
-        {
-          "word": "Vessel",
-          "startTime": 56.105,
-          "endTime": 56.493
-        },
-        {
-          "word": "carrying",
-          "startTime": 56.505,
-          "endTime": 56.93
-        },
-        {
-          "word": "twenty-four",
-          "startTime": 56.942,
-          "endTime": 57.455
-        },
-        {
-          "word": "thousand",
-          "startTime": 57.468,
-          "endTime": 57.892
-        },
-        {
-          "word": "containers",
-          "startTime": 57.905,
-          "endTime": 58.48
-        },
-        {
-          "word": "sank",
-          "startTime": 58.493,
-          "endTime": 58.843
-        },
-        {
-          "word": "or",
-          "startTime": 58.855,
-          "endTime": 58.992
-        },
-        {
-          "word": "grounded",
-          "startTime": 59.005,
-          "endTime": 59.442
-        },
-        {
-          "word": "in",
-          "startTime": 59.455,
-          "endTime": 59.53
+          "word": "Off",
+          "startTime": 54.75,
+          "endTime": 55.012
         },
         {
           "word": "the",
-          "startTime": 59.543,
-          "endTime": 59.605
+          "startTime": 55.025,
+          "endTime": 55.125
         },
         {
-          "word": "narrow",
-          "startTime": 59.617,
-          "endTime": 59.93
+          "word": "coast",
+          "startTime": 55.137,
+          "endTime": 55.475
         },
         {
-          "word": "shipping",
-          "startTime": 59.942,
-          "endTime": 60.343
+          "word": "of",
+          "startTime": 55.488,
+          "endTime": 55.575
         },
         {
-          "word": "lane",
-          "startTime": 60.355,
-          "endTime": 60.668
+          "word": "Aden",
+          "startTime": 55.588,
+          "endTime": 55.925
         },
         {
-          "word": "salvage",
-          "startTime": 60.992,
-          "endTime": 61.418
+          "word": "and",
+          "startTime": 55.938,
+          "endTime": 56.037
         },
         {
-          "word": "operations",
-          "startTime": 61.43,
-          "endTime": 62.13
+          "word": "Djibouti",
+          "startTime": 56.05,
+          "endTime": 56.55
         },
         {
-          "word": "could",
-          "startTime": 62.142,
-          "endTime": 62.305
+          "word": "commercial",
+          "startTime": 56.788,
+          "endTime": 57.237
         },
         {
-          "word": "take",
-          "startTime": 62.317,
-          "endTime": 62.555
+          "word": "vessels",
+          "startTime": 57.25,
+          "endTime": 57.688
         },
         {
-          "word": "months",
-          "startTime": 62.567,
-          "endTime": 63.043
+          "word": "hover",
+          "startTime": 57.7,
+          "endTime": 58.012
+        },
+        {
+          "word": "in",
+          "startTime": 58.025,
+          "endTime": 58.15
+        },
+        {
+          "word": "anchorage",
+          "startTime": 58.163,
+          "endTime": 58.663
+        },
+        {
+          "word": "zones",
+          "startTime": 58.675,
+          "endTime": 59.025
+        },
+        {
+          "word": "waiting",
+          "startTime": 59.038,
+          "endTime": 59.387
+        },
+        {
+          "word": "for",
+          "startTime": 59.4,
+          "endTime": 59.55
+        },
+        {
+          "word": "security",
+          "startTime": 59.562,
+          "endTime": 60.038
+        },
+        {
+          "word": "clearance",
+          "startTime": 60.05,
+          "endTime": 60.512
+        },
+        {
+          "word": "before",
+          "startTime": 60.525,
+          "endTime": 60.937
+        },
+        {
+          "word": "entering",
+          "startTime": 60.95,
+          "endTime": 61.262
+        },
+        {
+          "word": "the",
+          "startTime": 61.275,
+          "endTime": 61.35
+        },
+        {
+          "word": "Narrows",
+          "startTime": 61.363,
+          "endTime": 62.025
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "salvage_timeline",
-        "estimated_salvage": "30 to 90 Days"
+        "type": "anchorage_label",
+        "label": "Offshore Staging Hubs",
+        "coords": "Aden & Djibouti Anchorages"
       }
     },
     {
       "sceneIndex": 8,
-      "globalFrameIndex": 64,
-      "narrationText": "The resulting environmental oil spill would contaminate regional marine ecosystems and force maritime authorities to shut down traffic completely.",
-      "kineticHeading": "STRAIT OF MALACCA",
-      "lowerThird": "CASE FILE \u2022 FRAME 8",
-      "prompt": "Oil spill containment boom drifting on ocean surface around a damaged tanker, aerial view, 16:9",
-      "audioPath": "assets/audio/level_8_frame_8_audio.mp3",
-      "imagePath": "assets/images/level_8_frame_8_image.png",
-      "startTime": 63.92,
-      "endTime": 72.73,
-      "duration": 8.81,
+      "globalFrameIndex": 16,
+      "narrationText": "The economic stability of modern globalized trade is structurally dependent on keeping this narrow sea lane open and uninhibited.",
+      "kineticHeading": "LEVEL 2 \u00b7 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "lowerThird": "LEVEL 2 \u2022 THE BLOODLINE OF EUROPEAN & ASIAN COMMERCE",
+      "prompt": "Dramatic close up of globe focused on narrow Red Sea bottleneck with glowing golden choke point ring, paper collage keyline, 16:9",
+      "audioPath": "assets/audio/level_2_frame_8_audio.mp3",
+      "imagePath": "assets/images/level_2_frame_8_image.png",
+      "startTime": 62.91,
+      "endTime": 70.9,
+      "duration": 7.99,
       "wordTimestamps": [
         {
           "word": "The",
-          "startTime": 64.02,
-          "endTime": 64.145
+          "startTime": 63.01,
+          "endTime": 63.147
         },
         {
-          "word": "resulting",
-          "startTime": 64.157,
-          "endTime": 64.695
+          "word": "economic",
+          "startTime": 63.16,
+          "endTime": 63.748
         },
         {
-          "word": "environmental",
-          "startTime": 64.707,
-          "endTime": 65.382
+          "word": "stability",
+          "startTime": 63.76,
+          "endTime": 64.335
         },
         {
-          "word": "oil",
-          "startTime": 65.395,
-          "endTime": 65.695
+          "word": "of",
+          "startTime": 64.348,
+          "endTime": 64.422
         },
         {
-          "word": "spill",
-          "startTime": 65.708,
-          "endTime": 66.108
+          "word": "modern",
+          "startTime": 64.435,
+          "endTime": 64.785
         },
         {
-          "word": "would",
-          "startTime": 66.12,
-          "endTime": 66.27
+          "word": "globalized",
+          "startTime": 64.797,
+          "endTime": 65.435
         },
         {
-          "word": "contaminate",
-          "startTime": 66.282,
-          "endTime": 66.933
+          "word": "trade",
+          "startTime": 65.448,
+          "endTime": 65.747
         },
         {
-          "word": "regional",
-          "startTime": 66.945,
-          "endTime": 67.32
+          "word": "is",
+          "startTime": 65.76,
+          "endTime": 65.86
         },
         {
-          "word": "marine",
-          "startTime": 67.333,
-          "endTime": 67.695
+          "word": "structurally",
+          "startTime": 65.872,
+          "endTime": 66.385
         },
         {
-          "word": "ecosystems",
-          "startTime": 67.708,
-          "endTime": 68.482
+          "word": "dependent",
+          "startTime": 66.397,
+          "endTime": 66.897
+        },
+        {
+          "word": "on",
+          "startTime": 66.91,
+          "endTime": 67.048
+        },
+        {
+          "word": "keeping",
+          "startTime": 67.06,
+          "endTime": 67.435
+        },
+        {
+          "word": "this",
+          "startTime": 67.447,
+          "endTime": 67.623
+        },
+        {
+          "word": "narrow",
+          "startTime": 67.635,
+          "endTime": 68.022
+        },
+        {
+          "word": "sea",
+          "startTime": 68.035,
+          "endTime": 68.298
+        },
+        {
+          "word": "lane",
+          "startTime": 68.31,
+          "endTime": 68.685
+        },
+        {
+          "word": "open",
+          "startTime": 68.697,
+          "endTime": 69.06
         },
         {
           "word": "and",
-          "startTime": 68.495,
-          "endTime": 68.62
+          "startTime": 69.072,
+          "endTime": 69.26
         },
         {
-          "word": "force",
-          "startTime": 68.633,
-          "endTime": 68.957
-        },
-        {
-          "word": "maritime",
-          "startTime": 68.97,
-          "endTime": 69.52
-        },
-        {
-          "word": "authorities",
-          "startTime": 69.532,
-          "endTime": 70.082
-        },
-        {
-          "word": "to",
-          "startTime": 70.095,
-          "endTime": 70.195
-        },
-        {
-          "word": "shut",
-          "startTime": 70.207,
-          "endTime": 70.52
-        },
-        {
-          "word": "down",
-          "startTime": 70.532,
-          "endTime": 70.782
-        },
-        {
-          "word": "traffic",
-          "startTime": 70.795,
-          "endTime": 71.195
-        },
-        {
-          "word": "completely",
-          "startTime": 71.207,
-          "endTime": 71.858
+          "word": "uninhibited",
+          "startTime": 69.272,
+          "endTime": 70.035
         }
       ],
       "motionGraphicsOverlay": {
-        "type": "spill_impact",
-        "hazard": "Environmental & Traffic Shutdown"
+        "type": "economic_anchor",
+        "label": "Globalized Trade Pillar",
+        "value": "Uninhibited Passage"
       }
     }
   ]

@@ -1,3 +1,4 @@
+import os
 import logging
 import subprocess
 from pathlib import Path
@@ -12,35 +13,13 @@ def concatenate_audio_files(audio_files: List[Path], output_path: Path) -> Path:
         raise ValueError("No audio files provided for concatenation.")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    list_file = output_path.parent / "concat_list.txt"
 
-    with open(list_file, "w", encoding="utf-8") as f:
+    # Fast direct binary stream concatenation for standard EdgeTTS MP3 frames
+    with open(output_path, "wb") as outfile:
         for audio_file in audio_files:
-            # Use forward slashes for FFmpeg concat list
-            clean_name = audio_file.name
-            f.write(f"file '{clean_name}'\n")
+            p = Path(audio_file)
+            if p.exists():
+                outfile.write(p.read_bytes())
 
-    cmd = [
-        "npx", "remotion", "ffmpeg",
-        "-y",
-        "-f", "concat",
-        "-safe", "0",
-        "-i", str(list_file),
-        "-c", "copy",
-        str(output_path)
-    ]
-
-    try:
-        import sys
-        use_shell = sys.platform == "win32"
-        subprocess.run(cmd, check=True, capture_output=True, text=True, shell=use_shell)
-        logger.info(f"Successfully concatenated master narration audio: {output_path}")
-        return output_path
-    except Exception as err:
-        logger.error(f"FFmpeg audio concatenation failed: {err}")
-        # Fallback: simple binary concatenation if copy fails
-        with open(output_path, "wb") as outfile:
-            for audio_file in audio_files:
-                if audio_file.exists():
-                    outfile.write(audio_file.read_bytes())
-        return output_path
+    logger.info(f"Successfully concatenated master narration audio: {output_path} ({output_path.stat().st_size} bytes)")
+    return output_path

@@ -19,9 +19,6 @@ export const AlertWash: React.FC<AlertWashProps> = ({ active = false }) => {
     { extrapolateRight: 'clamp' }
   );
 
-  const shakeX = frame < 8 ? Math.sin(frame * 2.5) * 8 : 0;
-  const shakeY = frame < 8 ? Math.cos(frame * 3.0) * 6 : 0;
-
   return (
     <div
       style={{
@@ -32,7 +29,6 @@ export const AlertWash: React.FC<AlertWashProps> = ({ active = false }) => {
         height: '100%',
         backgroundColor: '#B92220',
         opacity: washOpacity,
-        transform: `translate(${shakeX}px, ${shakeY}px)`,
         mixBlendMode: 'color-burn',
         pointerEvents: 'none',
         zIndex: 30

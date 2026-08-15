@@ -24,7 +24,9 @@ public/assets/images/*.jpg
 projects/
 public/projects/
 scratch/
-test_fresh_ai.png
+test*.mp3
+test*.png
+test.txt
 
 # OS Junk
 .DS_Store

@@ -34,10 +34,11 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
 
   const resolvedSrc = getResolvedSrc(imagePath);
 
-  // 1. KINETIC PUNCH-ZOOM (SNAPPY 20% PUNCH WITH HARD STOP)
+  // Smooth Cinematic Motion (Zero Jitter / Zero Shake)
+
+  // 1. KINETIC PUNCH-ZOOM (SNAPPY SMOOTH PUNCH)
   if (transitionStyle === 'kinetic' || transitionStyle === 'kinetic_punch') {
-    const punchScale = interpolate(frame, [0, 8, 12, durationInFrames], [1.0, 1.22, 1.18, 1.20], { extrapolateRight: 'clamp' });
-    const shakeX = frame >= 8 && frame <= 14 ? Math.sin(frame * 3.5) * 5 : 0;
+    const punchScale = interpolate(frame, [0, 8, 12, durationInFrames], [1.0, 1.18, 1.15, 1.16], { extrapolateRight: 'clamp' });
 
     return (
       <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'hidden', backgroundColor: '#111111' }}>
@@ -48,7 +49,7 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              transform: `scale(${punchScale}) translate(${shakeX}px, 0px)`
+              transform: `scale(${punchScale})`
             }}
           />
         ) : null}
@@ -56,11 +57,11 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
     );
   }
 
-  // 2. DEEP 3D DIORAMA (PERSPECTIVE 3D ORBIT CAMERA MOVE)
+  // 2. DEEP 3D DIORAMA (SMOOTH PERSPECTIVE 3D ORBIT CAMERA MOVE)
   if (transitionStyle === 'deep_diorama' || transitionStyle === 'map_pin') {
-    const rotateY = interpolate(frame, [0, durationInFrames], [-6, 6], { extrapolateRight: 'clamp' });
-    const rotateX = interpolate(frame, [0, durationInFrames], [4, -3], { extrapolateRight: 'clamp' });
-    const scale = interpolate(frame, [0, durationInFrames], [1.05, 1.15], { extrapolateRight: 'clamp' });
+    const rotateY = interpolate(frame, [0, durationInFrames], [-4, 4], { extrapolateRight: 'clamp' });
+    const rotateX = interpolate(frame, [0, durationInFrames], [2, -2], { extrapolateRight: 'clamp' });
+    const scale = interpolate(frame, [0, durationInFrames], [1.03, 1.10], { extrapolateRight: 'clamp' });
 
     return (
       <div
@@ -90,11 +91,38 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
     );
   }
 
-  // 3. CLASSIC KEN BURNS IN / OUT
-  const isZoomOut = transitionStyle === 'ken_burns_out';
-  const scale = interpolate(frame, [0, durationInFrames], isZoomOut ? [1.14, 1.02] : [1.02, 1.14], { extrapolateRight: 'clamp' });
-  const translateX = interpolate(frame, [0, durationInFrames], isZoomOut ? [-20, 20] : [0, -25], { extrapolateRight: 'clamp' });
-  const translateY = interpolate(frame, [0, durationInFrames], [0, -12], { extrapolateRight: 'clamp' });
+  // 3. CLASSIC SMOOTH KEN BURNS IN / OUT & DYNAMIC SLOW DRIFT
+  const isZoomOut = transitionStyle === 'ken_burns_out' || transitionStyle === 'zoom_out';
+  const isPanRight = transitionStyle === 'pan_right';
+  const isPanLeft = transitionStyle === 'pan_left';
+
+  let startScale = 1.02;
+  let endScale = 1.12;
+  let startX = -10;
+  let endX = 20;
+  let startY = 0;
+  let endY = -12;
+
+  if (isZoomOut) {
+    startScale = 1.12;
+    endScale = 1.02;
+    startX = 15;
+    endX = -15;
+  } else if (isPanRight) {
+    startScale = 1.06;
+    endScale = 1.08;
+    startX = -30;
+    endX = 30;
+  } else if (isPanLeft) {
+    startScale = 1.06;
+    endScale = 1.08;
+    startX = 30;
+    endX = -30;
+  }
+
+  const scale = interpolate(frame, [0, durationInFrames], [startScale, endScale], { extrapolateRight: 'clamp' });
+  const translateX = interpolate(frame, [0, durationInFrames], [startX, endX], { extrapolateRight: 'clamp' });
+  const translateY = interpolate(frame, [0, durationInFrames], [startY, endY], { extrapolateRight: 'clamp' });
 
   return (
     <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'hidden', backgroundColor: '#111111' }}>

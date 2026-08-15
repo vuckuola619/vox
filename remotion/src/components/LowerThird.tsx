@@ -15,16 +15,20 @@ export const LowerThird: React.FC<LowerThirdProps> = ({
 
   if (!text) return null;
 
-  // Stop-motion slide-in with stepped easing ("cutting on twos")
-  const rawSlide = spring({
-    fps,
-    frame: frame - 5,
-    config: { damping: 14, stiffness: 180 }
-  });
-  const steppedSlide = Math.floor(rawSlide * 10) / 10;
+  // Exit completely after 2 seconds (60 frames)
+  if (frame > 60) return null;
 
-  const translateX = interpolate(steppedSlide, [0, 1], [-600, 0]);
-  const opacity = interpolate(steppedSlide, [0, 1], [0, 1]);
+  // Smooth slide-in (0-14f), hold (14-46f), smooth slide-out to left (46-60f)
+  let translateX = 0;
+  let opacity = 1;
+
+  if (frame < 14) {
+    translateX = interpolate(frame, [0, 14], [-600, 0], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
+  } else if (frame > 46) {
+    translateX = interpolate(frame, [46, 60], [0, -700], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [46, 58], [1, 0], { extrapolateRight: 'clamp' });
+  }
 
   return (
     <div
@@ -35,7 +39,7 @@ export const LowerThird: React.FC<LowerThirdProps> = ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
-        transform: `translateX(${translateX}px) rotate(-1deg)`,
+        transform: `translateX(${translateX}px) rotate(-0.5deg)`,
         opacity,
         zIndex: 28
       }}

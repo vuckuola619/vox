@@ -14,18 +14,23 @@ export const KineticHeadline: React.FC<KineticHeadlineProps> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  if (!heading) return null;
+  // Exit completely after 2 seconds (60 frames)
+  if (frame > 60) return null;
 
-  // Stop-motion pop-in with overshoot ("cutting on twos")
-  const rawPop = spring({
-    fps,
-    frame: frame - 2,
-    config: { damping: 11, stiffness: 220 }
-  });
-  const steppedPop = Math.floor(rawPop * 8) / 8;
+  // Smooth slide-in (0-12f), hold (12-46f), smooth slide-out (46-60f)
+  let translateY = 0;
+  let opacity = 1;
+  let scale = 1.0;
 
-  const scale = interpolate(steppedPop, [0, 1], [0.6, 1.0]);
-  const opacity = interpolate(steppedPop, [0, 1], [0, 1]);
+  if (frame < 12) {
+    translateY = interpolate(frame, [0, 12], [-80, 0], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
+    scale = interpolate(frame, [0, 12], [0.95, 1.0], { extrapolateRight: 'clamp' });
+  } else if (frame > 46) {
+    translateY = interpolate(frame, [46, 60], [0, -100], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [46, 58], [1, 0], { extrapolateRight: 'clamp' });
+    scale = interpolate(frame, [46, 60], [1.0, 0.95], { extrapolateRight: 'clamp' });
+  }
 
   return (
     <div
@@ -37,7 +42,7 @@ export const KineticHeadline: React.FC<KineticHeadlineProps> = ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        transform: `scale(${scale}) rotate(-0.8deg)`,
+        transform: `translateY(${translateY}px) scale(${scale}) rotate(-0.5deg)`,
         opacity,
         zIndex: 29
       }}

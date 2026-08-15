@@ -15,6 +15,7 @@ interface KineticCaptionsProps {
 
 export const KineticCaptions: React.FC<KineticCaptionsProps> = ({
   wordTimestamps = [],
+  highlightWords = [],
   sceneStartTime = 0
 }) => {
   const frame = useCurrentFrame();
@@ -75,7 +76,7 @@ export const KineticCaptions: React.FC<KineticCaptionsProps> = ({
     <div
       style={{
         position: 'absolute',
-        bottom: '110px',
+        bottom: '95px',
         left: '0',
         right: '0',
         display: 'flex',
@@ -85,12 +86,38 @@ export const KineticCaptions: React.FC<KineticCaptionsProps> = ({
         gap: '16px',
         padding: '0 80px',
         pointerEvents: 'none',
-        zIndex: 25
+        zIndex: 50
       }}
     >
       {activePage.map((item) => {
         const isWordActive =
           currentTime >= item.startTime - 0.02 && currentTime <= item.endTime + 0.02;
+
+        const isNumericOrStat =
+          /\d|\$|%|€|£|tn|bn|mn|nm|km|mile/i.test(item.word) ||
+          (highlightWords &&
+            highlightWords.some(
+              (hw) => item.word.toLowerCase().includes(hw.toLowerCase())
+            ));
+
+        let bgColor = '#EAE1C8';
+        let textColor = '#221D14';
+        let boxShadow = '2px 3px 0px #221D14';
+        let transform = 'none';
+
+        if (isWordActive) {
+          if (isNumericOrStat) {
+            bgColor = '#FFDE59'; // Signature Vox Yellow
+            textColor = '#221D14';
+            boxShadow = '5px 7px 0px #221D14';
+            transform = 'rotate(-1.2deg) scale(1.05)';
+          } else {
+            bgColor = '#B92220'; // Vox Red
+            textColor = '#FFFFFF';
+            boxShadow = '4px 6px 0px #221D14';
+            transform = 'scale(1.03)';
+          }
+        }
 
         return (
           <span
@@ -103,10 +130,11 @@ export const KineticCaptions: React.FC<KineticCaptionsProps> = ({
               letterSpacing: '1px',
               padding: '8px 20px',
               border: '3px solid #221D14',
-              backgroundColor: isWordActive ? '#B92220' : '#EAE1C8',
-              color: isWordActive ? '#FFFFFF' : '#221D14',
-              boxShadow: isWordActive ? '4px 6px 0px #221D14' : '2px 3px 0px #221D14',
-              transition: 'background-color 0.04s ease, color 0.04s ease'
+              backgroundColor: bgColor,
+              color: textColor,
+              boxShadow: boxShadow,
+              transform: transform,
+              transition: 'background-color 0.04s ease, color 0.04s ease, transform 0.04s ease'
             }}
           >
             {item.word}

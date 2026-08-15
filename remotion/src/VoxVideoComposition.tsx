@@ -14,6 +14,7 @@ import { RedMarkerOverlay } from './components/RedMarkerOverlay';
 import { AlertWash } from './components/AlertWash';
 import { LivingPuppet } from './components/LivingPuppet';
 import { KineticHeadline } from './components/KineticHeadline';
+import { KineticCaptions, WordTiming } from './components/KineticCaptions';
 import { WatermarkStamp } from './components/WatermarkStamp';
 
 export interface SceneData {
@@ -28,6 +29,7 @@ export interface SceneData {
   startTime: number;
   endTime: number;
   duration: number;
+  wordTimestamps?: WordTiming[];
   motionGraphicsOverlay?: any;
 }
 
@@ -96,10 +98,17 @@ const SceneWrapper: React.FC<{
       <AlertWash active={isAlertWashScene} />
 
       {/* 8. KINETIC HEADLINE BANNER (EDITORIAL PAPER STAMP) */}
-      <KineticHeadline heading={scene.kineticHeading} />
+      <KineticHeadline heading={scene.kineticHeading || "TAIWAN STRAIT"} />
 
       {/* 9. LOWER THIRD TYPEWRITER BANNER */}
       <LowerThird text={scene.lowerThird} />
+
+      {/* 10. DYNAMIC PHONETIC SUBTITLES WITH VOX YELLOW STAT HIGHLIGHTING */}
+      <KineticCaptions
+        wordTimestamps={scene.wordTimestamps || []}
+        highlightWords={scene.highlightWords}
+        sceneStartTime={scene.startTime}
+      />
     </div>
   );
 };

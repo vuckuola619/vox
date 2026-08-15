@@ -120,13 +120,14 @@ class EdgeTTSSynthesizer(BaseTTSSynthesizer):
         Config.ensure_directories()
         output_path = Config.AUDIO_DIR / output_filename
 
-        try:
-            result = asyncio.run(self._async_synthesize(text, output_path))
-            if result and result.word_timestamps and result.duration_seconds > 0:
-                logger.info(f"EdgeTTS generated audio with {len(result.word_timestamps)} timestamps: {output_path}")
-                return result
-        except Exception as err:
-            logger.warning(f"EdgeTTS synthesis issue: {err}. Using acoustic fallback.")
+        for attempt in range(2):
+            try:
+                result = asyncio.run(asyncio.wait_for(self._async_synthesize(text, output_path), timeout=25.0))
+                if result and result.word_timestamps and result.duration_seconds > 0:
+                    logger.info(f"EdgeTTS generated audio with {len(result.word_timestamps)} timestamps: {output_path}")
+                    return result
+            except Exception as err:
+                logger.warning(f"EdgeTTS attempt {attempt+1} issue: {err}.")
 
         return self._fallback_synthesize(text, output_path)
 

@@ -15,23 +15,31 @@
 
 ```
   ┌────────────────────────────────────────────────────────────────────────┐
-  │ PHASE 1: Project Bible & Script Breakdown (12 Levels / 96 Frames)       │
+  │ PHASE 0: Nexlev AI Niche Intelligence & Outlier Validation             │
+  │ • Outlier score validation (>= 2.0x) & small-channel breakouts         │
+  │ • Transcript extraction & narrative tension reverse-engineering        │
+  │ • RPM optimization ($8–$25) and high-CTR thumbnail benchmarking        │
+  └───────────────────────────────────┬────────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │ PHASE 1: Project Bible & Script Breakdown (12–15 Levels / 75–96 Frames)│
   │ • Strategic thesis, geopolitical tension points, metrics, and prompts  │
   └───────────────────────────────────┬────────────────────────────────────┘
                                       │
                                       ▼
   ┌────────────────────────────────────────────────────────────────────────┐
   │ PHASE 2: TTS Ground Truth & Monotonic Acoustic Alignment               │
-  │ • EdgeTTS Neural 48kHz (`en-US-ChristopherNeural`)                     │
+  │ • EdgeTTS / Kokoro Neural 48kHz (`en-US-ChristopherNeural` / `am_adam`)│
   │ • Physical MP3 millisecond duration lock via FFmpeg probe              │
   │ • Monotonic, character-weighted phonetic word timestamps (VTT)         │
   └───────────────────────────────────┬────────────────────────────────────┘
                                       │
                                       ▼
   ┌────────────────────────────────────────────────────────────────────────┐
-  │ PHASE 3: Direct AI Visual Asset Generation                             │
-  │ • 9Router Text-to-Image Proxy (`cx/gpt-5.4-image`) / Google Imagen 3   │
-  │ • 16:9 full-resolution archival collage visual per frame               │
+  │ PHASE 3: Direct AI Visual Asset Generation & Omni I2V Living Motion    │
+  │ • 9Router (`cx/gpt-5.4-image`) / Google Imagen 3 SDK 16:9 Visuals      │
+  │ • Google Omni Video (`gemini-omni-flash-preview`) 2.5D Living Motion   │
   │ • Strict Zero-Fallback / Zero-Placeholder policy                       │
   └───────────────────────────────────┬────────────────────────────────────┘
                                       │
@@ -56,19 +64,23 @@
 
 ## 🛠️ Tech Stack
 
+### 0. Niche Intelligence & Market Research
+- **[Nexlev MCP Platform](https://nexlev.io/)**: AI-powered semantic vector search over 50k+ curated channels and faceless outlier videos, estimating RPM, outlier multipliers ($\ge 2.0\times$), viral breakouts from small channels, and competitor transcript deconstruction.
+
 ### 1. Video Composition & Motion Graphics
 - **[Remotion 4.0](https://www.remotion.dev/)**: Programmatic video rendering in React & TypeScript.
-- **[React 18](https://react.dev/)**: Component-driven video layout (`VoxVideoComposition`, `KenBurnsImage`, `KineticCaptions`, `KineticHeadline`, `LowerThird`, `AlertWash`).
+- **[React 18](https://react.dev/)**: Component-driven video layout (`VoxVideoComposition`, `KenBurnsImage`, `KineticCaptions`, `KineticHeadline`, `LowerThird`, `AlertWash`, `LivingSceneOverlay`).
 - **Typography & Styling**: Oswald (700 Bold Condensed) for headlines, JetBrains Mono / Typewriter for case-file stamps, Inter for body copy, and signature **Vox Yellow (`#FFDE59`)** kinetic keyword badges.
 
 ### 2. Narration & Acoustic Ground Truth
-- **[EdgeTTS](https://github.com/rany2/edge-tts)**: High-fidelity Neural 48kHz voice synthesis (`en-US-ChristopherNeural`).
+- **[EdgeTTS](https://github.com/rany2/edge-tts) / Kokoro ONNX**: High-fidelity Neural 48kHz voice synthesis (`en-US-ChristopherNeural`, Kokoro-82M `am_adam`).
 - **Phonetic Acoustic Character Weighting**: Calculates word display timestamps based on acoustic phoneme length + punctuation pauses (comma/period = +0.8s), preventing long-word desync.
 - **Physical MP3 Duration Lock**: Reads physical audio durations via FFmpeg to guarantee exact millisecond audio-visual synchronization.
 
-### 3. AI Visual Art Generation
+### 3. AI Visual Art & Living Motion Generation
 - **[9Router](https://github.com/) / OpenAI-Compatible Image API**: Direct text-to-image synthesis using `cx/gpt-5.4-image` producing ~2.8–3.5 MB 16:9 visuals.
 - **[Google Imagen 3 SDK](https://deepmind.google/technologies/imagen-3/)**: Direct integration via Antigravity SDK for authentic newsprint and archival collage visual styles.
+- **[Google Omni Video I2V](https://deepmind.google/)**: `gemini-omni-flash-preview` 2.5D living stop-motion clip generation for moving background hero layers.
 
 ### 4. Encoding & Post-Processing
 - **[FFmpeg](https://ffmpeg.org/)**:

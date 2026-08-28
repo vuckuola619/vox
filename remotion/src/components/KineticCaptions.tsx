@@ -76,7 +76,7 @@ export const KineticCaptions: React.FC<KineticCaptionsProps> = ({
     <div
       style={{
         position: 'absolute',
-        bottom: '95px',
+        bottom: '105px',
         left: '0',
         right: '0',
         display: 'flex',

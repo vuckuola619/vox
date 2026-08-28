@@ -37,6 +37,7 @@ const ShortsSceneWrapper: React.FC<{
       <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'hidden' }}>
         <KenBurnsImage
           imagePath={scene.imagePath}
+          videoPath={scene.videoPath || scene.imagePath}
           durationInFrames={durationFrames}
           transitionStyle={scene.transitionStyle}
         />

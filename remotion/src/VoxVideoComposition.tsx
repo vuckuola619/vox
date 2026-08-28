@@ -4,18 +4,11 @@ import { PaperBackground } from './components/PaperBackground';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { LowerThird } from './components/LowerThird';
 import { FilmGrainOverlay } from './components/FilmGrainOverlay';
-import { VoxMotionOverlay } from './components/VoxMotionOverlay';
-import { RubberStamp } from './components/RubberStamp';
-import { RedStringConnect } from './components/RedStringConnect';
-import { VoxChartAnimation } from './components/VoxChartAnimation';
-import { VoxMapAnimation } from './components/VoxMapAnimation';
-import { TapeFragments } from './components/TapeFragments';
-import { RedMarkerOverlay } from './components/RedMarkerOverlay';
-import { AlertWash } from './components/AlertWash';
-import { LivingPuppet } from './components/LivingPuppet';
 import { KineticHeadline } from './components/KineticHeadline';
 import { KineticCaptions, WordTiming } from './components/KineticCaptions';
 import { WatermarkStamp } from './components/WatermarkStamp';
+
+import { EditorialDustParticles } from './components/EditorialDustParticles';
 
 export interface SceneData {
   sceneIndex: number;
@@ -26,6 +19,7 @@ export interface SceneData {
   transitionStyle?: string;
   audioPath?: string;
   imagePath?: string;
+  videoPath?: string;
   startTime: number;
   endTime: number;
   duration: number;
@@ -34,17 +28,53 @@ export interface SceneData {
 }
 
 export interface VoxVideoCompositionProps {
-  title: string;
-  topic: string;
-  totalDurationSeconds: number;
+  title?: string;
+  topic?: string;
+  totalDurationSeconds?: number;
   masterAudioPath?: string;
+  cleanEditorialMode?: boolean;
+  disableCaptions?: boolean;
+  watermarkLabel?: string;
   scenes: SceneData[];
 }
+
+const getAdaptiveWatermark = (topic?: string, title?: string, customLabel?: string) => {
+  if (customLabel) return customLabel;
+  const combined = `${topic || ''} ${title || ''}`.toLowerCase();
+  if (
+    combined.includes('dark pool') ||
+    combined.includes('trading') ||
+    combined.includes('finance') ||
+    combined.includes('stock') ||
+    combined.includes('wall street') ||
+    combined.includes('market') ||
+    combined.includes('hft')
+  ) {
+    return 'SEC ARCHIVES · INVESTIGATIVE DOSSIER';
+  }
+  if (
+    combined.includes('nuclear') ||
+    combined.includes('onkalo') ||
+    combined.includes('megariver') ||
+    combined.includes('engineering') ||
+    combined.includes('dam') ||
+    combined.includes('bridge') ||
+    combined.includes('tunnel') ||
+    combined.includes('megaproject')
+  ) {
+    return 'GIGAFORGE · ENGINEERING DOSSIER';
+  }
+  if (topic) {
+    return `${topic.toUpperCase()} · INVESTIGATIVE DOSSIER`;
+  }
+  return 'VOX ARCHIVES · EDITORIAL DOSSIER';
+};
 
 const SceneWrapper: React.FC<{
   scene: SceneData;
   durationFrames: number;
-}> = ({ scene, durationFrames }) => {
+  cleanEditorialMode?: boolean;
+}> = ({ scene, durationFrames, cleanEditorialMode = true }) => {
   const frame = useCurrentFrame();
 
   // 15-frame crossfade transition at scene exit
@@ -56,68 +86,48 @@ const SceneWrapper: React.FC<{
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
-  const overlayType = scene.motionGraphicsOverlay?.type;
-  const isStampScene = overlayType === 'stamp' || scene.motionGraphicsOverlay?.stampText;
-  const isRedStringScene = overlayType === 'red_string' || scene.motionGraphicsOverlay?.redString;
-  const isAlertWashScene = overlayType === 'alert_wash' || scene.motionGraphicsOverlay?.alertWash;
-  const isPuppetScene = overlayType === 'living_puppet' || scene.motionGraphicsOverlay?.gesture;
-  const stampText = scene.motionGraphicsOverlay?.stampText || (isStampScene ? "CLASSIFIED" : undefined);
-
   return (
     <div style={{ position: 'absolute', width: '100%', height: '100%', opacity }}>
-      {/* 1. HERO VISUAL LAYER: GOOGLE IMAGEN 3 / 9ROUTER ARTWORK (ALWAYS 100% CLEAN FULL SCREEN 16:9) */}
+      {/* 1. HERO VISUAL LAYER */}
       <KenBurnsImage
         imagePath={scene.imagePath}
+        videoPath={scene.videoPath}
         durationInFrames={durationFrames}
         transitionStyle={scene.transitionStyle}
       />
 
-      {/* 2. PAPER MASKING TAPE FRAGMENTS */}
-      <TapeFragments />
+      {/* 2. AMBIENT EDITORIAL DUST PARTICLES */}
+      <EditorialDustParticles durationInFrames={durationFrames} />
 
-      {/* 3. DYNAMIC ANIMATED VOX MAP & MOTION GRAPHICS OVERLAY */}
-      <VoxMotionOverlay
-        config={scene.motionGraphicsOverlay}
-        durationInFrames={durationFrames}
-      />
+      {/* 3. KINETIC HEADLINE BANNER (EDITORIAL PAPER STAMP) */}
+      <KineticHeadline heading={scene.kineticHeading || "DOCUMENTARY EXPLAINER"} />
 
-      {/* 4. RED STRING & BRASS PINS OVERLAY */}
-      {isRedStringScene ? <RedStringConnect /> : null}
-
-      {/* 5. PAPER MARIONETTE PUPPET (STOP-MOTION) */}
-      {isPuppetScene ? (
-        <LivingPuppet gesture={scene.motionGraphicsOverlay?.gesture || "arm_point"} />
-      ) : null}
-
-      {/* 6. RUBBER STAMP ACCENT */}
-      {isStampScene && stampText ? (
-        <RubberStamp text={stampText} />
-      ) : null}
-
-      {/* 7. ALERT WASH DRAMATIC FLOOD */}
-      <AlertWash active={isAlertWashScene} />
-
-      {/* 8. KINETIC HEADLINE BANNER (EDITORIAL PAPER STAMP) */}
-      <KineticHeadline heading={scene.kineticHeading || "TAIWAN STRAIT"} />
-
-      {/* 9. LOWER THIRD TYPEWRITER BANNER */}
+      {/* 4. LOWER THIRD TYPEWRITER BANNER */}
       <LowerThird text={scene.lowerThird} />
 
-      {/* 10. DYNAMIC PHONETIC SUBTITLES WITH VOX YELLOW STAT HIGHLIGHTING */}
-      <KineticCaptions
-        wordTimestamps={scene.wordTimestamps || []}
-        highlightWords={scene.highlightWords}
-        sceneStartTime={scene.startTime}
-      />
+      {/* 5. DYNAMIC PHONETIC SUBTITLES (Only rendered if cleanEditorialMode is false) */}
+      {!cleanEditorialMode && scene.wordTimestamps && (
+        <KineticCaptions
+          wordTimestamps={scene.wordTimestamps}
+          highlightWords={scene.highlightWords}
+          sceneStartTime={scene.startTime}
+        />
+      )}
     </div>
   );
 };
 
 export const VoxVideoComposition: React.FC<VoxVideoCompositionProps> = ({
+  title,
+  topic,
+  watermarkLabel,
   masterAudioPath,
+  cleanEditorialMode = true,
+  disableCaptions = true,
   scenes = []
 }) => {
   const { fps } = useVideoConfig();
+  const isCleanMode = cleanEditorialMode || disableCaptions;
 
   const getResolvedSrc = (src?: string) => {
     if (!src) return undefined;
@@ -137,43 +147,55 @@ export const VoxVideoComposition: React.FC<VoxVideoCompositionProps> = ({
     }
   };
 
-  const resolvedMasterAudio = getResolvedSrc(masterAudioPath || "assets/audio/narration_master.mp3");
+  const resolvedMasterAudio = getResolvedSrc(masterAudioPath);
 
   return (
     <div
       style={{
         flex: 1,
-        backgroundColor: '#EAE1C8',
+        backgroundColor: '#0F0E0D',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        width: '100%',
+        height: '100%'
       }}
     >
-      {/* Paper Collage Background */}
+      {/* 6. STATIC AGED PAPER BACKGROUND */}
       <PaperBackground />
 
-      {/* Master Voiceover Narration Track */}
-      {resolvedMasterAudio ? <Audio src={resolvedMasterAudio} volume={1.0} /> : null}
+      {/* 7. MASTER VOCAL AUDIO LAYER */}
+      {resolvedMasterAudio && (
+        <Audio
+          src={resolvedMasterAudio}
+          volume={1.0}
+        />
+      )}
 
-      {scenes.map((scene, index) => {
-        const startFrame = Math.round(scene.startTime * fps);
-        const durationFrames = Math.max(1, Math.round(scene.duration * fps)) + 15;
+      {/* 8. SCENE SEQUENCES (KEN BURNS + LIVING GRAPHICS + CAPTIONS) */}
+      {scenes.map((scene) => {
+        const durationFrames = Math.max(1, Math.round(scene.duration * fps));
+        const fromFrame = Math.round(scene.startTime * fps);
 
         return (
           <Sequence
-            key={`scene-${scene.sceneIndex}-${index}`}
-            from={startFrame}
+            key={`scene-${scene.sceneIndex}-${fromFrame}`}
+            from={fromFrame}
             durationInFrames={durationFrames}
           >
-            <SceneWrapper scene={scene} durationFrames={durationFrames} />
+            <SceneWrapper
+              scene={scene}
+              durationFrames={durationFrames}
+              cleanEditorialMode={isCleanMode}
+            />
           </Sequence>
         );
       })}
 
-      {/* Global Film Grain & Paper Vignette */}
+      {/* 9. SUBTLE TACTILE FILM GRAIN (AUTHENTIC 12FPS RETRO FILM TEXTURE) */}
       <FilmGrainOverlay />
 
-      {/* Global Vox Studio Watermark Stamp */}
-      <WatermarkStamp />
+      {/* 10. EDITORIAL WATERMARK STAMP */}
+      <WatermarkStamp label={getAdaptiveWatermark(topic, title, watermarkLabel)} />
     </div>
   );
 };

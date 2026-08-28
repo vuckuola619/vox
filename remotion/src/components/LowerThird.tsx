@@ -15,27 +15,27 @@ export const LowerThird: React.FC<LowerThirdProps> = ({
 
   if (!text) return null;
 
-  // Exit completely after 2 seconds (60 frames)
-  if (frame > 60) return null;
+  // Exit completely after 4 seconds (120 frames)
+  if (frame > 120) return null;
 
-  // Smooth slide-in (0-14f), hold (14-46f), smooth slide-out to left (46-60f)
+  // Smooth slide-in (0-20f), hold (20-95f), smooth slide-out to left (95-120f)
   let translateX = 0;
   let opacity = 1;
 
-  if (frame < 14) {
-    translateX = interpolate(frame, [0, 14], [-600, 0], { extrapolateRight: 'clamp' });
-    opacity = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
-  } else if (frame > 46) {
-    translateX = interpolate(frame, [46, 60], [0, -700], { extrapolateRight: 'clamp' });
-    opacity = interpolate(frame, [46, 58], [1, 0], { extrapolateRight: 'clamp' });
+  if (frame < 20) {
+    translateX = interpolate(frame, [0, 20], [-600, 0], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
+  } else if (frame > 95) {
+    translateX = interpolate(frame, [95, 120], [0, -700], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [95, 118], [1, 0], { extrapolateRight: 'clamp' });
   }
 
   return (
     <div
       style={{
         position: 'absolute',
-        bottom: '70px',
-        left: '70px',
+        bottom: '32px',
+        left: '60px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',

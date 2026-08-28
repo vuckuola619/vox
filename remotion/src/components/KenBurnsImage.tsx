@@ -1,18 +1,21 @@
 import React from 'react';
-import { useCurrentFrame, useVideoConfig, interpolate, Img, staticFile } from 'remotion';
+import { useCurrentFrame, useVideoConfig, interpolate, Img, OffthreadVideo, Loop, staticFile } from 'remotion';
 
 interface KenBurnsImageProps {
   imagePath?: string;
+  videoPath?: string;
   durationInFrames: number;
   transitionStyle?: string;
 }
 
 export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
   imagePath,
+  videoPath,
   durationInFrames,
   transitionStyle = 'ken_burns_in'
 }) => {
   const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
 
   const getResolvedSrc = (src?: string) => {
     if (!src) return undefined;
@@ -32,27 +35,44 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
     }
   };
 
-  const resolvedSrc = getResolvedSrc(imagePath);
+  const rawSrc = videoPath || imagePath;
+  const resolvedSrc = getResolvedSrc(rawSrc);
+  const isVideo = resolvedSrc ? (resolvedSrc.endsWith('.mp4') || resolvedSrc.endsWith('.webm')) : false;
 
-  // Smooth Cinematic Motion (Zero Jitter / Zero Shake)
+  const renderMedia = (style: React.CSSProperties) => {
+    if (!resolvedSrc) return null;
+    if (isVideo) {
+      return (
+        <Loop durationInFrames={150}>
+          <OffthreadVideo
+            src={resolvedSrc}
+            style={style}
+            muted
+            pauseWhenBuffering
+          />
+        </Loop>
+      );
+    }
+    return (
+      <Img
+        src={resolvedSrc}
+        style={style}
+      />
+    );
+  };
 
   // 1. KINETIC PUNCH-ZOOM (SNAPPY SMOOTH PUNCH)
   if (transitionStyle === 'kinetic' || transitionStyle === 'kinetic_punch') {
-    const punchScale = interpolate(frame, [0, 8, 12, durationInFrames], [1.0, 1.18, 1.15, 1.16], { extrapolateRight: 'clamp' });
+    const punchScale = interpolate(frame, [0, 8, 12, durationInFrames], [1.0, 1.18, 1.15, 1.18], { extrapolateRight: 'clamp' });
 
     return (
       <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'hidden', backgroundColor: '#111111' }}>
-        {resolvedSrc ? (
-          <Img
-            src={resolvedSrc}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transform: `scale(${punchScale})`
-            }}
-          />
-        ) : null}
+        {renderMedia({
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          transform: `scale(${punchScale})`
+        })}
       </div>
     );
   }
@@ -61,7 +81,7 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
   if (transitionStyle === 'deep_diorama' || transitionStyle === 'map_pin') {
     const rotateY = interpolate(frame, [0, durationInFrames], [-4, 4], { extrapolateRight: 'clamp' });
     const rotateX = interpolate(frame, [0, durationInFrames], [2, -2], { extrapolateRight: 'clamp' });
-    const scale = interpolate(frame, [0, durationInFrames], [1.03, 1.10], { extrapolateRight: 'clamp' });
+    const scale = interpolate(frame, [0, durationInFrames], [1.03, 1.12], { extrapolateRight: 'clamp' });
 
     return (
       <div
@@ -74,50 +94,51 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
           perspective: '1200px'
         }}
       >
-        {resolvedSrc ? (
-          <Img
-            src={resolvedSrc}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transform: `perspective(1200px) scale(${scale}) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`,
-              transformOrigin: 'center center',
-              boxShadow: '0 20px 50px rgba(0,0,0,0.6)'
-            }}
-          />
-        ) : null}
+        {renderMedia({
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          transform: `perspective(1200px) scale(${scale}) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`,
+          transformOrigin: 'center center',
+          boxShadow: '0 20px 50px rgba(0,0,0,0.6)'
+        })}
       </div>
     );
   }
 
-  // 3. CLASSIC SMOOTH KEN BURNS IN / OUT & DYNAMIC SLOW DRIFT
+  // 3. CLASSIC DYNAMIC VOX KEN BURNS & SCAN MOVES
   const isZoomOut = transitionStyle === 'ken_burns_out' || transitionStyle === 'zoom_out';
-  const isPanRight = transitionStyle === 'pan_right';
-  const isPanLeft = transitionStyle === 'pan_left';
+  const isPanRight = transitionStyle === 'pan_right' || transitionStyle === 'ken_burns_pan_right';
+  const isPanLeft = transitionStyle === 'pan_left' || transitionStyle === 'ken_burns_pan_left';
 
-  let startScale = 1.02;
-  let endScale = 1.12;
-  let startX = -10;
-  let endX = 20;
+  let startScale = 1.04;
+  let endScale = 1.15;
+  let startX = -20;
+  let endX = 30;
   let startY = 0;
-  let endY = -12;
+  let endY = -15;
 
   if (isZoomOut) {
-    startScale = 1.12;
-    endScale = 1.02;
-    startX = 15;
-    endX = -15;
+    startScale = 1.15;
+    endScale = 1.03;
+    startX = 25;
+    endX = -20;
+    startY = -10;
+    endY = 5;
   } else if (isPanRight) {
-    startScale = 1.06;
-    endScale = 1.08;
-    startX = -30;
-    endX = 30;
+    startScale = 1.08;
+    endScale = 1.12;
+    startX = -60;
+    endX = 50;
+    startY = -5;
+    endY = 5;
   } else if (isPanLeft) {
-    startScale = 1.06;
-    endScale = 1.08;
-    startX = 30;
-    endX = -30;
+    startScale = 1.08;
+    endScale = 1.12;
+    startX = 50;
+    endX = -60;
+    startY = 5;
+    endY = -5;
   }
 
   const scale = interpolate(frame, [0, durationInFrames], [startScale, endScale], { extrapolateRight: 'clamp' });
@@ -126,17 +147,12 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
 
   return (
     <div style={{ position: 'absolute', width: '100%', height: '100%', overflow: 'hidden', backgroundColor: '#111111' }}>
-      {resolvedSrc ? (
-        <Img
-          src={resolvedSrc}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            transform: `scale(${scale}) translate(${translateX}px, ${translateY}px)`
-          }}
-        />
-      ) : null}
+      {renderMedia({
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        transform: `scale(${scale}) translate(${translateX}px, ${translateY}px)`
+      })}
     </div>
   );
 };

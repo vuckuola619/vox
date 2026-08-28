@@ -1,6 +1,12 @@
 import React from 'react';
 
-export const WatermarkStamp: React.FC = () => {
+interface WatermarkStampProps {
+  label?: string;
+}
+
+export const WatermarkStamp: React.FC<WatermarkStampProps> = ({
+  label = "GIGAFORGE · ENGINEERING DOSSIER"
+}) => {
   return (
     <div
       style={{
@@ -20,7 +26,7 @@ export const WatermarkStamp: React.FC = () => {
         fontFamily: 'Oswald, sans-serif',
         fontWeight: 700,
         letterSpacing: '0.08em',
-        fontSize: '13px',
+        fontSize: '12px',
         lineHeight: 1.25,
         textTransform: 'uppercase',
         pointerEvents: 'none',
@@ -29,7 +35,7 @@ export const WatermarkStamp: React.FC = () => {
         zIndex: 35
       }}
     >
-      <span style={{ padding: '0 10px' }}>VOX STUDIO · CASE FILE ARCHIVE</span>
+      <span style={{ padding: '0 10px' }}>{label}</span>
     </div>
   );
 };

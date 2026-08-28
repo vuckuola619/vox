@@ -14,22 +14,22 @@ export const KineticHeadline: React.FC<KineticHeadlineProps> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Exit completely after 2 seconds (60 frames)
-  if (frame > 60) return null;
+  // Exit completely after 4 seconds (120 frames)
+  if (frame > 120) return null;
 
-  // Smooth slide-in (0-12f), hold (12-46f), smooth slide-out (46-60f)
+  // Smooth slide-in (0-20f), hold (20-95f), smooth slide-out (95-120f)
   let translateY = 0;
   let opacity = 1;
   let scale = 1.0;
 
-  if (frame < 12) {
-    translateY = interpolate(frame, [0, 12], [-80, 0], { extrapolateRight: 'clamp' });
-    opacity = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
-    scale = interpolate(frame, [0, 12], [0.95, 1.0], { extrapolateRight: 'clamp' });
-  } else if (frame > 46) {
-    translateY = interpolate(frame, [46, 60], [0, -100], { extrapolateRight: 'clamp' });
-    opacity = interpolate(frame, [46, 58], [1, 0], { extrapolateRight: 'clamp' });
-    scale = interpolate(frame, [46, 60], [1.0, 0.95], { extrapolateRight: 'clamp' });
+  if (frame < 20) {
+    translateY = interpolate(frame, [0, 20], [-90, 0], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
+    scale = interpolate(frame, [0, 20], [0.94, 1.0], { extrapolateRight: 'clamp' });
+  } else if (frame > 95) {
+    translateY = interpolate(frame, [95, 120], [0, -110], { extrapolateRight: 'clamp' });
+    opacity = interpolate(frame, [95, 118], [1, 0], { extrapolateRight: 'clamp' });
+    scale = interpolate(frame, [95, 120], [1.0, 0.94], { extrapolateRight: 'clamp' });
   }
 
   return (
